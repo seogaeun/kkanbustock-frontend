@@ -44,8 +44,8 @@ function Login() {
                     <button className='button' type='button' onClick={onClickLogin}>회원가입</button>
                 </div>
                 <div>
-                    <label>로그인없이 들어갈 수 있어요 </label>
-                    <label>구경하기{'>'} </label>
+                    <label id="explanation">로그인없이 들어갈 수 있어요 </label>
+                    <label id="guestLogin">구경하기{'>'} </label>
                 </div>
             </div>
         </div>
