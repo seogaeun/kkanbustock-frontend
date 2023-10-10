@@ -5,15 +5,19 @@
     padding: 15px 0px;
     text-align: right;
     display: flex;
+    justify-content: space-between;
 }
 #logo{
-    width: 50%;
+    padding-left: 3%;
+    width: 30%;
     text-align: left;
 }
 .menuClass{
+    width: 40%;
     display: flex;
+    text-align: center;
     justify-content: space-between;
-    width: 50%;
+    padding: 0px 15px;
 
 }
 .navbarMenu{
