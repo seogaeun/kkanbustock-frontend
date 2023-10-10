@@ -1,0 +1,67 @@
+*{
+    font-family: OneShinhan;
+    text-align: start;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+  
+.InvestType_intro {
+    display: flex;
+    align-items: center; 
+}
+
+
+
+
+.intro-container {
+    width: 700px;
+    display: flex;
+    flex-direction: column; /* 내부 요소들을 세로로 배치 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+}
+
+
+.intro-title{
+    margin-bottom: 60px;
+}
+
+
+span{
+    color: #0045FF;
+    font-size: 45px;
+    font-style: normal;
+    line-height: 46px; /* 102.222% */
+}
+
+h2{
+    color: #0045FF;
+    font-size: 35px;
+    font-style: normal;
+    line-height: 46px;
+}
+
+h1{
+    color: #000;
+    font-size: 60px;
+    font-style: bold;
+    line-height: 46px; /* 76.667% */
+}
+
+button{
+    color: #FFF;
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    padding: 15px 50px;
+    border-radius: 30px;
+    background: #005CFE;
+}
+
+img{
+    width: 350px;
+}
