@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import "./Login.css";
-
 function Login() {
     const [inputId, setInputId] = useState('')
     const [inputPw, setInputPw] = useState('')
