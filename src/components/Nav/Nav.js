@@ -11,10 +11,10 @@ function Nav() {
                 </div>
                 <div className='menuClass'>
                     <Link className='navbarMenu' to={'/'}>메인</Link>
-                    <Link className='navbarMenu' to={'/'}>라이벌</Link>
-                    <Link className='navbarMenu' to={'/'}>사전</Link>
-                    <Link className='navbarMenu' to={'/'}>퀴즈</Link>
-                    <Link className='navbarMenu' to={'/'}>내정보</Link>
+                    <Link className='navbarMenu' to={'/Rival'}>라이벌</Link>
+                    <Link className='navbarMenu' to={'/Dictionary'}>사전</Link>
+                    <Link className='navbarMenu' to={'/Quiz'}>퀴즈</Link>
+                    <Link className='navbarMenu' to={'/My'}>내정보</Link>
                 </div>
             </div>
         </div>
