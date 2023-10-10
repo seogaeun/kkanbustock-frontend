@@ -1,0 +1,81 @@
+*{
+    font-family: OneShinhan;
+    text-align: start;
+    /* outline: 1px solid black;  */
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column; /* 내부 요소들을 세로로 배치 */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.up-container{
+    display: flex;
+}
+
+.intro-title{
+    width: 800px;
+    margin-bottom: 60px;
+}
+
+.up-container>img{
+    width: 150px;
+    height: 200px;
+    
+} 
+
+.down-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1000px;
+    height: 250px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #F0F0F0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.typeText{
+    width: 450px;
+    height: 200px;
+    margin:10px;
+}
+
+
+
+.line{
+    width: 1px;
+    height: 200px;
+    background: #000;
+}
+
+.typeRecommand{
+    width: 450px;
+    height: 200px;
+    margin:10px;
+}
+
+
+span{
+    color: #0045FF;
+    font-size: 45px;
+    font-style: normal;
+    line-height: 46px; /* 102.222% */
+}
+
+
+button{
+    color: #FFF;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    padding: 10px 30px;
+    border-radius: 30px;
+    background: #005CFE;
+    margin:20px;
+}
