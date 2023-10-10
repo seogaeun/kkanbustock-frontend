@@ -75,7 +75,7 @@ h1{
 }
 
 
-button{
+.quiz-select>button{
     width: 650px;
     height: 80px;
     flex-shrink: 0;
