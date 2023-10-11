@@ -1,6 +1,43 @@
+.solvedItem{
+    border-bottom: 1px solid silver;
+    padding: 10px 0px;
+    vertical-align: middle;
+}
+
 .solvedQuizItem{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-size: 1.2rem;
 }
 
+.questionNumber{
+    text-align: center;
+    width: 10%;
+}
+
+.date{
+    width: 10%;
+}
+
+.questionSet{
+    padding-left: 15px;
+    width: 65%;
+}
+
+.qustion{
+    text-align: left;
+}
+
+.explanation{
+    text-align: left;
+}
+
+.corretAnswer{
+    width: 5%;
+}
+
+.isCorrect{
+    text-align: end;
+    width: 10%;
+}

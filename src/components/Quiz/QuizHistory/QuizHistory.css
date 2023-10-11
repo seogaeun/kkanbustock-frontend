@@ -7,12 +7,16 @@
     flex-direction: row;
     justify-content: space-between;
 }
+.quizList{
+    padding: 0;
+}
 .listHeader{
     display: flex;
     flex-direction: row;
     text-align: center;
     color: silver;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    margin-bottom: -10px;
     border-bottom: 0.1px solid rgb(204, 203, 203);
 }
 
@@ -30,7 +34,6 @@
 }
 
 .a{
-    text-align: end;
     width: 5%;
 }
 
