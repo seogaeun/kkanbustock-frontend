@@ -1,0 +1,38 @@
+*{
+    color: #000;
+    font-family: OneShinhan;
+    font-style: normal;
+}
+
+.informCodeContent{
+    height:400px;
+    width:500px;
+    margin-left: 20px;
+}
+
+.informCodeContent>h3{
+    font-size: 30px;
+}
+
+.groupCode{
+    text-align: end;
+}
+
+.informCodeContent>h3>span{
+    color: #0045FF;
+    font-weight: bold;
+    font-family: OneShinhan;
+    font-size: 60px;
+    letter-spacing: 30px;
+}
+
+.informCodeContent>p{
+    color: #555;
+    font-size: 15px;
+}
+
+.informCodeContent>p>a{
+    color: #0045FF;
+    font-size: 15px;
+    font-weight: bold;
+}
