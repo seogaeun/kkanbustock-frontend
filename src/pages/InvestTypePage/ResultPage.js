@@ -1,6 +1,6 @@
 import React from 'react';
-import "./../styles/InvestType_result.css";
-import SOL_info from "./../assets/images/SOL_info.png";
+import "./ResultPage.css";
+import SOL_info from "./../../assets/images/SOL_info.png";
 
 
 let nickname="게스트";
