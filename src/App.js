@@ -1,7 +1,8 @@
 import './App.css';
-import Main from './pages/MainPage/MainPage.js';
-import Login from './pages/LoginPage/LoginPage.js';
-import Quiz from  './pages/QuizPage/QuizPage.js';
+import MainPage from './pages/MainPage/MainPage.js';
+import LoginPage from './pages/LoginPage/LoginPage.js';
+import QuizPage from  './pages/QuizPage/QuizPage.js';
+import DictionaryPage from './pages/DictionaryPage/DictionaryPage';
 import Nav from './components/Nav/Nav.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -11,9 +12,10 @@ function App() {
     <div className="App">
       <Nav/>
       <Routes>
-        <Route path='/' element={<Main/>}/>
-        <Route path="/My" element={<Login />} />
-        <Route path="/Quiz" element={<Quiz />} />
+        <Route path='/' element={<MainPage/>}/>
+        <Route path="/My" element={<LoginPage />} />
+        <Route path="/Quiz" element={<QuizPage />} />
+        <Route path='/Dictionary' element={<DictionaryPage/>} />
       </Routes>
     </div>
     </BrowserRouter>

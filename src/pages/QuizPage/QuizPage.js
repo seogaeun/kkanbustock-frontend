@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Header from '../../components/Header/Header'
 function Quiz() {
     return (
         <div>
-            퀴즈~
+            <Header name='퀴즈'/>
         </div>
     )
 }
