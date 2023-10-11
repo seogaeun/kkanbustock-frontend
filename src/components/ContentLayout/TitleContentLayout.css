@@ -1,0 +1,43 @@
+.componentWrap{
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.titleContent{
+    width: 80%;
+    font-family: OneShinhan;
+    text-align: start;
+}
+
+.titleContent>h3{
+    color: #0045FF;
+    font-size: 30px;
+    font-style: normal;
+    margin-bottom: 0px; 
+}
+
+.titleContent>h1{
+    color: #000;
+    font-size: 30px;
+    font-style: normal;
+    margin-bottom: 20px;
+
+}
+
+
+.mainContent{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContent>img{
+    width:500px;
+    height:400px;
+    object-fit: contain;
+    flex-shrink: 0;
+    padding:20px;
+}
+
