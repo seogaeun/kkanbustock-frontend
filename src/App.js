@@ -5,8 +5,6 @@ import QuizPage from  './pages/QuizPage/QuizPage.js';
 import DictionaryPage from './pages/DictionaryPage/DictionaryPage';
 import Nav from './components/Nav/Nav.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import InvestType_intro from './pages/InvestType_intro.js';
-import InvestType_question from './pages/InvestType_question.js';
 
 function App() {
   return (

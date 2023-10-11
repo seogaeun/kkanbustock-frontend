@@ -1,7 +1,7 @@
 import React from 'react';
-import "./../styles/InvestType_question.css";
-import SOL_happy from "./../assets/images/SOL_happy.png";
-import Quiz from "./../assets/images/quiz1.png";
+import "./QuestionPage.css";
+import SOL_happy from "./../../assets/images/SOL_happy.png";
+import Quiz from "./../../assets/images/quiz1.png";
 
 const quiz_number=1;
 let quiz_title = "경기 침체로 인해 투자 시장이 좋지만은 않은데..!";
