@@ -9,9 +9,11 @@ const SolvedQuiz = ({
   correctAnswer,
   isCorrect,
 }) => {
+  const resultClassName = isCorrect ? "correct" : "incorrect";
+
   return (
     <div className="solvedItem">
-      <div className={`solved-quiz ${isCorrect ? "correct" : "incorrect"}`}>
+      <div className="solved-quiz">
         <div className="solvedQuizItem">
           <div className="questionNumber">{questionNumber}</div>
           <div className="date">{date}</div>
@@ -19,8 +21,10 @@ const SolvedQuiz = ({
             <div className="qustion">{question}</div>
             <div className="explanation">{explanation}</div>
           </div>
-          <div className="corretAnswer">{correctAnswer}</div>
-          <div className="isCorrect">{isCorrect ? "정답" : "오답"}</div>
+          <div className="corretAnswer ${resultClassName}">{correctAnswer}</div>
+          <div className={`isCorrect ${resultClassName}`}>
+            {isCorrect ? "정답" : "오답"}
+          </div>
         </div>
       </div>
     </div>
