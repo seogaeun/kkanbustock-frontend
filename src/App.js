@@ -1,7 +1,7 @@
 import './App.css';
-import Main from './pages/MainPage/Main';
-import Login from './pages/LoginPage/Login';
-import Quiz from  './components/Quiz/Quiz.js';
+import Main from './pages/MainPage/MainPage.js';
+import Login from './pages/LoginPage/LoginPage.js';
+import Quiz from  './pages/QuizPage/QuizPage.js';
 import Nav from './components/Nav/Nav.js';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import InvestType_intro from './pages/InvestType_intro.js';
