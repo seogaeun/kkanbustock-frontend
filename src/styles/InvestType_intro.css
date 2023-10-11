@@ -31,28 +31,30 @@
 }
 
 
-span{
-    color: #0045FF;
-    font-size: 45px;
-    font-style: normal;
-    line-height: 46px; /* 102.222% */
-}
-
-h2{
+.intro-title>h2{
     color: #0045FF;
     font-size: 35px;
     font-style: normal;
     line-height: 46px;
 }
 
-h1{
+
+.intro-title>h2>span{
+    color: #0045FF;
+    font-size: 45px;
+    font-style: normal;
+    line-height: 46px; /* 102.222% */
+}
+
+
+.intro-title>h1{
     color: #000;
     font-size: 60px;
     font-style: bold;
     line-height: 46px; /* 76.667% */
 }
 
-button{
+.intro-container>button{
     color: #FFF;
     text-align: center;
     font-size: 30px;
@@ -62,6 +64,6 @@ button{
     background: #005CFE;
 }
 
-img{
+.InvestType_intro>img{
     width: 350px;
 }
