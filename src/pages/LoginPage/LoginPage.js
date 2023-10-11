@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Header from '../../components/Header/Header';
 import './LoginPage.css';
+
 function Login() {
     const [inputId, setInputId] = useState('')
     const [inputPw, setInputPw] = useState('')
@@ -26,7 +28,7 @@ function Login() {
  
     return(
         <div>
-            <h2>LOGIN</h2>
+            <Header name='LOGIN'/>
             <div>
             <div>
                 <input className='input_group' placeholder='ID' type='text' name='input_id' value={inputId} onChange={handleInputId} />
