@@ -2,21 +2,21 @@
   font-family: "OneShinhan";
   font-weight: bold;
   font-style: bold;
-  src: url("./../assets/fonts/ONESHINHANBOLD.TTF") format("truetype");
+  src: url("./assets/fonts/ONESHINHANBOLD.TTF") format("truetype");
 }
 
 @font-face {
   font-family: "OneShinhan";
   font-weight: lighter;
   font-style: lighter;
-  src: url("./../assets/fonts/ONESHINHANLIGHT.TTF") format("truetype");
+  src: url("./assets/fonts/ONESHINHANLIGHT.TTF") format("truetype");
 }
 
 @font-face {
   font-family: "OneShinhan";
   font-weight: normal;
   font-style: normal;
-  src: url("./../assets/fonts/ONESHINHANMEDIUM.TTF") format("truetype");
+  src: url("./assets/fonts/ONESHINHANMEDIUM.TTF") format("truetype");
 }
 
 
