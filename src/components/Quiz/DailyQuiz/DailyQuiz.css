@@ -5,7 +5,7 @@
     flex-direction: column; /* 중앙 정렬을 위해 flexbox를 사용합니다. */
     align-items: center; /* 수직 가운데 정렬 */
     justify-content: center; /* 수평 가운데 정렬 */
-    background-image: url('../../assets/images/dailyquizback.png');
+    background-image: url('../../../assets/images/dailyquizback.png');
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
     background-size: cover;

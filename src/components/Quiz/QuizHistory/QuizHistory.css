@@ -1,0 +1,36 @@
+.quizHistory{
+    margin-top: 5vh;
+    width: 80vw;
+}
+
+.listHeader{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    color: silver;
+    padding-bottom: 5px;
+    border-bottom: 0.1px solid rgb(204, 203, 203);
+}
+
+.no{
+    width: 10%;
+}
+
+
+.date{
+    width: 10%;
+}
+
+.q{
+    width: 65%;
+}
+
+.a{
+    text-align: end;
+    width: 5%;
+}
+
+.result{
+    text-align: end;
+    width: 10%;
+}
