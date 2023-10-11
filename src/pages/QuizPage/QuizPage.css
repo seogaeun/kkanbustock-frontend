@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center; /* 추가: 수평 가운데 정렬 */
-
 }
 
 .dailyQuizSection{
@@ -11,3 +10,4 @@
     display: flex;
     justify-content: center;
 }
+

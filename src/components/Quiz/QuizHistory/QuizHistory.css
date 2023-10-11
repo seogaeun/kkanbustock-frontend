@@ -2,7 +2,11 @@
     margin-top: 5vh;
     width: 80vw;
 }
-
+.quizHistoryHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .listHeader{
     display: flex;
     flex-direction: row;
