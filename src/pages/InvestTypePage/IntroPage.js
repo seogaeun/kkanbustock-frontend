@@ -1,5 +1,5 @@
 import React from 'react';
-import "./InvestType_intro.css";
+import "./IntroPage.css";
 import SOL_hello from "./../../assets/images/sol-hello.png";
 
 let nickname = "게스트";

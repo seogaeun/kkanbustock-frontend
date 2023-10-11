@@ -1,5 +1,5 @@
 import React from 'react';
-import "./InvestType_result.css";
+import "./ResultPage.css";
 import SOL_info from "./../../assets/images/SOL_info.png";
 
 

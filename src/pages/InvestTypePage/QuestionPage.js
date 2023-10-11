@@ -1,5 +1,5 @@
 import React from 'react';
-import "./InvestType_question.css";
+import "./QuestionPage.css";
 import SOL_happy from "./../../assets/images/SOL_happy.png";
 import Quiz from "./../../assets/images/quiz1.png";
 
