@@ -5,7 +5,7 @@ import Quiz from "./../../assets/images/quiz1.png";
 
 const quiz_number=1;
 let quiz_title = "경기 침체로 인해 투자 시장이 좋지만은 않은데..!";
-let select1 = "“이럴 때 더 공격적으로!” 미래를 보고 더 투자한다";
+let select1 = "이럴 때 더 공격적으로!” 미래를 보고 더 투자한다";
 let select2 = "“더 떨어지기 전에 나오자!!” 지금 안정적인 게 더 중요하다.";
 
 

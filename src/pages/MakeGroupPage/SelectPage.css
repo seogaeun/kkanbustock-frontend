@@ -1,0 +1,13 @@
+.center-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.selectionContainer{
+    width: 60vw;
+    display: flex;
+    flex-flow: nowrap;
+    justify-content: space-around;
+}

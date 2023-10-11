@@ -1,7 +1,7 @@
 import React from 'react';
 import "./IntroPage.css";
 import SOL_hello from "./../../assets/images/sol-hello.png";
-
+import Nav from '../../components/Nav/Nav';
 let nickname = "게스트";
 
 function InvestType_intro() {
