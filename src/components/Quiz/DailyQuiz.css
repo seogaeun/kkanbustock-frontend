@@ -1,0 +1,14 @@
+.dailyQuiz{
+    width: 80vw;
+    height: 28vh;
+    display: flex; /* 중앙 정렬을 위해 flexbox를 사용합니다. */
+    align-items: center; /* 수직 가운데 정렬 */
+    justify-content: center; /* 수평 가운데 정렬 */
+    
+    background-image: url('../../assets/images/dailyquizback.png');
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
