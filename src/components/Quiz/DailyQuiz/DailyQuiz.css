@@ -1,0 +1,69 @@
+.dailyQuiz{
+    width: 80vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: column; /* 중앙 정렬을 위해 flexbox를 사용합니다. */
+    align-items: center; /* 수직 가운데 정렬 */
+    justify-content: center; /* 수평 가운데 정렬 */
+    background-image: url('../../../assets/images/dailyquizback.png');
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px;
+}
+
+.quizTitle{
+    color: white;
+    font-size: 25px;
+    margin: 10px;
+}
+
+.dailyQuizQnASet{
+    background-color: white;
+    width: 75%;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 5px;
+}
+
+#question{
+    font-size: 20px;
+    margin: 5px;
+}
+
+#explanation{
+    margin: 5px;
+}
+
+.answer{
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    border: 1.5px solid #8a8888;
+    border-radius: 0.6em;
+    color: #8a8888;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    line-height: 3;
+    margin: 0px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 2rem;
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+.oxbtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.answer:hover {
+    background-color: #0047FF;
+    color: white;
+}

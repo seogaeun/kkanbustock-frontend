@@ -1,0 +1,13 @@
+.quizPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* 추가: 수평 가운데 정렬 */
+}
+
+.dailyQuizSection{
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
