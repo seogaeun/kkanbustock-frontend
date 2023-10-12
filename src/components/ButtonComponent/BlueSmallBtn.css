@@ -1,0 +1,15 @@
+.blueSmallBtn{
+    width: 170px;
+    height: 50px;
+    border-radius: 30px;
+    background: #005CFE;
+    flex-shrink: 0;
+    box-shadow: 1px 0px 7px 0px rgba(0, 0, 0, 0.25);
+    border: none;
+
+    color: #FFF;
+    text-align: center;
+    font-family: OneShinhan;
+    font-size: 20px;
+}
+
