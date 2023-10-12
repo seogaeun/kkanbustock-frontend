@@ -1,0 +1,7 @@
+.stockListContent{
+    width: 1791px;
+    height: 877px;
+    border-radius: 20px;
+    background: rgba(217, 217, 217, 0.80);
+    flex-shrink: 0;
+}
