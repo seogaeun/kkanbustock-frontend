@@ -1,5 +1,5 @@
 .main-point {
-    background-color: black;
+    background-color: rgb(59, 136, 235);
     color: white;
     width: 100vw;
     height: 100vh;
@@ -31,10 +31,13 @@
     }
   }
   .arrow-image {
-    width: 50px; /* 화살표 이미지 크기 조절 */
-    margin-bottom: -20px; /* head2 아래에 위치하도록 여백 추가 */
-    opacity: 0; /* 초기에는 투명하게 설정 */
-    animation: fadeInOut 1.5s infinite; /* fadeInOut 애니메이션 적용 */
+    width: 50px;
+    margin: 0; /* 여백 제거 */
+    position: absolute; /* 절대 위치 지정 */
+    bottom: 0; /* 하단에 배치 */
+    opacity: 0;
+    animation: fadeInOut 2s alternate infinite;
+    padding-bottom: 50px;
   }
   
   @keyframes fadeInOut {
@@ -59,7 +62,7 @@
     width:100vw;
     font-size: 30px;
     margin: 10px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
 
 
