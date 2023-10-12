@@ -11,5 +11,27 @@
     color: #000000;
     font-family: OneShinhan;
     clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+    display: flex;
 }
 
+  
+  .myScoreInfo {
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    margin:0 30px;
+    width:150px;
+    height: 150px;
+  }
+  
+  .mySadariggol>img {
+    position: absolute;
+    object-fit: contain;
+    right: 60px;
+    top: 0;
+    margin:20px;
+    width:200px;
+    height: 200px;
+  }
+  
+  

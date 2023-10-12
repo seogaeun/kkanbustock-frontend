@@ -1,6 +1,6 @@
 
 
-.yourSadariggol{
+.ribalSadariggol{
     width: 400px;
     height: 260px;
     margin-left: -60px;
@@ -15,3 +15,24 @@
     
 }
 
+
+.rivalScoreInfo {
+    position: absolute;
+    width:150px;
+    height: 150px;
+    right: 0px;
+    top: 0;
+    margin:20px;
+    
+  }
+
+.ribalSadariggol>img {
+    position: absolute;
+    object-fit: contain;
+    left: 60px;
+    bottom: 0px;
+    margin:10px 20px;
+    width:180px;
+    height: 180px;
+
+}

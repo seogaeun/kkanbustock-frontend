@@ -9,6 +9,9 @@ function ViewScoreComponent() {
         <div className='componentWrap'>
             <div className="scoreComponent">
                 <ViewMyScore></ViewMyScore>
+                <div className="versusCircle">
+                    <div className='versusMent'>VS</div>
+                </div>
                 <ViewRivalScore></ViewRivalScore>
             </div>
         </div>

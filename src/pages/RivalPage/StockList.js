@@ -1,6 +1,6 @@
 import "./StockListContent.css";
 import StockListItem from "../../components/StockList/StockListItem";
-import StockList from "../../components/StockList/StockList";
+import StockList from "../../components/StockList/StockListCover";
 function StockListContent() {
     return (
         <div className="stockListContent">
