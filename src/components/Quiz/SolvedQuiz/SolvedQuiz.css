@@ -1,6 +1,59 @@
+.solvedItem{
+    border-bottom: 1px solid silver;
+    padding: 10px 0px;
+    margin-top: 0px;
+    vertical-align: middle;
+}
+
 .solvedQuizItem{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-size: 1.2rem;
 }
 
+.questionNumber{
+    text-align: center;
+    width: 10%;
+}
+
+.date{
+    width: 10%;
+}
+
+.questionSet{
+    padding-left: 40px;
+    width: 65%;
+}
+
+.qustion{
+    font-size: 1.3rem;
+    text-align: left;
+}
+
+.explanation{
+    padding-top: 5px;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.corretAnswer{
+    font-size: 30px;
+    vertical-align: middle;
+    width: 5%;
+}
+
+.isCorrect {
+    text-align: end;
+    width: 10%;
+    display: flex;
+    justify-content: end; /* 가로 가운데 정렬 */
+    align-items: center; /* 세로 가운데 정렬 */
+}
+
+.correct{
+    color: green;
+}
+.incorrect{
+    color: red;
+}
