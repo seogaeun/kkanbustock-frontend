@@ -1,0 +1,17 @@
+
+
+.yourSadariggol{
+    width: 400px;
+    height: 260px;
+    margin-left: -60px;
+    padding:10px;
+    border-radius:  0px 20px 20px 0px;
+    background: #ffffff;
+    fill: #FFF;
+    filter: drop-shadow(1px 0px 7px rgba(0, 0, 0, 0.25));
+    color: #000000;
+    font-family: OneShinhan;
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+    
+}
+

@@ -1,0 +1,16 @@
+.componentWrap {
+    display: flex;
+    justify-content: center;
+    /* 다른 스타일 설정 (예: 배경색, 패딩, 마진) */
+    flex-shrink: 0;
+  }
+  
+  .scoreComponent {
+    width: 572vw;
+    height: 572px;
+    display: flex;
+    background: url("./../../assets/images/RivalBg.png") center top/cover, lightgray -0.057px 0px / 99.853% 155.237% no-repeat;
+    justify-content: center;
+    /* 다른 스타일 설정 (예: 배경색, 패딩, 마진) */
+  }
+  

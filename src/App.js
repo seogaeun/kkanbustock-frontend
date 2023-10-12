@@ -11,6 +11,7 @@ function App() {
     <BrowserRouter>
     <div className="App">
       <Nav/>
+
       <Routes>
         <Route path='/' element={<MainPage/>}/>
         <Route path="/My" element={<LoginPage />} />

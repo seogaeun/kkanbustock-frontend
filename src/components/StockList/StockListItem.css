@@ -1,0 +1,26 @@
+.StockListItem{
+    display: flex;
+    align-items: center;
+    gap:20px;
+    padding-bottom:10px;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 1px 0px 7px 0px rgba(0, 0, 0, 0.25);
+    justify-content: space-around;
+    margin:10px;
+}
+.ItemLeft{
+    display: flex;
+}
+
+.ItemLeft>img{
+    width:70px;
+    height:70px;
+    align-items: center;
+    object-fit: contain;
+    flex-shrink: 0;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    margin: 10px 30px 0 0px;
+    padding: 15px;
+
+}
