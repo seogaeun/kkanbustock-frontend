@@ -1,0 +1,23 @@
+*{
+    font-family: OneShinhan;
+}
+
+.infoComponentWrap{
+    text-align: center;
+    color: #0045FF;
+
+}
+
+.infoComponentWrap>h2{
+    color: #0045FF;
+    font-size: 30px;
+    font-style: bolder;
+    margin-block:0;
+}
+
+.infoComponentWrap>h3{
+    color: #000000;
+    font-size: 20px;
+    font-style: normal;
+    margin-block:5px 0px;
+}
