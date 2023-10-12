@@ -8,7 +8,7 @@
     justify-content: center;
     align-items: center;
   }
-
+  
   .container {
     display: flex;
     align-items: center;
@@ -17,7 +17,7 @@
   }
   
   .bouncing-image {
-    width: 400px; /* 이미지의 너비 조절 */
+    width: 400px;
     animation: bounce 2s infinite;
   }
   
@@ -26,25 +26,17 @@
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-20px); /* 튀는 높이 조절 */
+      transform: translateY(-20px);
     }
   }
-
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-    }
-  }
-
-  .head1{
+  
+  .head1 {
     font-size: 40px;
     margin: 10px;
   }
-
-  .head2{
+  
+  .head2 {
     font-size: 30px;
     margin: 10px;
   }
+  
