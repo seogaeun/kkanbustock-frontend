@@ -39,7 +39,7 @@ const QuizHistory = ({ quizData }) => {
         <div className="result">결과</div>
       </div>
 
-      <ul>
+      <ul className="quizList">
         {filteredQuizData &&
           filteredQuizData.map((quiz, index) => (
             <SolvedQuiz

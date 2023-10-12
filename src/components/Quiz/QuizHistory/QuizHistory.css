@@ -1,18 +1,22 @@
 .quizHistory{
     margin-top: 5vh;
-    width: 80vw;
+    width: 70vw;
 }
 .quizHistoryHeader{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+.quizList{
+    padding: 0;
+}
 .listHeader{
     display: flex;
     flex-direction: row;
     text-align: center;
     color: silver;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    margin-bottom: -10px;
     border-bottom: 0.1px solid rgb(204, 203, 203);
 }
 
@@ -30,7 +34,6 @@
 }
 
 .a{
-    text-align: end;
     width: 5%;
 }
 
@@ -38,3 +41,22 @@
     text-align: end;
     width: 10%;
 }
+
+select {
+    background: transparent;
+    border: 1px solid silver;
+    border-radius: 20px;
+    width: 15%;
+    height: 50px;
+    padding: 15px;
+    text-align: center;
+    -webkit-appearance: none;
+    padding-right: 50px;
+    background-image: url('../../../../src/assets/images/arrow.png');
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* right 값을 조정하여 좀 더 왼쪽으로 이동 */
+    background-size: 20px;
+    background-color: transparent;
+  }
+
+  
