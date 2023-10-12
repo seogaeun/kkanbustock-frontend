@@ -1,17 +1,27 @@
 import React, { useEffect, useState } from "react";
 import "./MainPoint.css";
 import LL_together from "../../assets/images/LL_together.png";
+import arrowImage from "../../assets/images/arrow2.png"; // Arrow 이미지 파일 경로
 
 function MainPoint() {
   const [scrollOpacity, setScrollOpacity] = useState(1);
-  const [head1, setHead1] = useState(""); // Text for head1
-  const [head2, setHead2] = useState(""); // Text for head2
+  const [head1, setHead1] = useState("");
+  const [head2, setHead2] = useState("");
+  const [backgroundColor, setBackgroundColor] = useState("black"); // 배경색 상태 추가
+  const [isArrowVisible, setIsArrowVisible] = useState(false); // 화살표 표시 여부 상태 추가
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const opacity = 1 - Math.min(scrollY / 500, 1);
+      const opacity = 1 - Math.min(scrollY / 300, 1);
       setScrollOpacity(opacity);
+
+      // 스크롤 위치에 따라 배경색 변경
+      if (scrollY > 200) {
+        setBackgroundColor("white");
+      } else {
+        setBackgroundColor("black");
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -40,6 +50,8 @@ function MainPoint() {
             j++;
           } else {
             clearInterval(interval2);
+            // 화살표 표시
+            setIsArrowVisible(true);
           }
         }, 100);
       }
@@ -47,12 +59,12 @@ function MainPoint() {
   }, []);
 
   const imageStyle = {
-    transform: `translateY(${scrollOpacity * 100}px)`,
+    transform: `translateY(${scrollOpacity * 500}px)`,
     opacity: scrollOpacity,
   };
 
   return (
-    <div className="main-point">
+    <div className="main-point" style={{ backgroundColor: backgroundColor }}>
       <div className="container">
         <img
           className="bouncing-image"
@@ -63,6 +75,9 @@ function MainPoint() {
       </div>
       <div className="head1">{head1}</div>
       <div className="head2">{head2}</div>
+      {isArrowVisible && (
+        <img src={arrowImage} alt="Arrow Image" className="arrow-image" />
+      )}
     </div>
   );
 }

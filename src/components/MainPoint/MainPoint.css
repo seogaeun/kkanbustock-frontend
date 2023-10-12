@@ -13,12 +13,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 400px;
+    height: 350px;
   }
   
   .bouncing-image {
     width: 400px;
     animation: bounce 2s infinite;
+    transition: opacity 0.8s; /* 그림이 사라질 때의 애니메이션 지정 */
   }
   
   @keyframes bounce {
@@ -29,14 +30,37 @@
       transform: translateY(-20px);
     }
   }
+  .arrow-image {
+    width: 50px; /* 화살표 이미지 크기 조절 */
+    margin-bottom: -20px; /* head2 아래에 위치하도록 여백 추가 */
+    opacity: 0; /* 초기에는 투명하게 설정 */
+    animation: fadeInOut 1.5s infinite; /* fadeInOut 애니메이션 적용 */
+  }
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0; /* 시작 상태: 투명 */
+    }
+    50% {
+      opacity: 0.8; /* 중간 상태: 불투명 */
+    }
+    100% {
+      opacity: 0; /* 끝 상태: 투명 */
+    }
+  }  
   
   .head1 {
+    width:100vw;
     font-size: 40px;
     margin: 10px;
   }
   
   .head2 {
+    width:100vw;
     font-size: 30px;
     margin: 10px;
+    margin-bottom: 80px;
   }
+
+
   
