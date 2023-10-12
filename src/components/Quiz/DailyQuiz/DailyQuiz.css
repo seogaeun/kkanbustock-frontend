@@ -1,6 +1,6 @@
 .dailyQuiz{
-    width: 80vw;
-    height: 20vh;
+    width: 70vw;
+    height: 30%;
     display: flex;
     flex-direction: column; /* 중앙 정렬을 위해 flexbox를 사용합니다. */
     align-items: center; /* 수직 가운데 정렬 */
@@ -14,14 +14,17 @@
 }
 
 .quizTitle{
+    width: 100%;
+    height: 15%;
     color: white;
     font-size: 25px;
-    margin: 10px;
+    margin: 1%;
 }
 
 .dailyQuizQnASet{
     background-color: white;
     width: 75%;
+    height: 70%;
     border-radius: 30px;
     padding: 10px;
     margin: 5px;
@@ -34,6 +37,12 @@
 
 #explanation{
     margin: 5px;
+}
+
+.oxbtn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .answer{
@@ -57,13 +66,59 @@
     transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
 }
 
-.oxbtn{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-
 .answer:hover {
     background-color: #0047FF;
     color: white;
 }
+
+.answer.correct {
+  background-color: #2ecc71;
+  color: #ffffff;
+}
+
+.answer.incorrect {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+.answer:disabled {
+  cursor: not-allowed;
+}
+
+.answerStatus {
+  font-size: 1.5rem;
+  margin: 10px;
+  text-align: center;
+}
+
+/* 이미 푼 문제에 대한 스타일 */
+.answer:hover .answered {
+    /* 다른 스타일 속성들 */
+    pointer-events: none; /* 마우스 이벤트를 받지 않음 */
+  }
+
+/* 이미 푼 문제에 대한 스타일 */
+.answer.answered .oxbtn button {
+    background-color: #0047FF; /* 이미 선택된 버튼의 배경색을 파란색으로 설정 */
+    color: white; /* 텍스트 색상을 흰색으로 설정 */
+    cursor: default; /* 커서를 기본값(화살표)로 설정 */
+  }
+  
+/* 이미 선택된 버튼에 대한 스타일 */
+.answered .oxbtn button.selected {
+    background-color: #0047FF; /* 이미 선택된 버튼의 배경색을 파란색으로 설정 */
+    color: white; /* 텍스트 색상을 흰색으로 설정 */
+    cursor: default; /* 커서를 기본값(화살표)로 설정 */
+  }
+
+  /* 이미 선택된 버튼에 대한 스타일 (선택되지 않은 상태) */
+.answered .oxbtn button:not(.selected):hover {
+    background-color: inherit; /* hover 효과를 없애고 배경색을 기본값으로 설정 */
+    color: #8a8888;
+    cursor: default; /* hover 시 커서를 기본값(화살표)로 설정 */
+  }
+  
+  /* 이미 선택된 버튼에 대한 스타일 (선택되지 않은 상태) */
+  .answered .oxbtn button:not(.selected) {
+    transition: none; /* 트랜지션 효과를 제거 */
+  }
