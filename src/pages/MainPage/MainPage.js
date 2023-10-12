@@ -11,18 +11,6 @@ function Main() {
       <Header name="안녕~" />
       <Header name="안녕~" />
       <Header name="안녕~" />
-      <Header name="안녕~" />
-      <Header name="안녕~" />
-      <Header name="안녕~" />
-      <Header name="안녕~" />
-      <Header name="안녕~" />
-      <Header name="안녕~" />
-      <Header name="안녕~" />
-      <Header name="안녕~" />
-      <Header name="안녕~" />
-      <Header name="안녕~" />
-      <Header name="안녕~" />
-      <Header name="안녕~" />
     </div>
   );
 }

@@ -10,23 +10,10 @@ import React, { useEffect, useState } from "react";
 function App() {
   const [scroll, setScroll] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScroll(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <BrowserRouter>
       <div className="App">
-        <Nav scroll={scroll} />
-
+        <Nav />
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/My" element={<LoginPage />} />
