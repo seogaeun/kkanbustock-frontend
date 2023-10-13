@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./MainPage.css";
 import Header from "../../components/Header/Header";
-import { color } from "@mui/system";
-
+import MainPoint from "../../components/MainPoint/MainPoint";
 function Main() {
   return (
     <div>
-      <Header name="KKANBU STOCK" />
-      <h2>반갑습니다! </h2>
+      <MainPoint />
+
+      <Header name="안녕~" />
+      <Header name="안녕~" />
+      <Header name="안녕~" />
+      <Header name="안녕~" />
+      <Header name="안녕~" />
+      <Header name="안녕~" />
     </div>
   );
 }

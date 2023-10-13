@@ -1,0 +1,69 @@
+.main-point {
+    background-color: rgb(59, 136, 235);
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+  }
+  
+  .bouncing-image {
+    width: 400px;
+    animation: bounce 2s infinite;
+    transition: opacity 0.8s; /* 그림이 사라질 때의 애니메이션 지정 */
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+  .arrow-image {
+    width: 50px;
+    margin: 0; /* 여백 제거 */
+    position: absolute; /* 절대 위치 지정 */
+    bottom: 0; /* 하단에 배치 */
+    opacity: 0;
+    animation: fadeInOut 2s alternate infinite;
+    padding-bottom: 50px;
+  }
+  
+  @keyframes fadeInOut {
+    0% {
+      opacity: 0; /* 시작 상태: 투명 */
+    }
+    50% {
+      opacity: 0.8; /* 중간 상태: 불투명 */
+    }
+    100% {
+      opacity: 0; /* 끝 상태: 투명 */
+    }
+  }  
+  
+  .head1 {
+    width:100vw;
+    font-size: 40px;
+    margin: 10px;
+  }
+  
+  .head2 {
+    width:100vw;
+    font-size: 30px;
+    margin: 10px;
+    margin-bottom: 40px;
+  }
+
+
+  
