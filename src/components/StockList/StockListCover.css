@@ -2,11 +2,33 @@
     width: 100%;
     height: 95%;
     margin:10px;
-    padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    overflow-y: scroll;
-    overflow-x: hidden;
+    overflow: auto;
+
 }
+
+
+
+
+/* 웹킷 브라우저 (Chrome, Safari)에서 스크롤바 스타일링 */
+/* 스크롤바 전체 스타일 */
+.stockListComponent::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* 스크롤바 드래거블(Thumb) 스타일 */
+  .stockListComponent::-webkit-scrollbar-thumb {
+    background: #132BFF; /* 스크롤바 색상 */
+    border-radius: 6px; /* 스크롤바 모서리 둥글게 */
+    background-image: linear-gradient(to Top, #0F24DB, #0C1DB3, #071061, #000); /* 그라데이션 배경 */
+  }
+  
+  /* 스크롤바 배경 스타일 */
+  .stockListComponent::-webkit-scrollbar-track {
+    background: #f1f1f1; /* 스크롤바 배경 색상 */
+    border-radius: 20px;
+  }
+  
+  

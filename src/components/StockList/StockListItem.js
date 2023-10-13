@@ -13,7 +13,7 @@ function StockListItem ({profitRate=1,stockName="Unity Software",quantity=22,pur
         {profitRate > 0 ? (
             <img style={{ background: upDownColor }} alt="happy" src={SOL_happyEmoji} />
           ) : profitRate == 0 ? (
-            <img alt="soso" src={SOL_sosoEmoji} />
+            <img style={{ background: "white" }} alt="soso" src={SOL_sosoEmoji} />
           ) : (
             <img style={{ background: upDownColor }} alt="sad" src={SOL_sadEmoji} />
           )}
