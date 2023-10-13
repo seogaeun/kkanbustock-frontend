@@ -1,0 +1,41 @@
+.componentWrap {
+    display: flex;
+    justify-content: center;
+    /* 다른 스타일 설정 (예: 배경색, 패딩, 마진) */
+    align-items: center;
+    flex-shrink: 0;
+  }
+  
+  .scoreComponent {
+    position: relative;
+    width: 572vw;
+    height: 572px;
+    display: flex;
+    background: url("./../../assets/images/RivalBg.png") center top/cover, lightgray -0.057px 0px / 99.853% 155.237% no-repeat;
+    justify-content: center;
+    /* 다른 스타일 설정 (예: 배경색, 패딩, 마진) */
+  }
+  
+  .versusMent{
+    display: absolute;
+
+    text-stroke: 2px ;
+  -webkit-text-stroke: 2px #ffffff;
+    color: #000;
+    font-family: OneShinhan;
+    font-size: 50px;
+    font-style: border;
+    font-weight: 900;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+  }
+
+
+  .versusMent {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 1; 
+  }
+  
