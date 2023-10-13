@@ -1,74 +1,77 @@
-.dailyQuiz{
-    width: 70vw;
-    height: 30%;
-    display: flex;
-    flex-direction: column; /* 중앙 정렬을 위해 flexbox를 사용합니다. */
-    align-items: center; /* 수직 가운데 정렬 */
-    justify-content: center; /* 수평 가운데 정렬 */
-    background-image: url('../../../assets/images/dailyquizback.png');
-    background-color: rgb(255, 255, 255);
-    border-radius: 15px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 10px;
+.dailyQuiz {
+  width: 70vw;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 0, 255, 1) 0%, rgba(0, 128, 255, 1) 100%);
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* 그림자 효과 추가 */
 }
 
-.quizTitle{
-    width: 100%;
-    height: 15%;
-    color: white;
-    font-size: 25px;
-    margin: 1%;
+.quizTitle {
+  width: 100%;
+  height: 15%;
+  color: white;
+  font-size: 25px;
+  margin: 1%;
+  text-shadow: -2px -2px 5px rgba(0, 0, 0, 0.5); /* 텍스트에 그림자 효과 추가 */
 }
 
-.dailyQuizQnASet{
-    background-color: white;
-    width: 75%;
-    height: 70%;
-    border-radius: 30px;
-    padding: 10px;
-    margin: 5px;
+.dailyQuizQnASet {
+  background-color: white;
+  width: 75%;
+  height: 70%;
+  border-radius: 30px;
+  padding: 10px;
+  margin: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* 그림자 효과 추가 */
 }
 
-#question{
-    font-size: 20px;
-    margin: 5px;
+#question {
+  font-size: 20px;
+  margin: 5px;
 }
 
-#explanation{
-    margin: 5px;
+#explanation {
+  margin: 5px;
 }
 
-.oxbtn{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.oxbtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.answer{
-    width: 70px;
-    height: 70px;
-    background-color: transparent;
-    border: 1.5px solid #8a8888;
-    border-radius: 0.6em;
-    color: #8a8888;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: center;
-    line-height: 3;
-    margin: 0px 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 2rem;
-    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+.answer {
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  border: 1.5px solid #8a8888;
+  border-radius: 0.6em;
+  color: #8a8888;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  line-height: 3;
+  margin: 0px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2rem;
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
 }
 
 .answer:hover {
-    background-color: #0047FF;
-    color: white;
+  background-color: #0047FF;
+  color: white;
 }
 
 .answer.correct {
@@ -93,32 +96,31 @@
 
 /* 이미 푼 문제에 대한 스타일 */
 .answer:hover .answered {
-    /* 다른 스타일 속성들 */
-    pointer-events: none; /* 마우스 이벤트를 받지 않음 */
-  }
+  pointer-events: none;
+}
 
 /* 이미 푼 문제에 대한 스타일 */
 .answer.answered .oxbtn button {
-    background-color: #0047FF; /* 이미 선택된 버튼의 배경색을 파란색으로 설정 */
-    color: white; /* 텍스트 색상을 흰색으로 설정 */
-    cursor: default; /* 커서를 기본값(화살표)로 설정 */
-  }
-  
+  background-color: #0047FF;
+  color: white;
+  cursor: default;
+}
+
 /* 이미 선택된 버튼에 대한 스타일 */
 .answered .oxbtn button.selected {
-    background-color: #0047FF; /* 이미 선택된 버튼의 배경색을 파란색으로 설정 */
-    color: white; /* 텍스트 색상을 흰색으로 설정 */
-    cursor: default; /* 커서를 기본값(화살표)로 설정 */
-  }
+  background-color: #0047FF;
+  color: white;
+  cursor: default;
+}
 
-  /* 이미 선택된 버튼에 대한 스타일 (선택되지 않은 상태) */
+/* 이미 선택된 버튼에 대한 스타일 (선택되지 않은 상태) */
 .answered .oxbtn button:not(.selected):hover {
-    background-color: inherit; /* hover 효과를 없애고 배경색을 기본값으로 설정 */
-    color: #8a8888;
-    cursor: default; /* hover 시 커서를 기본값(화살표)로 설정 */
-  }
-  
-  /* 이미 선택된 버튼에 대한 스타일 (선택되지 않은 상태) */
-  .answered .oxbtn button:not(.selected) {
-    transition: none; /* 트랜지션 효과를 제거 */
-  }
+  background-color: inherit;
+  color: #8a8888;
+  cursor: default;
+}
+
+/* 이미 선택된 버튼에 대한 스타일 (선택되지 않은 상태) */
+.answered .oxbtn button:not(.selected) {
+  transition: none;
+}
