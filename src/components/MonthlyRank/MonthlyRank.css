@@ -33,27 +33,17 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.gold, .silver, .bronze {
-  width: 30%;
-  height: 100%;
-  text-align: center;
-  background-color: white;
-  opacity: 95%;
-  border: 1px solid black;
-  border-radius: 30px;
-  display: flex; /* 내용물을 가운데로 정렬하기 위해 추가 */
-  flex-direction: column; /* 내용물을 세로로 정렬하기 위해 추가 */
-  align-items: center;
-}
 
-.gold, .silver, .bronze {
-  transition: transform 0.3s ease; /* 트랜지션 추가 */
-}
 
 .gold:hover, .silver:hover, .bronze:hover {
-  transform: translateX(0); /* 마우스 호버시 화면으로 이동 */
+  transform: translateY(-5px); /* 마우스 호버 시 약간 위로 이동하는 애니메이션 */
 }
 
+.gold, .silver, .bronze {
+  width: 25%;
+  height: 85%;
+  margin: 0 80px; /* 좁힐 간격 설정 */
+}
 
 .gold img, .silver img, .bronze img {
   max-width: 120px; /* 이미지 크기 조절 */
