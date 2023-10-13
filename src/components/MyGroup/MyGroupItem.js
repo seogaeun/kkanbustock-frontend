@@ -1,15 +1,18 @@
 import React from 'react';
-import "./myGroup.css";
+import "./MyGroupItem.css";
 import GroupBtnImg from "./../../assets/images/GroupBtnImg.png"
+import BlueSmallBtn from '../ButtonComponent/BlueSmallBtn';
 
-let groupName="그룹1";
-function myGroup() {
+function MyGroupItem({groupName="그룹 이름"}) {
     return (
         <div className='myGroup-container'>
             <h2>{groupName}</h2>
             <div className='groupInfo'>
                 <img alt="그룹버튼이미지" src={GroupBtnImg}></img>
-                <button>match!</button>
+                <div className='groupInfoBtn'>
+                    <BlueSmallBtn title="Match!"></BlueSmallBtn>
+                </div>
+
             </div>
         </div>
         
@@ -17,4 +20,4 @@ function myGroup() {
     );
 }
 
-export default myGroup;
+export default MyGroupItem;

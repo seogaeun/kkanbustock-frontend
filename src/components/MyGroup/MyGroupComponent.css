@@ -1,0 +1,26 @@
+.myGroupComponentWrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.myGrpComponentTitle{
+    color: #000;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-block: 0;
+    margin-top: 30px;
+}
+
+.myGroupListSection{
+
+    margin: 20px 0px 20px 20px;
+    padding:20px;
+    max-width:1200px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap:15px;
+}
