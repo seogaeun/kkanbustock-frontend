@@ -1,12 +1,42 @@
+.StockListComponentWrap{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
 
-  .stockListContent {
-    padding: 10px;
-    width: 600px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.stockListContentTitle{
+  color: #000;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+line-height: normal;
+  margin-block: 0;
+  margin-top: 30px;
+}
 
-  }
-  
-  
+.stockListContent {
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.manyStockContent{
+  margin: 20px;
+}
+
+.manyStockTitle{
+  color: #000;
+  font-size: 15px;
+  margin:10px 0;
+}
+
+.manyStockName{
+  color: #0045FF;
+  font-size: 20px;
+  margin-bottom:10px;
+}
+
