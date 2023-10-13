@@ -14,7 +14,7 @@ function Nav() {
   };
 
   useEffect(() => {
-    setIsMainPage(location.pathname === "/");
+    setIsMainPage(location.pathname === "/" || location.pathname === "/Rival");
     window.addEventListener("scroll", updateScroll);
 
     return () => {
