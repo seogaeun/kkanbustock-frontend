@@ -6,7 +6,7 @@ function Nav() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const location = useLocation();
   const [isMainPage, setIsMainPage] = useState(location.pathname === "/");
-  const isScrolled = scrollPosition >= 100;
+  const isScrolled = scrollPosition >= 150;
   const shouldApplyStyle = isMainPage && !isScrolled;
 
   const updateScroll = () => {
