@@ -25,7 +25,7 @@ function Nav() {
   return (
     <div className={!shouldApplyStyle ? "nav" : "change_nav"}>
       <div className={!shouldApplyStyle ? "navbar" : "change_header"}>
-        <div id="logo">로고</div>
+        <div className={!shouldApplyStyle ? "logo" : "change_logo"}>KKANBU</div>
         <div className="menuClass">
           <Link
             className={!shouldApplyStyle ? "navbarMenu" : "change_navbarMenu"}

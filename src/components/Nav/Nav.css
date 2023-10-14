@@ -41,8 +41,13 @@
 }
 
 
-#logo{
-    padding-left: 3%;
+.logo{
+    width: 30%;
+    text-align: left;
+    color: black;
+}
+
+.logo_change{
     width: 30%;
     text-align: left;
     color: black;
