@@ -1,0 +1,53 @@
+.containerForMonthlyRanking {
+  width: 70%;
+  background: linear-gradient(135deg, rgba(174, 62, 245, 1) 0%, rgba(0, 0, 128, 1) 100%);
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); 
+  margin: 0 auto; 
+  justify-content: center;
+}
+
+.headForRanking{
+  color: white;
+  font-size: 35px;
+  height: 20%;
+  text-shadow: -2px -2px 5px rgba(0, 0, 0, 0.5);
+  vertical-align: bottom;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.headerForTitle{
+  color: rgb(213, 213, 213);
+  font-size: 15px;
+  height: 15%;
+  vertical-align: middle;
+}
+
+.medalList{
+  width: 80%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.gold:hover, .silver:hover, .bronze:hover {
+  transform: translateY(-5px); /* 마우스 호버 시 약간 위로 이동하는 애니메이션 */
+}
+
+.gold, .silver, .bronze {
+  width: 25%;
+  height: 85%;
+  margin: 0 80px; /* 좁힐 간격 설정 */
+}
+
+.gold img, .silver img, .bronze img {
+  max-width: 120px; /* 이미지 크기 조절 */
+  max-height: 120px;
+}
