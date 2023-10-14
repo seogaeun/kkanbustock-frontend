@@ -1,0 +1,80 @@
+.containerForGroupRanking {
+    width: 70vw;
+    background: linear-gradient(135deg, rgb(253, 179, 115) 0%, rgb(235, 110, 0) 100%);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); 
+    margin: 0 auto; 
+    justify-content: center;
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  .headForRanking{
+    color: white;
+    font-size: 1.6rem;
+    height: 20%;
+    text-shadow: -2px -2px 5px rgba(0, 0, 0, 0.5);
+    vertical-align: bottom;
+    padding-top: 10px;
+    font-weight: bold;
+  }
+  
+  .medalList2{
+    width:auto;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-between;
+  }
+  
+
+  .top1, .top2, .top3, .top4, .top5 {
+    width: 90%;
+    height: 10%;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2px;
+  }
+  
+  .top1 img, .top2 img, .top3 img, .top4 img, .top5 img {
+    max-width: 40px; /* 이미지 크기를 더 크게 조절 */
+    max-height: 80px; /* 이미지 크기를 더 크게 조절 */
+  }
+  
+  .top1 div, .top2 div, .top3 div, .top4 div, .top5 div {
+    flex: 1; /* 동일한 너비로 배치하기 위해 flex 속성 추가 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  
+  /* PC 화면 */
+@media (min-width: 1024px) {
+    .containerForMonthlyRanking,
+    .containerForGroupRanking {
+      width: 35vw;
+    }
+  }
+  
+  /* 태블릿 화면 */
+  @media (max-width: 1023px) {
+    .containerForMonthlyRanking,
+    .containerForGroupRanking {
+      width: 70vw;
+    }
+  }
