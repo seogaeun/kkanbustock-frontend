@@ -1,0 +1,48 @@
+.layout {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    min-width: 700px;
+    height: max-content;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    justify-content: space-between;
+}
+
+.once_short_box {
+    width: 100%;
+    min-width: 240px;
+    aspect-ratio: 1;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    flex-grow: 0;
+    padding: 30px;
+    border-radius: 5%;
+}
+
+.left_layout {
+    width: 33%;
+    display: flex;
+    aspect-ratio: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1200px) {
+    .layout {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .once_short_box {
+        width: 45%;
+    }
+
+    .left_layout {
+        width: 100%;
+        aspect-ratio: 2;
+        flex-direction: row;
+    }
+}
