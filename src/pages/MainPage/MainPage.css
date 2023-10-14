@@ -1,0 +1,27 @@
+.rankingSection {
+    width: 80vw;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow items to wrap to a new row when the screen size decreases */
+  }
+  
+  
+  /* PC 화면 */
+  @media (min-width: 1024px) {
+    .containerForMonthlyRanking,
+    .containerForGroupRanking {
+      width: 30vw;
+      padding-left: 20px; /* Increase left padding to create more space between components */
+      padding-right: 20px; /* Increase right padding to create more space between components */
+      flex: 1; /* Distribute the available space evenly to make two components appear in a row */
+    }
+  }
+  
+  /* 태블릿 화면 */
+  @media (max-width: 1023px) {
+    .containerForMonthlyRanking,
+    .containerForGroupRanking {
+      width: 70vw;
+    }
+  }
+  

@@ -1,17 +1,17 @@
 .containerForMonthlyRanking {
-  width: 70%;
+  width: 70vw;
   background: linear-gradient(135deg, rgba(174, 62, 245, 1) 0%, rgba(0, 0, 128, 1) 100%);
-  height: 40vh;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   padding: 20px;
   border-radius: 30px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); 
-  margin: 0 auto; 
   justify-content: center;
   margin-top: 10vw;
   margin-bottom: 10vw;
-}
+  margin-right: 10px;
+  margin-left: 10px;}
 
 .headForRanking{
   color: white;
@@ -28,6 +28,7 @@
   font-size: 0.8rem;
   height: 15%;
   vertical-align: middle;
+  margin-bottom: 20px;
 }
 
 .medalList{
@@ -36,6 +37,7 @@
   display: flex;
   flex-direction: row;
   justify-content:space-between;
+  margin-bottom: 20px;
 }
 
 .gold, .silver, .bronze {
@@ -57,4 +59,18 @@
 }
 
 
+/* PC 화면 */
+@media (min-width: 1024px) {
+  .containerForMonthlyRanking,
+  .containerForGroupRanking {
+    width: 35vw;
+  }
+}
 
+/* 태블릿 화면 */
+@media (max-width: 1023px) {
+  .containerForMonthlyRanking,
+  .containerForGroupRanking {
+    width: 70vw;
+  }
+}
