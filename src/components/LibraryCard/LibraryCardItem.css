@@ -1,0 +1,137 @@
+*{
+
+}
+
+/* .library-card 클래스에만 적용되는 CSS 변수 재정의 */
+.library-card {
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+    --cyan: hsl(183deg 96% 56%);
+    --anim-time--hi: 266ms;
+    --anim-time--med: 400ms;
+    --anim-time--lo: 600ms;
+
+    /* 다른 .library-card 클래스의 스타일 속성들 */
+}
+
+.library-card{
+    margin:100px;
+}
+
+
+.library-card {
+    --width: 250px;
+    --height: 300px;
+    --easing: cubic-bezier(0.5, 0, 0.2, 1);
+    --easing1: cubic-bezier(0.4, 0.3, 0.65, 1);
+    --easing2: cubic-bezier(0.8, 0, 0.6, 1);
+    --easing3: cubic-bezier(0, 0.2, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    inline-size: var(--width);
+    block-size: var(--height);
+    border-radius: 0.125em;
+    background: #fff;
+    overflow: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.library-card:hover {
+    transition: all var(--anim-time--hi) var(--easing1);
+    border: 0;
+    box-shadow: -0.375rem 0 1px -1px var(--cyan),
+        -3.5rem 0 3.125rem -1.125rem hsl(186deg 87% 86%);
+}
+
+
+
+header::before,
+header::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transition-property: opacity, transform;
+    transition-duration: var(--anim-time--med), var(--anim-time--med);
+    transition-timing-function: ease, ease;
+}
+
+header::before {
+    background: linear-gradient(to top,
+            hsla(0, 0%, 0%, 0.7) 12%,
+            hsla(0, 0%, 0%, 0.2) 41.6%,
+            hsla(0, 0%, 0%, 0.125) 50%,
+            hsla(0, 0%, 0%, 0.01) 59.9%,
+            hsla(0, 0%, 0%, 0) 100%);
+    opacity: 0;
+    z-index: 4;
+}
+
+.library-card-description {
+    opacity: 0;
+}
+
+.library-card-caption{
+    background: linear-gradient(0deg,  #000000b3 12%,#00000033 41.6%,#00000020 50%,#00000003 59.9%,#00000000 100%);
+}
+
+.library-card-caption{
+    width:200px;
+    height: 10px;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    height: 60px;
+}
+
+.library-card-content{
+    padding:10px;
+    width: 100px;
+    height: 100px;
+
+}
+
+/*********************************/
+.library-card:hover .library-card-caption {
+    opacity: 1;
+    transform: translateY(-20px);
+    transition: opacity var(--anim-time--med) var(--easing2),
+        transform var(--anim-time--med) var(--easing2);
+}
+
+.library-card:hover .library-card-sub-tag{
+    background-color: #fff;
+    border-radius: 0 10px 0 0;
+    border-top: 3px solid cyan;
+    border-right: 3px solid cyan;
+}
+
+.library-card:hover .library-card-content {
+    opacity: 1;
+    transform: translateY(-20px);
+    transition: opacity var(--anim-time--hi) var(--easing2),
+        transform var(--anim-time--hi) var(--easing2);
+}
+
+.library-card:hover .library-card-description {
+    opacity: 1;
+    margin-top: 10px;
+    transition: opacity var(--anim-time--hi) var(--easing2),
+        transform var(--anim-time--hi) var(--easing2);
+}
+
+.library-card:hover .library-card-read-more {
+    opacity: 0;
+    transition: opacity var(--anim-time--lo) var(--easing3);
+}
+
+
+/********************************************************/
+
+.library-card-content{
+    width:300px;
+    height: 100px;
+}
