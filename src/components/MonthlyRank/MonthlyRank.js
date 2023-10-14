@@ -1,6 +1,6 @@
 import React from "react";
 import "./MonthlyRank.css"; // CSS 파일을 import
-import RankingCard from "../RankingCard/RankingCard";
+import RankingCard from "../RankingCard/RankingCard.js";
 import goldMedal from "../../assets/images/medal/gold.png";
 import silverMedal from "../../assets/images/medal/silver.png";
 import bronzeMedal from "../../assets/images/medal/dong.png";
