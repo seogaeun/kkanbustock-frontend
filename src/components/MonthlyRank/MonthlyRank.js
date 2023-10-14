@@ -38,7 +38,7 @@ function MonthlyRank() {
 
   return (
     <div className="containerForMonthlyRanking">
-      <div className="headForRanking">이번달 수익률 TOP3</div>
+      <div className="headForRanking">10월의 수익률 TOP3</div>
       <div className="headerForTitle">그룹별 / 2023.10.1-2023.10.31</div>
       <div className="medalList">
         <div className="silver">
