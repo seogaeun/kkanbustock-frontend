@@ -1,8 +1,8 @@
 import "./StockListCover.css";
 
-function StockListCover(props) {
+function StockListCover(props, width) {
     return (
-        <div className="stockListComponent">
+        <div className="stockListComponent" >
             {props.children}
         </div>
     )

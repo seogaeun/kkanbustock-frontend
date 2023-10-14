@@ -1,50 +1,27 @@
-.firstPage {
-    background-color: black;
-    color: white;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 400px;
+.rankingSection {
+    width: 80vw;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow items to wrap to a new row when the screen size decreases */
   }
   
-  .bouncing-image {
-    width: 400px; /* 이미지의 너비 조절 */
-    animation: bounce 2s infinite;
+  
+  /* PC 화면 */
+  @media (min-width: 1024px) {
+    .containerForMonthlyRanking,
+    .containerForGroupRanking {
+      width: 30vw;
+      padding-left: 20px; /* Increase left padding to create more space between components */
+      padding-right: 20px; /* Increase right padding to create more space between components */
+      flex: 1; /* Distribute the available space evenly to make two components appear in a row */
+    }
   }
   
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-20px); /* 튀는 높이 조절 */
-    }
-  }
-
-  @keyframes fadeOut {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
+  /* 태블릿 화면 */
+  @media (max-width: 1023px) {
+    .containerForMonthlyRanking,
+    .containerForGroupRanking {
+      width: 70vw;
     }
   }
-
-  .head1{
-    font-size: 40px;
-    margin: 10px;
-  }
-
-  .head2{
-    font-size: 30px;
-    margin: 10px;
-  }
+  

@@ -1,77 +1,70 @@
 import React, { useEffect, useState } from "react";
 import "./MainPage.css";
 import Header from "../../components/Header/Header";
-import LL_together from "../../assets/images/LL_together.png";
+import MainPoint from "../../components/MainPoint/MainPoint.js";
+import MonthlyRank from "../../components/MonthlyRank/MonthlyRank";
+import MyGRoupRanking from "../../components/MyGroupRanking/MyGroupRanking";
+import TopLayout from "../../components/MainPage/layout/top.layout";
+import BottomLayout from "../../components/MainPage/layout/bottom.layout";
+import OnceLayout from "../../components/MainPage/layout/once.layout";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 function Main() {
-  const [scrollOpacity, setScrollOpacity] = useState(1);
-  const [head1, setHead1] = useState(""); // Text for head1
-  const [head2, setHead2] = useState(""); // Text for head2
+  // 유저 로그인 상태를 관리하는 상태 변수
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [items, setItems] = useState([]);
+  const [hasMore, setHasMore] = useState(true);
+  const [page, setPage] = useState(1);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const opacity = 1 - Math.min(scrollY / 500, 1);
-      setScrollOpacity(opacity);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    // Typing effect for head1
-    const text1 = '"깐부끼리, 수익률 내기 한판 할까?"';
-    let i = 0;
-    const interval1 = setInterval(() => {
-      if (i <= text1.length) {
-        setHead1(text1.substring(0, i));
-        i++;
-      } else {
-        clearInterval(interval1);
-        // Typing effect for head2
-        const text2 = "경쟁을 통해 성장하는, 깐부주식";
-        let j = 0;
-        const interval2 = setInterval(() => {
-          if (j <= text2.length) {
-            setHead2(text2.substring(0, j));
-            j++;
-          } else {
-            clearInterval(interval2);
-          }
-        }, 100);
-      }
-    }, 100);
-  }, []);
-
-  const imageStyle = {
-    transform: `translateY(${scrollOpacity * 100}px)`,
-    opacity: scrollOpacity,
+  // 유저 로그인 여부를 확인하는 함수
+  const checkLoginStatus = () => {
+    // 실제 로그인 상태 확인 로직을 구현할 예정
+    // 여기에서는 간단히 false를 반환하는 예시를 사용합니다.
+    return true;
   };
+
+  const fetchMoreData = () => {
+    // 데이터를 추가로 불러올 비동기 작업을 수행합니다.
+    // 예를 들어, API 호출을 통해 새로운 데이터를 가져올 수 있습니다.
+    // 가져온 데이터를 items 배열에 추가하고 hasMore 상태를 업데이트합니다.
+    // 만약 더 이상 데이터가 없다면 hasMore를 false로 설정합니다.
+
+    // 예제: 가상으로 데이터를 추가하는 방법
+    const newData = [...items, ...Array.from({ length: 10 }, (_, i) => i + 1)];
+    setItems(newData);
+    setPage(page + 1);
+  };
+
+  useEffect(() => {
+    // 컴포넌트가 마운트될 때 로그인 상태 확인
+    setIsLoggedIn(checkLoginStatus());
+    fetchMoreData();
+  }, []);
 
   return (
     <div>
-      <div className="firstPage">
-        <div className="container">
-          <img
-            className="bouncing-image"
-            src={LL_together}
-            alt="Bouncing Image"
-            style={imageStyle}
-          />
-        </div>
-        <div className="head1">{head1}</div>
-        <div className="head2">{head2}</div>
+      <MainPoint />
+      <div className="rankingSection">
+        <MonthlyRank />
+        {isLoggedIn && <MyGRoupRanking />}
       </div>
-      <Header name="안녕~" />
-      <Header name="안녕~" />
-      <Header name="안녕~" />
-      <Header name="안녕~" />
-      <Header name="안녕~" />
-      <Header name="안녕~" />
+      <TopLayout />
+      <OnceLayout />
+      <BottomLayout />
+
+      <InfiniteScroll
+        dataLength={items.length}
+        next={fetchMoreData}
+        hasMore={hasMore}
+        loader={<h4>Loading...</h4>}
+      >
+        {items.map((item, index) => (
+          <div key={index}>
+            <TopLayout />
+            <BottomLayout />
+          </div>
+        ))}
+      </InfiniteScroll>
     </div>
   );
 }

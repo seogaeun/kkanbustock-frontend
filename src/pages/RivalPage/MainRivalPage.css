@@ -1,0 +1,16 @@
+.RivalPageWrap{
+margin-top: 80px;
+}
+
+
+.stockListContent{
+    height: 500px;
+    border-radius: 20px;
+    background: rgba(217, 217, 217, 0.80);
+}
+
+.ViewMyStockSection{
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+}

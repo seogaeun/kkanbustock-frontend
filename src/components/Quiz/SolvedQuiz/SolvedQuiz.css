@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-size: 1.2rem;
+    font-size: 0.8rem;
 }
 
 .questionNumber{
@@ -18,33 +18,34 @@
 }
 
 .date{
-    width: 10%;
+    width: 15%;
 }
 
 .questionSet{
     padding-left: 40px;
-    width: 65%;
+    width: 60%;
 }
 
 .qustion{
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-align: left;
 }
 
 .explanation{
     padding-top: 5px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-align: left;
 }
 
 .corretAnswer{
-    font-size: 30px;
+    font-size: 1.2rem;
     vertical-align: middle;
     width: 5%;
 }
 
 .isCorrect {
     text-align: end;
+    font-size: 1rem;
     width: 10%;
     display: flex;
     justify-content: end; /* 가로 가운데 정렬 */

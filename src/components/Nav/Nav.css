@@ -41,15 +41,20 @@
 }
 
 
-#logo{
-    padding-left: 3%;
+.logo{
+    width: 30%;
+    text-align: left;
+    color: black;
+}
+
+.logo_change{
     width: 30%;
     text-align: left;
     color: black;
 }
 
 .menuClass{
-    width: 30%;
+    width: 45%;
     display: flex;
     text-align: center;
     padding: 0px 15px;

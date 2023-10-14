@@ -6,7 +6,7 @@ function Nav() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const location = useLocation();
   const [isMainPage, setIsMainPage] = useState(location.pathname === "/");
-  const isScrolled = scrollPosition >= 100;
+  const isScrolled = scrollPosition >= 150;
   const shouldApplyStyle = isMainPage && !isScrolled;
 
   const updateScroll = () => {
@@ -14,7 +14,7 @@ function Nav() {
   };
 
   useEffect(() => {
-    setIsMainPage(location.pathname === "/");
+    setIsMainPage(location.pathname === "/" || location.pathname === "/Rival");
     window.addEventListener("scroll", updateScroll);
 
     return () => {
@@ -25,7 +25,7 @@ function Nav() {
   return (
     <div className={!shouldApplyStyle ? "nav" : "change_nav"}>
       <div className={!shouldApplyStyle ? "navbar" : "change_header"}>
-        <div id="logo">로고</div>
+        <div className={!shouldApplyStyle ? "logo" : "change_logo"}>KKANBU</div>
         <div className="menuClass">
           <Link
             className={!shouldApplyStyle ? "navbarMenu" : "change_navbarMenu"}

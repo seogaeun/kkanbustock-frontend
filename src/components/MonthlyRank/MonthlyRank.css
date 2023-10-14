@@ -1,0 +1,76 @@
+.containerForMonthlyRanking {
+  width: 70vw;
+  background: linear-gradient(135deg, rgba(174, 62, 245, 1) 0%, rgba(0, 0, 128, 1) 100%);
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); 
+  justify-content: center;
+  margin-top: 10vw;
+  margin-bottom: 10vw;
+  margin-right: 10px;
+  margin-left: 10px;}
+
+.headForRanking{
+  color: white;
+  font-size: 1.6rem;
+  height: 20%;
+  text-shadow: -2px -2px 5px rgba(0, 0, 0, 0.5);
+  vertical-align: bottom;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.headerForTitle{
+  color: rgb(213, 213, 213);
+  font-size: 0.8rem;
+  height: 15%;
+  vertical-align: middle;
+  margin-bottom: 20px;
+}
+
+.medalList{
+  width:auto;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  margin-bottom: 20px;
+}
+
+.gold, .silver, .bronze {
+  width: 30%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7); 
+  border-radius: 30px;
+  font-size: 1rem;
+}
+
+.gold img, .silver img, .bronze img {
+  max-width: 80px; /* 이미지 크기 조절 */
+  max-height: 100px;
+}
+
+.gold:hover, .silver:hover, .bronze:hover {
+  transform: scale(1.1); /* 1.1배 확대 애니메이션 */
+  transition: transform 0.3s; /* 애니메이션 지속 시간 설정 */
+}
+
+
+/* PC 화면 */
+@media (min-width: 1024px) {
+  .containerForMonthlyRanking,
+  .containerForGroupRanking {
+    width: 35vw;
+  }
+}
+
+/* 태블릿 화면 */
+@media (max-width: 1023px) {
+  .containerForMonthlyRanking,
+  .containerForGroupRanking {
+    width: 70vw;
+  }
+}

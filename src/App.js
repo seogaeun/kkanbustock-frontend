@@ -3,6 +3,7 @@ import MainPage from "./pages/MainPage/MainPage.js";
 import LoginPage from "./pages/LoginPage/LoginPage.js";
 import QuizPage from "./pages/QuizPage/QuizPage.js";
 import DictionaryPage from "./pages/DictionaryPage/DictionaryPage";
+import RivalPage from "./pages/RivalPage/MainRivalPage";
 import Nav from "./components/Nav/Nav.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/My" element={<LoginPage />} />
           <Route path="/Quiz" element={<QuizPage />} />
+          <Route path="/Rival" element={<RivalPage />} />
           <Route path="/Dictionary" element={<DictionaryPage />} />
         </Routes>
       </div>
