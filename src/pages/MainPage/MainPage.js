@@ -48,9 +48,11 @@ function Main() {
         <MonthlyRank />
         {isLoggedIn && <MyGRoupRanking />}
       </div>
-      <TopLayout />
-      <OnceLayout />
-      <BottomLayout />
+      <div className="cardSection">
+        <TopLayout />
+        <OnceLayout />
+        <BottomLayout />
+      </div>
 
       <InfiniteScroll
         dataLength={items.length}
