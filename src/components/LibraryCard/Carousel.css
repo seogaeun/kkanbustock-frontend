@@ -1,0 +1,104 @@
+Carousel.css
+
+
+#carousel {
+  position: relative;
+  width: 95%;
+  margin: auto;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(0, 81, 255);
+  text-align: center;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #228291;
+  line-height: 30px;
+  margin: 0; /* 기본 마진을 제거하고 */
+}
+
+.arrow-left {
+  margin-right: 10px; /* 왼쪽 버튼과 carousel-items 간격 조절 */
+}
+
+.arrow-right {
+  margin-left: 10px; /* 오른쪽 버튼과 carousel-items 간격 조절 */
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: space-between; /* 왼쪽과 오른쪽에 요소를 분배하려면 사용 */
+  align-items: center; /* 세로 중앙 정렬을 원한다면 사용 */
+  overflow-y: hidden;
+}
+
+
+.noselect{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.carousel-items {
+  width: 90%;
+  padding: 0 10px;
+  overflow-y: scroll;
+  display: flex;
+
+
+}
+
+.item {
+  text-align: center;
+  font-size: 40px;
+  padding: 10px;
+  transition: transform 0.5s;
+  transform-origin: center;
+  transform: translateX(0);
+  backface-visibility: hidden;
+}
+
+.item.active {
+  background-color: #228291;
+  color: white;
+  transform: translateX(100%);
+}
+
+.carousel-items {
+  display: flex;
+  transition: transform 0.5s ease; /* transform 속성에 대한 0.5초의 부드러운 전환을 추가합니다 */
+}
+
+.item {
+  flex: 0 0 100%; /* 각 아이템의 너비를 100%로 설정합니다 */
+  margin-right: 10px; /* 아이템 사이 간격을 설정합니다 (원하는 간격으로 조정) */
+  transition: transform 0.5s ease; /* 아이템 이동에 대한 0.5초의 부드러운 전환을 추가합니다 */
+}
+
+/* 좌측 화살표 버튼 클릭 시의 애니메이션 */
+.arrow-left:hover + .carousel-items {
+  transform: translateX(110%); /* 버튼 위에 마우스를 올리면 아이템들을 오른쪽으로 이동합니다 */
+}
+
+/* 우측 화살표 버튼 클릭 시의 애니메이션 */
+.arrow-right:hover + .carousel-items {
+  transform: translateX(-110%); /* 버튼 위에 마우스를 올리면 아이템들을 왼쪽으로 이동합니다 */
+}
+
+
+
+/* ====== */
+.carousel-items {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.active {
+  transform: translateX(0%);
+}
+
