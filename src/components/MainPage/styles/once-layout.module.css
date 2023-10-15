@@ -1,8 +1,6 @@
 .layout {
     display: flex;
     width: 100%;
-    max-width: 1100px;
-    min-width: 700px;
     height: max-content;
     box-sizing: border-box;
     white-space: pre-wrap;
@@ -11,7 +9,6 @@
 
 .once_short_box {
     width: 100%;
-    min-width: 240px;
     aspect-ratio: 1;
     box-sizing: border-box;
     margin-bottom: 10px;

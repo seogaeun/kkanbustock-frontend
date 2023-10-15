@@ -1,4 +1,5 @@
 .container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,7 +47,7 @@
     width: 66%;
     min-width: 240px;
     aspect-ratio: 1;
-    background: yellow;
+    background: rgb(255, 213, 24);
     box-sizing: border-box;
     margin-bottom: 10px;
 }
