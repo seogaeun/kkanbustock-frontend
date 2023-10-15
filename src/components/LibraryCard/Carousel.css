@@ -34,8 +34,8 @@
 }
 
 .carousel-items {
+  width: 150%;
   display: flex;
-  justify-content: space-between;
 }
 
 .item {
@@ -53,3 +53,37 @@
   color: white;
   transform: translateX(100%);
 }
+
+.carousel-items {
+  display: flex;
+  transition: transform 0.5s ease; /* transform 속성에 대한 0.5초의 부드러운 전환을 추가합니다 */
+}
+
+.item {
+  flex: 0 0 100%; /* 각 아이템의 너비를 100%로 설정합니다 */
+  margin-right: 10px; /* 아이템 사이 간격을 설정합니다 (원하는 간격으로 조정) */
+  transition: transform 0.5s ease; /* 아이템 이동에 대한 0.5초의 부드러운 전환을 추가합니다 */
+}
+
+/* 좌측 화살표 버튼 클릭 시의 애니메이션 */
+.arrow-left:hover + .carousel-items {
+  transform: translateX(110%); /* 버튼 위에 마우스를 올리면 아이템들을 오른쪽으로 이동합니다 */
+}
+
+/* 우측 화살표 버튼 클릭 시의 애니메이션 */
+.arrow-right:hover + .carousel-items {
+  transform: translateX(-110%); /* 버튼 위에 마우스를 올리면 아이템들을 왼쪽으로 이동합니다 */
+}
+
+
+
+/* ====== */
+.carousel-items {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.active {
+  transform: translateX(0%);
+}
+

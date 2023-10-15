@@ -1,66 +1,94 @@
 import React, { Component } from 'react';
 import './Carousel.css';
-import LibraryCardItem from './LibraryCardItem'; // LibraryCardItem 컴포넌트를 불러옵니다.
+import LibraryCardItem from './LibraryCardItem';
+import axios from 'axios';
+
+const url = "/api/v1/dictionary";
 
 class Carousel extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            items: this.props.items,
-            activeIndex: this.props.active,
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      dictionaryContents: [],
+      items: this.props.items,
+      activeIndex: this.props.active,
+    };
+  }
 
-    moveLeft() {
-        const { items, activeIndex } = this.state;
-        const lastIndex = items.length - 1;
-        const newIndex = (activeIndex - 1 + items.length) % items.length;
+  componentDidMount() {
+    this.searchApi();
+  }
 
-        const rotatedItems = items.slice();
-        rotatedItems.unshift(rotatedItems.pop());
+  searchApi() {
+    axios.get(url)
+      .then((response) => {
+        this.setState({ dictionaryContents: response.data });
+        console.log("성공");
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log("실패");
+        this.setState({ dictionaryContents:   {
+          title: "제목을 불러오지 못했습니다",
+          description: "설명도 불러오지 못했어요...",
+      } });
+      });
+  }
 
-        this.setState({
-            items: rotatedItems,
-            activeIndex: newIndex,
-        });
-    }
+  moveLeft() {
+    const { items, activeIndex } = this.state;
+    const newIndex = (activeIndex - 1 + items.length) % items.length;
+    const firstItem = items[0];
+    items.push(firstItem);
 
-    moveRight() {
-        const { items, activeIndex } = this.state;
-        const lastIndex = items.length - 1;
-        const newIndex = (activeIndex + 1) % items.length;
+    this.setState({
+      activeIndex: newIndex,
+    });
 
-        const rotatedItems = items.slice();
-        rotatedItems.push(rotatedItems.shift());
+    setTimeout(() => {
+      items.shift();
+      this.setState({ items });
+    }, 500);
+  }
 
-        this.setState({
-            items: rotatedItems,
-            activeIndex: newIndex,
-        });
-    }
+  moveRight() {
+    const { items, activeIndex } = this.state;
+    const newIndex = (activeIndex + 1) % items.length;
+    const lastItem = items[items.length - 1];
+    items.unshift(lastItem);
 
-    render() {
-        const { items, activeIndex } = this.state;
-        return (
-            <div id="carousel" className="noselect">
-                <div className="arrow arrow-left" onClick={() => this.moveLeft()}>
-                    <i className="fi-arrow-left"></i>
-                </div>
-                <div className="carousel-items">
-                    {items.map((item, index) => (
-                        <LibraryCardItem
-                            key={index}
-                            title={item.title}
-                            description={item.description}
-                        />
-                    ))}
-                </div>
-                <div className="arrow arrow-right" onClick={() => this.moveRight()}>
-                    <i className="fi-arrow-right"></i>
-                </div>
-            </div>
-        );
-    }
+    this.setState({
+      activeIndex: newIndex,
+    });
+
+    setTimeout(() => {
+      items.pop();
+      this.setState({ items });
+    }, 500);
+  }
+
+  render() {
+    const { dictionaryContents, items, activeIndex } = this.state;
+    return (
+      <div id="carousel" className="noselect">
+        <div className="arrow arrow-left" onClick={() => this.moveLeft()}>
+          <i className="fi-arrow-left"></i>
+        </div>
+        <div className="carousel-items">
+          {dictionaryContents.length > 0 && dictionaryContents.map((dictionaryContent) => (
+            <LibraryCardItem
+              key={dictionaryContent.id}
+              title={dictionaryContent.word}
+              description={dictionaryContent.explanation}
+            />
+          ))}
+        </div>
+        <div className="arrow arrow-right" onClick={() => this.moveRight()}>
+          <i className="fi-arrow-right"></i>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Carousel;

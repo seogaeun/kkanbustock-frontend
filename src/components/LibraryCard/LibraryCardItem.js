@@ -28,6 +28,3 @@ function LibraryCardItem({ title = "주식이란?", description = "어려운거�
 }
 
 export default LibraryCardItem;
-
-
-
