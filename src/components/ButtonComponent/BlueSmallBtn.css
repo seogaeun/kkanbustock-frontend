@@ -1,17 +1,21 @@
-.blueSmallBtn{
+.blueSmallBtn {
     width: 120px;
     height: 30px;
     border-radius: 30px;
-    background: linear-gradient(to bottom, #0B63F6,#005CFE,#0444da);
-
-    /* background: #005CFE; */
+    background: linear-gradient(to bottom, #0B63F6, #005CFE, #0444da);
     flex-shrink: 0;
     box-shadow: 1px 0px 7px 0px rgba(0, 0, 0, 0.25);
     border: none;
-
     color: #FFF;
     text-align: center;
     font-family: OneShinhan;
     font-size: 15px;
+    transition: background 0.3s; /* background 속성에 대한 hover 트랜지션 설정 */
 }
+
+.blueSmallBtn:hover {
+    background: gold;
+    /* linear-gradient(to bottom,#9055FF , #13E2DA); 배경 색상 변경 */
+}
+
 
