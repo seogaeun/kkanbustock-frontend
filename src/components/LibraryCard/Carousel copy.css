@@ -1,0 +1,35 @@
+.carousel-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.arrow{
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(45deg, #9055FF, #13E2DA);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+
+}
+.arrow-right{
+  clip-path: polygon(20% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 20% 80%);
+}
+
+.arrow-left{
+  clip-path: polygon(40% 0%, 40% 20%, 80% 20%, 80% 80%, 40% 80%, 40% 100%, 0% 50%);
+}
+
+.carousel-items{
+  display: flex;
+  margin:10px;
+  width: 1200px;
+  height: 450px;
+  overflow-y: hidden;
+}
+.carousel-wrapper{
+  margin:10px;
+  width: 330px;
+}
+

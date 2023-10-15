@@ -2,6 +2,9 @@ import React from 'react';
 import './LibraryCardItem.css';
 
 function LibraryCardItem({ title = "주식이란?", description = "어려운거다~~" }) {
+
+    
+
   return (
     <div className="library-card">
         <div className="cardCaptionWrap">

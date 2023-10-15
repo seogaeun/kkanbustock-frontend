@@ -1,6 +1,6 @@
 import React, {useState } from 'react';
 import Header from "../../components/Header/Header";
-import Carousel from "../../components/LibraryCard/Carousel";
+import Carousel from "../../components/LibraryCard/Carousel copy";
 import axios from 'axios';
 
 
@@ -17,10 +17,10 @@ import axios from 'axios';
 //       title: "제목 3",
 //       description: "설명 3",
 //   },
-  // {
-  //     title: "제목 1",
-  //     description: "설명 1",
-  // },
+//   {
+//       title: "제목 1",
+//       description: "설명 1",
+//   },
 //   {
 //       title: "제목 2",
 //       description: "설명 2",
