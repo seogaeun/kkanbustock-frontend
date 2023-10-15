@@ -9,10 +9,10 @@ const TopLayout = () => {
             <div className={styles.child_container}>
               <section className={styles.row_container}>
                 <TodayQuizBox/>
+                <NewBox/>
+                <NewBox/>
+                <NewBox/>
                 <DictionaryBox/>
-                <NewBox/>
-                <NewBox/>
-                <NewBox/>
               </section>
             </div>
         </div>

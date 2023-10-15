@@ -8,6 +8,7 @@ import TopLayout from "../../components/MainPage/layout/top.layout";
 import BottomLayout from "../../components/MainPage/layout/bottom.layout";
 import OnceLayout from "../../components/MainPage/layout/once.layout";
 import InfiniteScroll from "react-infinite-scroll-component";
+import SecondTop from "../../components/MainPage/layout/secondtop.layout";
 
 function Main() {
   // 유저 로그인 상태를 관리하는 상태 변수
@@ -61,8 +62,8 @@ function Main() {
         loader={<h4>Loading...</h4>}
       >
         {items.map((item, index) => (
-          <div key={index}>
-            <TopLayout />
+          <div key={index} className="cardSection">
+            <SecondTop />
             <BottomLayout />
           </div>
         ))}
