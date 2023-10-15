@@ -11,7 +11,7 @@ function LibraryCardItem({ title = "주식이란?", description = "어려운거�
     <div className="library-card">
         <div className="cardCaptionWrap">
             <div className="library-card-caption">
-                <span class="library-card-tag library-card-main-tag">주식 백과사전</span>
+                <span class="library-card-tag library-card-main-tag"><span>SOL</span>의 주식 백과사전</span>
                 <span class="library-card-tag library-card-sub-tag">
                 Dictornary <span id="tag">Stock</span>
                 </span>

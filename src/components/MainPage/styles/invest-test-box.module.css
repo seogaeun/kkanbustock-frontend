@@ -1,0 +1,121 @@
+.investTestWrap {
+    /* width: 66%; */
+    width: 760px;
+    height: 770px;
+    min-width: 240px;
+    aspect-ratio: 1;
+    background: linear-gradient(90deg, #B1D3FF 0%, #FFB0B3 100%);
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textContent{
+    width: 100%;
+    text-align: center;
+}
+
+.mainQuestion{
+    color: #FFF;
+    font-size: 30px;
+    font-weight: 700;
+    text-shadow: -2px 0px black, 0px 2px black, 2px 0px black, 0px -2px black;
+    margin-bottom: 10px;
+}
+
+.yourChoice{
+    color: #0045FF;
+    font-weight: bolder;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.chooseContent{
+    display: flex;
+    width: 100%;
+    height: 65px;
+    position: relative;
+    
+}
+
+.choose1{
+
+    width: 50%;
+    height: 65px;
+    background: #0197E3;
+    flex-shrink: 0;
+    line-height: 60px; /* 184% */
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: -2px 0px black, 0px 2px black, 2px 0px black, 0px -2px black;
+}
+
+.versus{
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 1; 
+
+
+    color: #FFF;
+    font-size: 30px;
+    font-weight: bolder;
+    text-shadow: -2px 0px black, 0px 2px black, 2px 0px black, 0px -2px black;
+    margin-bottom: 10px;
+
+}
+
+.choose2{
+    width: 50%;
+    height: 65px;
+    background: #FB3B60;
+    flex-shrink: 0;
+    line-height: 60px; /* 184% */
+    text-align: end;
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 700;
+    text-shadow: -2px 0px black, 0px 2px black, 2px 0px black, 0px -2px black;
+}
+
+.chooseText{
+    margin: 0 20px 0 20px;
+}
+
+.joinContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 요소를 수평 가운데 정렬 */
+    position: relative;
+    /* 다른 스타일 속성을 설정할 수 있음 */
+}
+
+.solImg {
+    width: 407.089px;
+    height: 400px;
+    /* 다른 스타일 속성을 설정할 수 있음 */
+}
+
+.letsGoBtn {
+    position: relative;
+    z-index: 1; /* 이미지 위로 버튼을 올립니다 */
+    /* 다른 스타일 속성을 설정할 수 있음 */
+    width: 600px;
+    height: 70px;
+    flex-shrink: 0;
+    border: 3px solid #000;
+    background: #FFF;
+
+
+    color: #FFF;
+    text-shadow: -2px 0px black, 0px 2px black, 2px 0px black, 0px -2px black;
+    text-align: center;
+    font-size: 25px;
+
+    
+}
