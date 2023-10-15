@@ -5,6 +5,12 @@
     flex-wrap: wrap; /* Allow items to wrap to a new row when the screen size decreases */
   }
   
+.cardSection{
+    width: 80vw;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+ }
   
   /* PC 화면 */
   @media (min-width: 1024px) {

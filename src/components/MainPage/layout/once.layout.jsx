@@ -11,8 +11,8 @@ const OnceLayout = () => {
             <div className={styles.child_container}>
                 <section className={onceLayoutStyles.layout}>
                   <div className={onceLayoutStyles.left_layout}>
-                    <StockBox className={onceLayoutStyles.once_short_box}/>
                     <NewBox className={onceLayoutStyles.once_short_box}/>
+                    <StockBox className={onceLayoutStyles.once_short_box}/>
                   </div>
                   <InvestmentAppetiteBox/>
                 </section>
