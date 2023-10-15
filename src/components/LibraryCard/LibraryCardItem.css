@@ -72,9 +72,7 @@ header::before {
     opacity: 0;
 }
 
-.library-card-caption{
-    background: linear-gradient(0deg,  #000000b3 12%,#00000033 41.6%,#00000020 50%,#00000003 59.9%,#00000000 100%);
-}
+
 
 .library-card-caption{
     width:200px;
@@ -87,11 +85,53 @@ header::before {
     height: 60px;
 }
 
+.library-card-tag{
+    padding-left: 10px;
+}
+
+.cardCaptionWrap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    height: 100%;
+}
+
+
+.library-card-title{
+    background-color: #fff;
+    width: 100%;
+    padding: 10px;
+}
+
+.library-card-description{
+    background-color: #fff;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.cardContentWrap{
+    background-color: #fff;
+}
+
 .library-card-content{
-    padding:10px;
+
     width: 100px;
     height: 100px;
 
+}
+
+.library-card-down-content{
+    background: #FFF;
+    
+}
+
+.library-card-read-more{
+    width: 85%;
+    text-align: right;
+    padding: 10px 20px;
+    color: #0045FF;
 }
 
 /*********************************/
@@ -110,6 +150,7 @@ header::before {
 }
 
 .library-card:hover .library-card-content {
+        background-color: #fff;
     opacity: 1;
     transform: translateY(-20px);
     transition: opacity var(--anim-time--hi) var(--easing2),
@@ -129,9 +170,40 @@ header::before {
 }
 
 
+.library-card:hover .cardCaptionWrap{
+    background: linear-gradient(0deg,  #000000b3 12%,#00000033 41.6%,#00000020 50%,#00000003 59.9%,#00000000 100%);
+}
+
+
 /********************************************************/
 
 .library-card-content{
     width:300px;
     height: 100px;
 }
+
+
+
+
+
+
+
+
+
+.library-card {
+    position: relative;
+    background: radial-gradient(circle, #2196F3 20%, transparent 20%, transparent 50%, #2196F3 50%, #2196F3 80%, transparent 80%);
+
+    background-size: 56.57px 56.57px; /* 파도의 크기 및 간격을 조절합니다 */
+    animation: wave 10s linear infinite; /* 2초 간격으로 반복하는 애니메이션을 적용합니다 */
+  }
+  
+  @keyframes wave {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 56.57px 56.57px;
+    }
+  }
+  

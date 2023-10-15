@@ -11,7 +11,8 @@
     width: 572vw;
     height: 572px;
     display: flex;
-    background: url("./../../assets/images/RivalBg.png") center top/cover, lightgray -0.057px 0px / 99.853% 155.237% no-repeat;
+    /* background: url("./../../assets/images/RivalBg.png") center top/cover, lightgray -0.057px 0px / 99.853% 155.237% no-repeat; */
+    background: conic-gradient(from 0deg at 50.03% 40.06%, #000 35.16104578971863deg, rgba(0, 0, 0, 0.76) 323.179771900177deg, rgba(217, 217, 217, 0.00) 359.7679138183594deg);
     justify-content: center;
     /* 다른 스타일 설정 (예: 배경색, 패딩, 마진) */
   }
