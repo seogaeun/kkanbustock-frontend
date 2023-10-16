@@ -2,7 +2,7 @@ import React from 'react';
 import "./TitleContentLayout.css";
 
 
-function TitleContentLayout({ title, subtitle, imgSrc, children }) {
+function TitleContentLayout({ title, subtitle, imgSrc, children,style }) {
     return (
         <div className='componentWrap'>
             <div>
@@ -11,7 +11,7 @@ function TitleContentLayout({ title, subtitle, imgSrc, children }) {
                     {title ? <h1>{title}</h1> : null}
                 </div>
                 <div className="mainContent">
-                    <img alt={title} src={imgSrc} />
+                    <img alt={title} src={imgSrc} style={style} />
                     {children}
                 </div>
             </div>

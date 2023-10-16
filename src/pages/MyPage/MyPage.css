@@ -1,0 +1,81 @@
+*{
+
+}
+
+.infoTextContent {
+    width:500px;
+    height: 100px;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+  
+.infoTitle{
+    padding:0 10px 10px 10px;
+    font-size: 20px;
+    color: #687be1;
+    
+}
+
+.textInfo{
+    padding:0 10px 10px 10px;
+    font-size: 20px;
+    font-weight: 700; 
+    color:black;
+}
+
+.infoBtnContent{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btnInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin: 10px;
+    padding: 10px;
+    width:120px;
+    height:120px;
+    border-radius: 100px;
+    background: #88BDE7;
+    border: none;
+    font-size: 12px;
+    font-weight: 700; 
+    color:white;
+}
+
+.infoBtnImg{
+    width:50px;
+    height:50px;
+    margin-bottom:5px;
+}
+
+.btnInfo:hover {
+    background: #005CFE;
+    animation-name: shake;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: rotate(0);
+    }
+    25% {
+      transform: rotate(5deg);
+    }
+    50% {
+      transform: rotate(-5deg);
+    }
+    75% {
+      transform: rotate(5deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }

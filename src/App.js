@@ -7,6 +7,8 @@ import RivalPage from "./pages/RivalPage/MainRivalPage";
 import Nav from "./components/Nav/Nav.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import MyPage from "./pages/MyPage/MyPage";
+
 
 function App() {
   const [scroll, setScroll] = useState(0);
@@ -17,7 +19,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/My" element={<LoginPage />} />
+          <Route path="/My" element={<MyPage />} />
           <Route path="/Quiz" element={<QuizPage />} />
           <Route path="/Rival" element={<RivalPage />} />
           <Route path="/Dictionary" element={<DictionaryPage />} />
