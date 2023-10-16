@@ -2,6 +2,20 @@
 
 }
 
+div>hr {
+  width: 100%; /* 가로로 화면 전체에 표시 */
+  border: 1px solid #ccc; /* 테두리 스타일 지정 */
+  margin: 10px 0; /* 위아래 여백 지정 */
+}
+
+.infoWrap{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .infoTextContent {
     width:500px;
     height: 100px;
@@ -28,6 +42,7 @@
 .infoBtnContent{
     display: flex;
     justify-content: flex-start;
+    padding:20px 0;
 }
 
 .btnInfo{
@@ -55,6 +70,7 @@
 }
 
 .btnInfo:hover {
+    cursor: pointer;
     background: #005CFE;
     animation-name: shake;
     animation-duration: 0.5s;
@@ -78,4 +94,17 @@
     100% {
       transform: rotate(0);
     }
+  }
+
+  .logoutContent {
+    margin:20px 10px 10px 10px;
+    display: flex;
+    justify-content: start;
+  }
+  
+
+  .logoutBtn{
+    width:100px;
+    height: 30px;
+    border: none;
   }
