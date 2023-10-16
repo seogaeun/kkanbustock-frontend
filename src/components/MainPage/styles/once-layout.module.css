@@ -20,6 +20,11 @@
     flex-grow: 0;
     padding: 30px;
     border-radius: 5%;
+    transition: transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.once_short_box:hover {
+    transform: scale(1.01);
 }
 
 .left_layout {
