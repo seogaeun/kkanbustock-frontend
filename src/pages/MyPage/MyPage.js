@@ -7,10 +7,9 @@ import My_best from './../../assets/images/premium-quality.png';
 import My_portfolio from './../../assets/images/portfolio.png';
 import My_grpBell from './../../assets/images/bell.png';
 import "./MyPage.css";
-import PopupComponent from '../../components/PopUpComponent/PopupComponent';
 import PopupInvestType from '../../components/PopUpComponent/PopupInvestType';
 import PopupPortfolio from '../../components/PopUpComponent/PopupPortfolio';
-
+import PopupGrpAlarm from '../../components/PopUpComponent/PopupGrpAlarm';
 
 //더미데이터
 const componentContent = { imgSrc: SOL_welcome, inputTitle: "내 정보" };
@@ -43,12 +42,26 @@ function MyPage() {
     const openPopupComponentModal = () => setIsPopupComponentModalOpen(true);
     const closePopupComponentModal = () => setIsPopupComponentModalOpen(false);
 
+    //My추천 종목 팝업
+    const [isPopupRecommandStockOpen, setIsPopupRecommandStockOpen] = useState(false);
+
+    const openPopupRecommandStock = () => setIsPopupRecommandStockOpen(true);
+    const closePopupRecommandStock = () => setIsPopupRecommandStockOpen(false);
+
+
+    //My그룹알림 팝업
+    const [isPopupGrpAlarmOpen, setIsPopupGrpAlarmOpen] = useState(false);
+
+    const openPopupGrpAlarm = () => setIsPopupGrpAlarmOpen(true);
+    const closePopupGrpAlarm = () => setIsPopupGrpAlarmOpen(false);
+
   return (
     <div>
       <Header name="내정보" />
       <div className="infoWrap">
         <PopupInvestType isOpen={isInvestTypeModalOpen} closeModal={closeInvestTypeModal} userInfo={userInfo}/>
         <PopupPortfolio isOpen={isPopupComponentModalOpen} closeModal={closePopupComponentModal} stockDataList={stockDataList}/>
+        <PopupGrpAlarm isOpen={isPopupGrpAlarmOpen} closeModal={closePopupGrpAlarm} stockDataList={stockDataList}/>
 
         <hr />
         <TitleContentLayout {...componentContent}>
@@ -70,7 +83,7 @@ function MyPage() {
                 <img className="infoBtnImg" alt="my추천종목" src={My_best} />
                 My 추천 종목
               </button>
-              <button className="btnInfo myGrpNotice">
+              <button className="btnInfo myGrpNotice" onClick={openPopupGrpAlarm}>
                 <img className="infoBtnImg" alt="my그룹 알림" src={My_grpBell} />
                 My 그룹 알림
               </button>
