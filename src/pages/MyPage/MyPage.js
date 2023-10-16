@@ -10,6 +10,7 @@ import "./MyPage.css";
 import PopupInvestType from '../../components/PopUpComponent/PopupInvestType';
 import PopupPortfolio from '../../components/PopUpComponent/PopupPortfolio';
 import PopupGrpAlarm from '../../components/PopUpComponent/PopupGrpAlarm';
+import PopupPortRecommandStock from '../../components/PopUpComponent/PopupRecommandStock';
 
 //더미데이터
 const componentContent = { imgSrc: SOL_welcome, inputTitle: "내 정보" };
@@ -61,7 +62,9 @@ function MyPage() {
       <div className="infoWrap">
         <PopupInvestType isOpen={isInvestTypeModalOpen} closeModal={closeInvestTypeModal} userInfo={userInfo}/>
         <PopupPortfolio isOpen={isPopupComponentModalOpen} closeModal={closePopupComponentModal} stockDataList={stockDataList}/>
+        <PopupPortRecommandStock isOpen={isPopupRecommandStockOpen} closeModal={closePopupRecommandStock} stockDataList={stockDataList}/>
         <PopupGrpAlarm isOpen={isPopupGrpAlarmOpen} closeModal={closePopupGrpAlarm} stockDataList={stockDataList}/>
+
 
         <hr />
         <TitleContentLayout {...componentContent}>
@@ -79,7 +82,7 @@ function MyPage() {
                 <img className="infoBtnImg" alt="my포트폴리오" src={My_portfolio} />
                 My 포트폴리오
               </button>
-              <button className="btnInfo myBestInvest">
+              <button className="btnInfo myBestInvest" onClick={openPopupRecommandStock}>
                 <img className="infoBtnImg" alt="my추천종목" src={My_best} />
                 My 추천 종목
               </button>
