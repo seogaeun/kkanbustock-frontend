@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 function BlueSmallBtn({ title, link }) {
     return (
         <Link to={link} className="link-style">
-            <div className='componentWrap'>
+            <div className='BlueSmallBtnWrap'>
                 <button onclick={onclick} className='blueSmallBtn'>
                     {title}
                 </button>

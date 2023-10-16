@@ -4,7 +4,7 @@ import "./TitleContentLayout.css";
 
 function TitleContentLayout({ title, subtitle, imgSrc, children,style }) {
     return (
-        <div className='componentWrap'>
+        <div className='TitleContentLayoutWrap'>
             <div>
                 <div className='titleContent'>
                     {subtitle ? <h3>{subtitle}</h3> : null}

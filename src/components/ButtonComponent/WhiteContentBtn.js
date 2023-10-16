@@ -4,7 +4,7 @@ import BlueSmallBtn from './BlueSmallBtn';
 
 function WhiteContentBtn({ width, height, children }) {
     return (
-        <div className='componentWrap'  style={{ width, height }}>
+        <div className='WhiteContentBtnWrap'  style={{ width, height }}>
             <button className='whiteContentBtn' style={{ width, height }}>
                 {children}
             </button>
