@@ -1,26 +1,52 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // useNavigate를 불러옵니다.
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import commonStyles from './styles/main-page.module.css';
 import styles from './styles/today-quiz-box.module.css';
+import axios from 'axios';
 
-const TodayQuizBox = ({ content }) => {
+const TodayQuizBox = ({ memberId = 1 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [isAnswered, setIsAnswered] = useState(false);
-  const navigate = useNavigate(); // useNavigate를 사용할 수 있도록 초기화
+  const [isAnswered, setAnswered] = useState(false);
+  const navigate = useNavigate();
+  const [quiz, setQuiz] = useState({
+    answer: '',
+  });
 
   const flipCard = () => {
     setIsFlipped(!isFlipped);
   };
 
   const revealAnswer = () => {
-    setIsAnswered(true);
+    setAnswered(true);
   };
 
   const navigateToQuizPage = () => {
-    // 클릭하면 '/quiz' 경로로 이동
     navigate('/quiz');
   };
-  
+
+  const fetchQuiz = async () => {
+    try {
+      const response = await axios.get(`/api/v1/quizzes/daily/${memberId}`);
+      if (response.data) {
+        const data = response.data;
+        setQuiz({
+          content: data.answer,
+        });
+      } else {
+        setQuiz({
+          content: '매도란 주식을 파는 것을 의미한다.',
+        });
+      }
+    } catch (error) {
+      console.error('퀴즈 불러오기 실패', error);
+    }
+  };
+
+  useEffect(() => {
+    console.log(memberId);
+    fetchQuiz();
+  }, [memberId]);
+
   return (
     <div
       className={`${commonStyles.flex_box} ${styles.container} ${
@@ -28,11 +54,13 @@ const TodayQuizBox = ({ content }) => {
       }`}
       onMouseEnter={flipCard}
       onMouseLeave={flipCard}
-      onClick={navigateToQuizPage} // 클릭 이벤트 추가
+      onClick={navigateToQuizPage}
     >
       <div className={styles.front}>
         <div className={styles.title}>오늘의 퀴즈</div>
-        <div className={styles.content}>{content ?? "매도란 주식을 파는 것을 의미한다."}</div>
+        <div className={styles.content}>
+          {quiz.content ?? '매도란 주식을 파는 것을 의미한다.'}
+        </div>
         <section className={styles.button_group}>
           <div className={styles.button_o} onClick={revealAnswer}>
             O
@@ -44,8 +72,9 @@ const TodayQuizBox = ({ content }) => {
       </div>
       <div className={styles.back}>
         <div className={styles.backContent}>
-          카드를 눌러 <br /> <span className={styles.underline}>오늘의 퀴즈 풀러 가기</span> &gt;
-        </div>      
+          카드를 눌러 <br />{' '}
+          <span className={styles.underline}>오늘의 퀴즈 풀러 가기</span> &gt;
+        </div>
       </div>
     </div>
   );
