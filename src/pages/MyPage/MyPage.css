@@ -2,9 +2,11 @@
 
 }
 
-.infoWrap>hr {
-  width: 100%; /* 가로로 화면 전체에 표시 */
-  margin: 10px; /* 위아래 여백 지정 */
+.hr {
+    width: 80%;
+    margin: 20px 0;
+    border: none; 
+    border-top: 1px solid #c4c4c4; 
 
 }
 

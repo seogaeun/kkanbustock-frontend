@@ -66,7 +66,7 @@ function MyPage() {
         <PopupGrpAlarm isOpen={isPopupGrpAlarmOpen} closeModal={closePopupGrpAlarm} stockDataList={stockDataList}/>
 
 
-        <hr />
+        <div className="hr"></div>
         <TitleContentLayout {...componentContent}>
           <div className="infoComponentWrap">
             <div className="infoTextContent">
@@ -96,7 +96,7 @@ function MyPage() {
             </div>
           </div>
         </TitleContentLayout>
-        <hr />
+        <div className="hr"></div>
       </div>
     </div>
   );
