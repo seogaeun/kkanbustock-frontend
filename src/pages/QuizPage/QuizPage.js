@@ -3,6 +3,7 @@ import "./QuizPage.css";
 import Header from "../../components/Header/Header";
 import DailyQuiz from "../../components/Quiz/DailyQuiz/DailyQuiz.js";
 import QuizHistory from "../../components/Quiz/QuizHistory/QuizHistory";
+import axios from "axios";
 
 function Quiz() {
   // 임의의 퀴즈 데이터
