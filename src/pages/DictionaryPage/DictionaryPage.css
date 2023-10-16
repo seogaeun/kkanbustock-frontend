@@ -1,0 +1,18 @@
+.dictonaryPageWrap{
+    width: 100%;
+    
+    padding:10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh; /* 화면 높이에 맞춰 조절할 수 있습니다. */
+}
+
+.dictonaryContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
