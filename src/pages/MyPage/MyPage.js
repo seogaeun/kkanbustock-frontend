@@ -9,26 +9,46 @@ import My_grpBell from './../../assets/images/bell.png';
 import "./MyPage.css";
 import PopupComponent from '../../components/PopUpComponent/PopupComponent';
 import PopupInvestType from '../../components/PopUpComponent/PopupInvestType';
+import PopupPortfolio from '../../components/PopUpComponent/PopupPortfolio';
 
+
+//더미데이터
 const componentContent = { imgSrc: SOL_welcome, inputTitle: "내 정보" };
 const userInfo = { nickname: "안녕나는쏠", userid: "HiIamsol", userInvestType: "공격투자형" };
+const stockDataList = [
+    { profitRate: 1, stockName: "Unity Software", quantity: 22, purchasePrice: 2183729 },
+    { profitRate: 1, stockName: "Unity Software", quantity: 22, purchasePrice: 2183729 },
+    { profitRate: -1, stockName: "Unity Software", quantity: 22, purchasePrice: 2183729 },
+    { profitRate: 0, stockName: "Unity Software", quantity: 22, purchasePrice: 2129 },
+    { profitRate: 1, stockName: "Unity Software", quantity: 22, purchasePrice: 2183729 },
+
+    // 다른 객체들도 여기에 추가 가능
+];
+
+
+
+
+
 
 function MyPage() {
-  const [isInvestTypeModalOpen, setIsInvestTypeModalOpen] = useState(false);
-  const [isPopupComponentModalOpen, setIsPopupComponentModalOpen] = useState(false);
+    //My투자 성향 팝업
+    const [isInvestTypeModalOpen, setIsInvestTypeModalOpen] = useState(false);
 
-  const openInvestTypeModal = () => setIsInvestTypeModalOpen(true);
-  const closeInvestTypeModal = () => setIsInvestTypeModalOpen(false);
+    const openInvestTypeModal = () => setIsInvestTypeModalOpen(true);
+    const closeInvestTypeModal = () => setIsInvestTypeModalOpen(false);
 
-  const openPopupComponentModal = () => setIsPopupComponentModalOpen(true);
-  const closePopupComponentModal = () => setIsPopupComponentModalOpen(false);
+    //My포트폴리오 팝업
+    const [isPopupComponentModalOpen, setIsPopupComponentModalOpen] = useState(false);
+
+    const openPopupComponentModal = () => setIsPopupComponentModalOpen(true);
+    const closePopupComponentModal = () => setIsPopupComponentModalOpen(false);
 
   return (
     <div>
       <Header name="내정보" />
       <div className="infoWrap">
         <PopupInvestType isOpen={isInvestTypeModalOpen} closeModal={closeInvestTypeModal} userInfo={userInfo}/>
-        <PopupComponent isOpen={isPopupComponentModalOpen} closeModal={closePopupComponentModal} />
+        <PopupPortfolio isOpen={isPopupComponentModalOpen} closeModal={closePopupComponentModal} stockDataList={stockDataList}/>
 
         <hr />
         <TitleContentLayout {...componentContent}>
@@ -42,7 +62,7 @@ function MyPage() {
                 <img className="infoBtnImg" alt="my투자성향" src={My_type} />
                 My 투자 성향
               </button>
-              <button className="btnInfo myPortfolio" onClick={openInvestTypeModal}>
+              <button className="btnInfo myPortfolio" onClick={openPopupComponentModal}>
                 <img className="infoBtnImg" alt="my포트폴리오" src={My_portfolio} />
                 My 포트폴리오
               </button>

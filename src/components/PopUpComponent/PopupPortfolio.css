@@ -1,25 +1,23 @@
-.PopupInvestTypeWrap{
+.PopupPortfolioWrap{
     width: 100%;
-    height: 95%;
+    overflow: auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     
     padding:10px;
     box-sizing:border-box;
 }
 
-.popupInvestType-upContent{
-    padding:20px;
-}
 
-.PopupInvestTypeTitle{
+
+.PopupPortfolioTitle{
     font-size: 20px;
     font-weight: 500;
 
 }
 
-.PopupInvestTypeText{
+.PopupPortfolioText{
     color: #0045FF;
     font-size: 30px;
     font-weight: 700;
@@ -31,3 +29,7 @@
 }
 
 
+
+.goStockBtn{
+    padding:10px;
+}

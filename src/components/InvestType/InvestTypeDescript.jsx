@@ -53,7 +53,8 @@ function InvestTypeDescript({InvestType="공격투자형"}) {
             </div>
 
             <div className="BtnZone">
-                <BlueSmallBtn title={"상품 추천 받기"}></BlueSmallBtn>
+                
+                <BlueSmallBtn link="/Rival" title={"상품 추천 받기"}></BlueSmallBtn>
             </div>
 
         </div>
