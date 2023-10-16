@@ -42,7 +42,8 @@ function Quiz() {
           {
             questionNumber: 1,
             date: "2023-10-11",
-            question: "이것은 테스트 문제입니다.",
+            question:
+              "주식이란 주식회사의 자본을 일정한 금액으로 분할한 것이다.",
             correctAnswer: "o",
             isCorrect: true,
           },
@@ -67,11 +68,9 @@ function Quiz() {
   return (
     <div className="quizPage">
       <Header name="QUIZ" />
-
       <div className="dailyQuizSection">
-        <DailyQuiz stockQuiz={StockQuiz} />
+        <DailyQuiz memberId={memberId} />
       </div>
-
       <QuizHistory quizData={quizContents} />
     </div>
   );

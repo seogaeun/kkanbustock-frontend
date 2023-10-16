@@ -75,12 +75,12 @@
 }
 
 .answer.correct {
-  background-color: #2ecc71;
+  background-color: #ffffff;
   color: #ffffff;
 }
 
 .answer.incorrect {
-  background-color: #e74c3c;
+  background-color: #ffffff;
   color: #ffffff;
 }
 
@@ -123,4 +123,12 @@
 /* 이미 선택된 버튼에 대한 스타일 (선택되지 않은 상태) */
 .answered .oxbtn button:not(.selected) {
   transition: none;
+}
+
+.answerStatus--correct {
+  color: rgb(197, 255, 197);
+}
+
+.answerStatus--incorrect {
+  color: rgb(255, 175, 175);
 }

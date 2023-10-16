@@ -1,22 +1,64 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./DailyQuiz.css";
+import axios from "axios";
 
-function DailyQuiz({ stockQuiz }) {
+function DailyQuiz({ memberId }) {
+  const [quiz, setQuiz] = useState({
+    quizId: "",
+    content: "",
+    answer: "",
+    explanation: "",
+    solved: false,
+  });
   const [answered, setAnswered] = useState(false);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
+  const isCorrectClassName = isCorrect
+    ? "answerStatus--correct"
+    : "answerStatus--incorrect";
 
-  const handleAnswerClick = (selectedAnswer) => {
+  const fetchQuiz = async () => {
+    try {
+      const response = await axios.get(`/api/v1/quizzes/daily/${memberId}`);
+      if (response.data) {
+        const data = response.data;
+        setQuiz({
+          quizId: data.id,
+          content: data.answer,
+          answer: data.content,
+          explanation: data.explanation,
+          solved: data.solved,
+        });
+      } else {
+        // 서버에서 퀴즈가 없는 경우에 대한 처리
+        setQuiz({
+          quizId: "",
+          content: "오늘의 퀴즈가 없습니다.",
+          answer: "",
+          explanation: "",
+          solved: true,
+        });
+      }
+    } catch (error) {
+      console.error("퀴즈 불러오기 실패", error);
+    }
+  };
+
+  useEffect(() => {
+    console.log(memberId); // 멤버 아이디를 콘솔에 출력
+    fetchQuiz();
+  }, [memberId]);
+
+  const handleAnswerClick = async (selectedAnswer) => {
     if (answered) {
-      return; // 이미 답을 선택했으면 아무 작업도 하지 않음
+      return;
     }
 
-    const isAnswerCorrect = selectedAnswer === stockQuiz[0].answer;
-    setSelectedAnswer(selectedAnswer); // 선택한 답을 저장
-    setIsCorrect(isAnswerCorrect); // 정답 여부를 저장
+    const isAnswerCorrect = selectedAnswer === quiz.answer;
+    setSelectedAnswer(selectedAnswer);
+    setIsCorrect(isAnswerCorrect);
     setAnswered(true);
 
-    // 선택된 버튼의 배경색을 파란색으로 변경
     const buttons = document.querySelectorAll(".oxbtn button");
     buttons.forEach((button) => {
       button.classList.remove("selected");
@@ -27,40 +69,49 @@ function DailyQuiz({ stockQuiz }) {
     if (selectedButton) {
       selectedButton.classList.add("selected");
     }
+
+    // POST 요청을 보냅니다.
+    try {
+      await axios.post(`/api/v1/quizzes/daily`, {
+        memberId: memberId,
+        stockQuizId: quiz.quizId,
+        isCorrect: true,
+      });
+    } catch (error) {
+      console.error("문제 푼 상태 업데이트 실패", error);
+    }
   };
 
   return (
     <div className="dailyQuiz">
       <div className="quizTitle">오늘의 퀴즈</div>
       <div className={`dailyQuizQnASet ${answered ? "answered" : ""}`}>
-        <div id="question">{stockQuiz[0].content}</div>
-        {answered && stockQuiz[0].answer === "x" && (
-          <div id="explanation">{stockQuiz[0].explanation}</div>
+        <div id="question">{quiz.content}</div>
+        {answered && quiz.answer === "X" && (
+          <div id="explanation">{quiz.explanation}</div>
         )}
         <div className="oxbtn">
           <button
-            className={`answer ${selectedAnswer === "o" ? "selected" : ""} ${
+            className={`answer ${selectedAnswer === "O" ? "selected" : ""} ${
               answered ? "answered" : ""
             }`}
-            onClick={() => handleAnswerClick("o")}
+            onClick={() => handleAnswerClick("O")}
           >
             O
           </button>
           <button
-            className={`answer ${selectedAnswer === "x" ? "selected" : ""} ${
+            className={`answer ${selectedAnswer === "X" ? "selected" : ""} ${
               answered ? "answered" : ""
             }`}
-            onClick={() => handleAnswerClick("x")}
+            onClick={() => handleAnswerClick("X")}
           >
             X
           </button>
         </div>
       </div>
       {answered && (
-        <div className={`answerStatus ${isCorrect ? "correct" : "incorrect"}`}>
-          {isCorrect
-            ? "정답입니다!"
-            : `땡! 정답은 '${stockQuiz[0].answer}'입니다`}
+        <div className={`answerStatus ${isCorrectClassName}`}>
+          {isCorrect ? "정답입니다!" : `땡! 정답은 '${quiz.answer}'입니다`}
         </div>
       )}
     </div>
