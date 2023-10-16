@@ -1,10 +1,10 @@
 .container {
-    background: #E1F4FD !important;
+    background: #E1F4FD !important;     
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
+    }
+    
 .title{
     text-align: left;
     font-size: 1rem;

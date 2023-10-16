@@ -1,5 +1,9 @@
 .container {
-    background: #9FC9FB !important;
+    background: linear-gradient(
+        125deg,
+        #c5f4fe 0%,
+        #8dc2ff 100%
+      );    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
