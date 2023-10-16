@@ -3,6 +3,8 @@ import styles from './styles/invest-test-box.module.css';
 import commonStyles from './styles/main-page.module.css';
 import SOL_Question from './../../assets/images/SOL_Question.png'
 
+
+
 const InvestTestBox = ({className}) => {
     return (
         <div className="parentSize">

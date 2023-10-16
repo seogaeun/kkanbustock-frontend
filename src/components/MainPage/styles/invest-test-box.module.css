@@ -42,7 +42,7 @@
 }
 
 .choose1{
-
+    animation: moveUpDown1 2s ease-in-out infinite; /* 2초 간격으로 반복 */
     width: 50%;
     height: 65px;
     background: #0197E3;
@@ -71,6 +71,7 @@
 }
 
 .choose2{
+    animation: moveUpDown2 2s ease-in-out infinite; /* 2초 간격으로 반복 */
     width: 50%;
     height: 65px;
     background: #FB3B60;
@@ -92,19 +93,18 @@
     flex-direction: column;
     align-items: center; /* 요소를 수평 가운데 정렬 */
     position: relative;
-    /* 다른 스타일 속성을 설정할 수 있음 */
+
 }
 
 .solImg {
     width: 407.089px;
     height: 400px;
-    /* 다른 스타일 속성을 설정할 수 있음 */
+    animation: shake 2s ease-in-out infinite; 
 }
 
 .letsGoBtn {
     position: relative;
     z-index: 1; /* 이미지 위로 버튼을 올립니다 */
-    /* 다른 스타일 속성을 설정할 수 있음 */
     width: 600px;
     height: 70px;
     flex-shrink: 0;
@@ -113,9 +113,64 @@
 
 
     color: #FFF;
-    text-shadow: -2px 0px black, 0px 2px black, 2px 0px black, 0px -2px black;
+    text-shadow: -2px 0px #0045FF, 0px 2px #0045FF, 2px 0px #0045FF, 0px -2px #0045FF;
     text-align: center;
     font-size: 25px;
 
+    position: absolute;
+    top: 90%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 1; 
+
     
 }
+
+
+.letsGoBtn:hover {
+    background-color: #0045FF;
+}
+
+
+
+
+
+  @keyframes moveUpDown1 {
+    0% {
+      transform: translateY(10px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(10px);
+    }
+  }
+   
+
+  @keyframes moveUpDown2 {
+    0% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(-10px);
+    }
+  }
+  
+
+  @keyframes shake {
+    0% {
+      transform: rotate(0deg); /* 초기 각도 */
+    }
+    50% {
+      transform: rotate(10deg); /* 30도로 회전 (오른쪽으로) */
+    }
+    100% {
+      transform: rotate(0deg); /* 초기 각도로 돌아옴 */
+    }
+  }
+  
+  
