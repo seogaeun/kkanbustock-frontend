@@ -8,6 +8,11 @@
 }
 
 .once_short_box {
+    background: linear-gradient(
+        45deg,
+        #d0f6ff 0%,
+        #6bb0ff 100%
+      );
     width: 100%;
     aspect-ratio: 1;
     box-sizing: border-box;

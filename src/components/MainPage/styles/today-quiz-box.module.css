@@ -1,5 +1,9 @@
 .container {
-    background: #9FC9FB;
+    background: linear-gradient(
+        125deg,
+        #b9f2ff 0%,
+        #5ca8ff 100%
+      );     
     display: flex;
     flex-direction: column;
     justify-content: center;

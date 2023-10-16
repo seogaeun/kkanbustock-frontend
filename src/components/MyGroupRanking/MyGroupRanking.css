@@ -62,6 +62,10 @@
     text-align: center;
   }
   
+  .top1:hover, .top2:hover, .top3:hover, .top4:hover, .top5:hover {
+    transform: scale(1.1); /* 1.1배 확대 애니메이션 */
+    transition: transform 0.3s; /* 애니메이션 지속 시간 설정 */
+  }
   
   /* PC 화면 */
 @media (min-width: 1024px) {
