@@ -1,5 +1,5 @@
 import React from 'react';
-import NewBox from "../new-box";
+import NewsBox from "../news-box";
 import styles from '../styles/main-page.module.css'
 import TodayQuizBox from "../today-quiz-box";
 import DictionaryBox from "../dictionary-box";
@@ -20,9 +20,9 @@ const TopLayout = () => {
             <div className={styles.child_container}>
               <section className={styles.row_container}>
                 <TodayQuizBox stockQuiz="StockQuiz"/>
-                <NewBox/>
-                <NewBox/>
-                <NewBox/>
+                <NewsBox/>
+                <NewsBox/>
+                <NewsBox/>
                 <DictionaryBox/>
               </section>
             </div>
