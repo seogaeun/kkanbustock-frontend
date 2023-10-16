@@ -6,5 +6,5 @@ import InvestTestBox from './components/MainPage/invest-test-box';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
-root.render(<InvestTestBox/>);
+root.render(<App/>);
 
