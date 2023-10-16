@@ -47,9 +47,14 @@
     width: 66%;
     min-width: 240px;
     aspect-ratio: 1;
-    background: rgb(255, 213, 24);
+    background: linear-gradient(
+        45deg,
+        #d0f6ff 0%,
+        #6bb0ff 100%
+      );        
     box-sizing: border-box;
     margin-bottom: 10px;
+    border-radius: 5%;
 }
 
 @media screen and (max-width: 1200px) {
