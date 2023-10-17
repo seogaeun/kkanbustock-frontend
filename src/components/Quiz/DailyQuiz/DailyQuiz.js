@@ -24,8 +24,8 @@ function DailyQuiz({ memberId }) {
         const data = response.data;
         setQuiz({
           quizId: data.id,
-          content: data.answer,
-          answer: data.content,
+          content: data.content,
+          answer: data.answer,
           explanation: data.explanation,
           solved: data.solved,
         });

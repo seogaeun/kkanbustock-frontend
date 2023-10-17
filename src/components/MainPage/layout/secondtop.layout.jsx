@@ -5,7 +5,7 @@ import DictionaryBox from "../dictionary-box";
 import NewsBox from '../news-box';
 import { padding } from '@mui/system';
 
-function SecondTop() {
+function SecondTop({ dict }) {
     return (
         <div className={styles.container}>
             <div className={styles.child_container}>
@@ -14,7 +14,7 @@ function SecondTop() {
                 <NewsBox/>
                 <NewsBox/>
                 <NewsBox/>
-                <DictionaryBox/>
+                <DictionaryBox dict={dict}/>
               </section>
             </div>
         </div>
