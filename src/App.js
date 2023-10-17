@@ -8,7 +8,7 @@ import Nav from "./components/Nav/Nav.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import MyPage from "./pages/MyPage/MyPage";
-import SignupPage from "./pages/SignupPage/SignupPage.jsx";
+import SignupPage from "./pages/SignupPage/SignupPage";
 
 function App() {
   const [scroll, setScroll] = useState(0);
