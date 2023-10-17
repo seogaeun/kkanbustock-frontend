@@ -4,7 +4,7 @@ import TodayQuizBox from "../today-quiz-box";
 import NewsBox from "../news-box";
 import DictionaryBox2 from '../dictionaty-box2';
 
-const BottomLayout = () => {
+const BottomLayout = ({ dict }) => {
     return (
         <div className={styles.container}>
             <div className={styles.child_container}>
@@ -13,7 +13,7 @@ const BottomLayout = () => {
                     <NewsBox/>
                     <NewsBox/>
                     <NewsBox/>
-                    <DictionaryBox2/>
+                    <DictionaryBox2 dict={dict} /> {/* dict prop을 전달 */}
                 </section>
             </div>
         </div>

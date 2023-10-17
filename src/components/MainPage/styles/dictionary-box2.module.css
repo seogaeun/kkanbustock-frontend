@@ -1,11 +1,11 @@
 .container2 {
     background: linear-gradient(
-        125deg,
-        #e2faff 0%,
-        #b0d5ff 100%
-      ); 
+    135deg,
+    #b1eaf8 0%,
+    #0c99f7 100%
+);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     height: fit-content;
     transition: transform 0.2s;
@@ -17,31 +17,30 @@
 }
 
 .header2 {
-    padding-left: 10%;
     text-align: left;
-    margin-top: 4%;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    justify-content: center;
 }
 
 .title2 {
     font-weight: bold;
     font-size: 1.5rem;
-    margin-bottom: 10px;
-
 }
 
 .content2 {
     font-size: 1.2rem;
+    width: 80%;
 }
 
 .image_box2{
-    width: 90%;
+    width: 30%;
     display: flex;
-    justify-content: right;
 }
 
 .short_box_image_box2 {
-    width: 40%;
-    height: 80%;
+    width: 100%;
     aspect-ratio: 1;
 }
 
