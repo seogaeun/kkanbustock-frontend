@@ -21,23 +21,44 @@ function Main() {
     () => Math.floor(Math.random() * 34) + 1
   );
   const [topNGroups, setTopNGroups] = useState([]); // 추가: Top N 그룹 데이터를 저장하는 상태
+  const [topNMyGroups, setTopNMyGroups] = useState([]); // 추가: Top N 그룹 데이터를 저장하는 상태
+
+  const memberId = "choi";
 
   const fetchTopNGroups = async () => {
     try {
-      const response = await axios.get("/api/v1/groups/top-n-groups", {
+      const response2 = await axios.get("/api/v1/groups/top-n-groups", {
         params: {
-          n: 5, // 5개의 그룹을 가져오기 위한 쿼리 파라미터
+          n: 3, // 5개의 그룹을 가져오기 위한 쿼리 파라미터
         },
       });
-      setTopNGroups(response.data); // API에서 받은 그룹 데이터를 상태에 저장
+      setTopNGroups(response2.data); // API에서 받은 그룹 데이터를 상태에 저장
       console.log("Top N 그룹 데이터 불러오기 성공");
-      console.log(response.data);
+      console.log(response2.data);
     } catch (error) {
       console.error("Top N 그룹 데이터 불러오기 실패", error);
       // 실패한 경우에 대한 처리를 추가할 수 있습니다.
     }
   };
-
+  const fetchTopNMhyGroups = async () => {
+    try {
+      const response3 = await axios.get(
+        "/api/v1/groups/my-groups-profit-rate",
+        {
+          params: {
+            n: 5,
+            memberId: memberId,
+          },
+        }
+      );
+      setTopNMyGroups(response3.data); // API에서 받은 그룹 데이터를 상태에 저장
+      console.log("Top N 마이 그룹 데이터 불러오기 성공");
+      console.log(response3.data);
+    } catch (error) {
+      console.error("Top N 마이 그룹 데이터 불러오기 실패", error);
+      // 실패한 경우에 대한 처리를 추가할 수 있습니다.
+    }
+  };
   function calculateDictIndex(currentIndex, index, dictionaryLength) {
     if (isNaN(currentIndex)) {
       setCurrentIndex(Math.floor(Math.random() * 34) + 1);
@@ -80,6 +101,8 @@ function Main() {
       }
     };
     fetchData();
+    fetchTopNGroups();
+    fetchTopNMhyGroups();
     setIsLoggedIn(checkLoginStatus());
   }, []);
 
@@ -88,8 +111,8 @@ function Main() {
       <MainPoint />
       <div className="titleForMain">'깐부 내기 랭킹'</div>
       <div className="rankingSection">
-        <MonthlyRank />
-        {isLoggedIn && <MyGroupRanking />}
+        <MonthlyRank topNGroups={topNGroups} />
+        {isLoggedIn && <MyGroupRanking topNMyGroups={topNMyGroups} />}
       </div>
       <div className="titleForMain">'당신을 위한 오늘의 증권 소식'</div>
       <div className="cardSection">
