@@ -1,0 +1,40 @@
+
+.PopupMainContent>button{
+    background: #88BDE7;
+    border: none;
+    font-size: 12px;
+    border-radius: 5px;
+    padding:7px;
+}
+
+.PopupBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+.PopupMainContent{
+    position: absolute;
+    padding:10px;
+    top: 50%;
+    left: 50%;
+    border-radius: 20px;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    height: 80%;    
+    max-width: 100%;
+    max-height: 90%;
+    overflow-y: auto;
+    background-color: rgb(255, 255, 255);
+    filter: drop-shadow(1px 0px 7px rgba(0, 0, 0, 0.25));
+    z-index: 10000;
+}
+
+.PopupMainContent>button{
+    margin:10px;
+}

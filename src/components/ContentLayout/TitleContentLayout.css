@@ -1,4 +1,4 @@
-.componentWrap{
+.TitleContentLayoutWrap{
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -34,7 +34,7 @@
 }
 
 .mainContent>img{
-    width:500px;
+    width:20vw;
     height:400px;
     object-fit: contain;
     flex-shrink: 0;

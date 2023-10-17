@@ -1,39 +1,10 @@
-*{
-    font-family: OneShinhan;
-    text-align: start;
-    /* outline: 1px solid black;  */
-}
-
-.center-container {
-    display: flex;
-    flex-direction: column; /* 내부 요소들을 세로로 배치 */
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.up-container{
-    display: flex;
-}
-
-.intro-title{
-    width: 800px;
-    margin-bottom: 60px;
-}
-
-.up-container>img{
-    width: 150px;
-    height: 200px;
-    
-} 
-
-.down-container{
+.investTypeDescriptWrap{
     display: flex;
     justify-content: center;
     align-items: center;
 
-    width: 1000px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
     flex-shrink: 0;
     border-radius: 20px;
     background: #F0F0F0;
@@ -77,3 +48,13 @@
     color: #0045FF;
 
 }
+
+.BtnZone{
+    margin:20px;
+}
+
+.typeFlavorDescript {
+    word-break:keep-all;
+    /* 그 외 스타일 속성 설정 */
+  }
+  

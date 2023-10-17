@@ -1,3 +1,7 @@
+button{
+  cursor: pointer;
+}
+
 @font-face {
   font-family: "OneShinhan";
   font-weight: bold;
