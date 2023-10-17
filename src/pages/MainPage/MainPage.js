@@ -20,6 +20,24 @@ function Main() {
   const [currentIndex, setCurrentIndex] = useState(
     () => Math.floor(Math.random() * 34) + 1
   );
+  const [topNGroups, setTopNGroups] = useState([]); // 추가: Top N 그룹 데이터를 저장하는 상태
+
+  const fetchTopNGroups = async () => {
+    try {
+      const response = await axios.get("/api/v1/groups/top-n-groups", {
+        params: {
+          n: 5, // 5개의 그룹을 가져오기 위한 쿼리 파라미터
+        },
+      });
+      setTopNGroups(response.data); // API에서 받은 그룹 데이터를 상태에 저장
+      console.log("Top N 그룹 데이터 불러오기 성공");
+      console.log(response.data);
+    } catch (error) {
+      console.error("Top N 그룹 데이터 불러오기 실패", error);
+      // 실패한 경우에 대한 처리를 추가할 수 있습니다.
+    }
+  };
+
   function calculateDictIndex(currentIndex, index, dictionaryLength) {
     if (isNaN(currentIndex)) {
       setCurrentIndex(Math.floor(Math.random() * 34) + 1);
@@ -62,7 +80,6 @@ function Main() {
       }
     };
     fetchData();
-
     setIsLoggedIn(checkLoginStatus());
   }, []);
 

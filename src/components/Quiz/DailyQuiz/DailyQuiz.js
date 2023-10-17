@@ -70,15 +70,22 @@ function DailyQuiz({ memberId }) {
       selectedButton.classList.add("selected");
     }
 
-    // POST 요청을 보냅니다.
     try {
       await axios.post(`/api/v1/quizzes/daily`, {
         memberId: memberId,
         stockQuizId: quiz.quizId,
-        isCorrect: true,
+        isCorrect: isAnswerCorrect,
       });
+
+      console.log("POST 요청 성공: 문제 푼 상태 업데이트 완료");
     } catch (error) {
-      console.error("문제 푼 상태 업데이트 실패", error);
+      console.error(
+        "POST 요청 실패: 문제 푼 상태 업데이트 실패",
+        error,
+        memberId,
+        quiz.quizId,
+        isAnswerCorrect
+      );
     }
   };
 
