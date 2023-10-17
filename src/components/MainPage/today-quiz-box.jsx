@@ -4,7 +4,7 @@ import commonStyles from './styles/main-page.module.css';
 import styles from './styles/today-quiz-box.module.css';
 import axios from 'axios';
 
-const TodayQuizBox = ({ memberId = 1 }) => {
+const TodayQuizBox = ({ memberId = 'choi' }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isAnswered, setAnswered] = useState(false);
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const TodayQuizBox = ({ memberId = 1 }) => {
       if (response.data) {
         const data = response.data;
         setQuiz({
-          content: data.answer,
+          content: data.content,
         });
       } else {
         setQuiz({

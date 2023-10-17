@@ -8,7 +8,7 @@ import Nav from "./components/Nav/Nav.js";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import MyPage from "./pages/MyPage/MyPage";
-
+import SignupPage from "./pages/SignupPage/SignupPage.jsx";
 
 function App() {
   const [scroll, setScroll] = useState(0);
@@ -23,6 +23,7 @@ function App() {
           <Route path="/Quiz" element={<QuizPage />} />
           <Route path="/Rival" element={<RivalPage />} />
           <Route path="/Dictionary" element={<DictionaryPage />} />
+          <Route path="/Signup" element={<SignupPage />} />
         </Routes>
       </div>
     </BrowserRouter>
