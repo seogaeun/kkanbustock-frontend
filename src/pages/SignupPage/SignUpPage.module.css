@@ -22,14 +22,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-input[type="text"],
-input[type="password"],
-select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
+
 
 /* 추가: 플레이스홀더 스타일 */
 input[type="text"]::placeholder,
@@ -37,10 +30,6 @@ input[type="password"]::placeholder {
     color: #ccc; /* 회색으로 레이블 색상 설정 */
 }
 
-/* 추가: 세렉트박스 스타일 */
-select {
-    padding: 10px;
-}
 
 button {
     background-color: #0071f2;
