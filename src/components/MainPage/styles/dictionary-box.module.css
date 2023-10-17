@@ -14,6 +14,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     perspective: 1000px; /* 추가: 3D 변환을 사용하기 위해 필요 */
     transform-style: preserve-3d; /* 추가: 자식 요소를 3D 변환하기 위해 필요 */
+    min-height: fit-content;
 }
 
 .container:hover {
@@ -45,14 +46,18 @@
     font-weight: bold;
     font-size: 1.5rem;
     margin-bottom: 10px;
+    height: 33%;
+    justify-content:bottom;
 }
 
 .content {
     font-size: 1rem;
+    height: 33%;
 }
 
 .image_box {
     width: 30%;
+    height: 33%;
     display: flex;
 }
 
@@ -71,3 +76,4 @@
 .smallText {
     font-size: 1rem; /* 작은 글꼴 크기로 조절 */
 }
+
