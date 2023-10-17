@@ -7,7 +7,7 @@ import axios from "axios";
 
 function Quiz() {
   const [quizContents, setQuizContents] = useState([]); // API에서 가져온 데이터를 저장하는 상태
-  const memberId = "1";
+  const memberId = "choi";
 
   useEffect(() => {
     // API에서 데이터를 가져오는 함수
@@ -27,8 +27,8 @@ function Quiz() {
           return {
             questionNumber: index + 1,
             date: formattedDate,
-            question: quiz.answer,
-            correctAnswer: quiz.content,
+            question: quiz.content,
+            correctAnswer: quiz.answer,
             isCorrect: quiz.correct,
             explanation: quiz.explanation,
           };
