@@ -19,3 +19,7 @@
 }
 
 
+.link-style {
+    text-decoration: none; /* 밑줄 제거 */
+    /* 다른 스타일 속성 추가 */
+  }

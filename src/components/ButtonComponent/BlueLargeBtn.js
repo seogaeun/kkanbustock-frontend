@@ -4,7 +4,7 @@ import "./BlueLargeBtn.css";
 
 function BlueLargeBtn({ title="클릭하기" }) {
     return (
-        <div className='componentWrap'>
+        <div className='BlueLargeBtnWrap'>
             <button className='blueLargeBtn'>
                 {title}
             </button>

@@ -2,6 +2,21 @@
 
 }
 
+.hr {
+    width: 80%;
+    margin: 20px 0;
+    border: none; 
+    border-top: 1px solid #c4c4c4; 
+
+}
+
+.infoWrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .infoTextContent {
     width:500px;
     height: 100px;
@@ -28,6 +43,7 @@
 .infoBtnContent{
     display: flex;
     justify-content: flex-start;
+    padding:20px 0;
 }
 
 .btnInfo{
@@ -55,6 +71,7 @@
 }
 
 .btnInfo:hover {
+    cursor: pointer;
     background: #005CFE;
     animation-name: shake;
     animation-duration: 0.5s;
@@ -78,4 +95,17 @@
     100% {
       transform: rotate(0);
     }
+  }
+
+  .logoutContent {
+    margin:20px 10px 10px 10px;
+    display: flex;
+    justify-content: start;
+  }
+  
+
+  .logoutBtn{
+    width:100px;
+    height: 30px;
+    border: none;
   }
