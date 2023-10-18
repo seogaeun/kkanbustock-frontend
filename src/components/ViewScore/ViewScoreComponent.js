@@ -60,7 +60,6 @@ function ViewScoreComponent({ memberId, guestId }) {
   }
 
 
-  console.log(memberTotalProfitRate+" and "+guestTotalProfitRate);
   return (
     <div className='ViewScoreComponentWrap'>
       <div className="RivalPageTitle">🔥깐부끼리, 수익률 내기 한판 할까?🔥</div>
@@ -68,7 +67,6 @@ function ViewScoreComponent({ memberId, guestId }) {
       <div className="scoreComponent">
         <ViewMyScore memberId={memberId} totalProfitRate={memberTotalProfitRate} matchResult={memberMatchResult} />
         <div className="versusCircle">
-          <div className='versusMent'>VS</div>
         </div>
         <ViewRivalScore guestId={guestId} totalProfitRate={guestTotalProfitRate} matchResult={guestMatchResult} />
       </div>
