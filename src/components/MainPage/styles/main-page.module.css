@@ -6,7 +6,6 @@
     align-items: center;
     box-sizing: border-box;
     min-height: fit-content;
-
 }
 
 .child_container {
@@ -82,7 +81,11 @@
 
 @media screen and (max-width: 868px) {
     .container{
-        padding: 0 20px;
+    }
+
+    .short_box {
+        width: 100%;
+        aspect-ratio: 1;
     }
 
     .child_container {
@@ -92,7 +95,10 @@
 
 @media screen and (max-width: 650px) {
     .container{
-        padding: 0 20px;
         box-sizing: unset;
+    }
+    .short_box {
+        width: 100%;
+        aspect-ratio: 1;
     }
 }

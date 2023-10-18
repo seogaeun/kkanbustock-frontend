@@ -95,3 +95,21 @@
     border-radius: 5px;
 }
 
+@media screen and (max-width: 1200px) {
+  .container {
+      width: 100%;
+      min-width: 20px;
+      aspect-ratio: 1;
+  }
+}
+
+@media screen and (max-width: 868px) {
+  .container{
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container{
+      box-sizing: unset;
+  }
+}

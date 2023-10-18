@@ -1,10 +1,15 @@
 .container {
-    background: linear-gradient(
+    /*background: linear-gradient(
         135deg,
         #d300a5 0%,
         #5432ff 100%
-      );    
-    color: antiquewhite;
+      ); */   
+    background:linear-gradient(
+        135deg,
+        #80c1ff 0%,
+        #1f9aff 100%
+    );
+    color: rgb(31, 25, 16);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
