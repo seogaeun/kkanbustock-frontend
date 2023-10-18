@@ -1,9 +1,15 @@
 import React from 'react';
 import commonStyles from './styles/main-page.module.css';
 import styles from './styles/stock-box.module.css'
-import stockImage from '../../assets/images/quiz1.png';
+import stockImage from '../../assets/images/MOLY_plant.png';
 
-const StockBox = ({className, title, price, detail, content}) => {
+const StockBox = ({className, stock}) => {
+
+    const title = stock[0].itmsNm;
+    const price = stock[0].clpr;
+    const detail = stock[0].vs;
+    const content = stock[0].content;
+    console.log("제발",stock)
     return (
         <div className={`${className ?? commonStyles.short_box} ${styles.container}`}>
             <section>
