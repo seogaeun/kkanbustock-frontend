@@ -25,6 +25,7 @@ function Login() {
     
     const [loginData, setLoginData] = useState({});
     const [token, setToken] = useState('');
+    const [id, setId] = useState('');
 
     const handleInput = (e) => {
     setLoginData((prevData) => ({
@@ -52,6 +53,10 @@ function Login() {
 
         //   console.log(token)
           setToken(token);
+          setId(response.data.member.id);
+          
+          console.log(token);
+          console.log(id);
       
           // 로그인이 성공했을 때 원하는 작업을 수행할 수 있습니다.
         } catch (error) {
