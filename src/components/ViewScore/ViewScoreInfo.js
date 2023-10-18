@@ -2,7 +2,7 @@ import React from 'react';
 import "./ViewScoreInfo.css";
 
 
-function ViewScoreInfo({who, nickname, totalProfitRate }) {
+function ViewScoreInfo({who, nickname="--", totalProfitRate="--" }) {
     const style = who.toUpperCase() == "RIVAL" ? 'end' : 'start';
 
     return (

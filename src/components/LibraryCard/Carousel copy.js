@@ -16,16 +16,15 @@ function Carousel() {
   };
 
   useEffect(() => {
-    // API에서 데이터를 가져오는 함수
     const fetchData = async () => {
       try {
-        const response = await axios.get('/api/v1/dictionary'); // API 엔드포인트를 변경해야 할 수도 있습니다.
+        const response = await axios.get('/api/v1/dictionary'); // API 엔드포인트를 변경해야 할 수도..
         setDictionaryContents(response.data);
         console.log("데이터 불러오기 성공");
         console.log(response.data);
       } catch (error) {
         console.error("데이터 불러오기 실패", error);
-        // 실패 시에 대체 데이터 설정 가능
+        // 실패 시에 대체 데이터 설정 가능!!!
         setDictionaryContents([
           {
             id: 1,

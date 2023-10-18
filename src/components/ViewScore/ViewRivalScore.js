@@ -4,8 +4,8 @@ import ViewScoreInfo from './ViewScoreInfo';
 import PLI_GO from './../../assets/images/PLI_GO.png';
 
 function ViewRivalScore({nickname, totalProfitRate}) {
-    nickname = "서가돌";
-    totalProfitRate = 100;
+    nickname = "--";
+    totalProfitRate = "--";
 
     return (
         <div className='componentWrap'>
