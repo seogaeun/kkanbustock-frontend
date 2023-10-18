@@ -6,13 +6,11 @@ import BlueLargeBtn from "../../components/ButtonComponent/BlueLargeBtn";
 import React, { useState, useEffect } from 'react';
 
 
-const arr1 = [1,2,3];
-const arr2 = [4,5,6];
-
-let result = [arr2, ...arr1];
-console.log(result[1]);
-
+let hostName="";
+let guestName="";
+let guestId ="";
 const memberId = "dd";
+
 const stockDataList = []; // 실제 데이터로 설정하세요
 
 function RivalPage() {
@@ -44,26 +42,26 @@ function RivalPage() {
   const handleGroupItemClick = (group) => {
     // 그룹 정보 처리
     console.log("그룹을 클릭했습니다:", group);
-    // 그룹을 클릭했을 때 ViewOurStockSection을 보여줄지 결정
-    if (group && group.name === "일치하는 이름") {
-      setViewOurStock(true);
-    } else {
-      setViewOurStock(false);
-    }
+    guestId = group.guestId;
+    hostName = group.hostName;
+    guestName = group.guestName;
+    setViewOurStock(true);
   };
+  
 
   return (
     <div>
       <div className="RivalPageWrap" style={rivalPageStyle}>
-        <ViewScoreComponent memberId={memberId}></ViewScoreComponent>
+
+        <ViewScoreComponent memberId={memberId} guestId={guestId}></ViewScoreComponent>
         {viewOurStock ? (
           <div className="ViewOurStockSection">
-            <StockListComponent memberId={memberId} stockDataList={stockDataList} width="400px" height="100%"></StockListComponent>
-            <StockListComponent memberId={memberId} stockDataList={stockDataList} width="400px" height="100%"></StockListComponent>
+            <StockListComponent memberId={memberId} userName={hostName}  width="500px" height="100%"></StockListComponent>
+            <StockListComponent memberId={guestId}  userName={guestName} width="500px" height="100%"></StockListComponent>
           </div>
         ) : (
           <div className="ViewMyStockSection">
-            <StockListComponent memberId={memberId} stockDataList={stockDataList} width="800px" height="100%"></StockListComponent>
+            <StockListComponent memberId={memberId}  width="800px" height="100%"></StockListComponent>
           </div>
         )}
         <BlueLargeBtn title="투자하러 가기"></BlueLargeBtn>

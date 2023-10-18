@@ -1,4 +1,6 @@
-
+.ViewRivalScoreWrap{
+    padding:10px;
+}
 
 .ribalSadariggol{
     width: 400px;
@@ -12,6 +14,8 @@
     color: #000000;
     font-family: OneShinhan;
     clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+    animation-duration: 0.5s ease;
+
     
 }
 
@@ -29,10 +33,47 @@
 .ribalSadariggol>img {
     position: absolute;
     object-fit: contain;
-    left: 60px;
     bottom: 0px;
     margin:10px 20px;
     width:180px;
     height: 180px;
 
 }
+
+.winClassRival{
+    background-color: red;
+    margin-left: 0px;
+    width:450px;
+    height: 292.5px;
+    animation-duration: 0.5s ease;
+    z-index: 1;
+  }
+
+  .winClassRival>img{
+
+    width:80%;
+    height: 80%;
+    right: 0px;
+  }
+
+  .lossClassRival{
+
+    margin-top: 100px;
+    width: 300px;
+    height: 195px;
+    background-color: blue;
+    animation-duration: 3s ease;
+    
+  }
+
+  .lossClassRival>img{
+    width:50%;
+    height: 50%;
+    left:0;
+
+  }
+
+  .defaultClassRival>img{
+    left: 60px;
+
+  }
