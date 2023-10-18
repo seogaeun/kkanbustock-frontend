@@ -32,13 +32,12 @@ function Main() {
     try {
       const response = await axios.get("/api/v1/news", {
         params: {
-          page1,
-          size,
+          page1: 0,
+          size: 500,
         },
       });
-      const newNewsData = response.data;
-      setNewsData((prevNewsData) => [...prevNewsData, ...newNewsData]);
-      setPage(page + 1);
+      const newsData = response.data;
+      setNewsData(newsData);
     } catch (error) {
       console.error("뉴스 데이터를 불러오는 데 실패했습니다", error);
     }
@@ -121,26 +120,6 @@ function Main() {
     }
   };
 
-  const fetchMoreNewsData = async () => {
-    try {
-      const response7 = await axios.get("/api/v1/news", {
-        params: {
-          page1: page,
-          size,
-        },
-      });
-      const newNewsData = response7.data;
-      if (newNewsData.length > 0) {
-        setNewsData((prevNewsData) => [...prevNewsData, ...newNewsData]);
-        setPage(page + 1);
-      } else {
-        setHasMore(false);
-      }
-    } catch (error) {
-      console.error("추가 뉴스 데이터를 불러오는 데 실패했습니다", error);
-    }
-  };
-
   useEffect(() => {
     const fetchData = async () => {
       const dictionaryData = await fetchDictionaryData();
@@ -152,7 +131,6 @@ function Main() {
     fetchData();
     fetchTopNGroups();
     fetchTopNMyGroups();
-    fetchMoreNewsData();
     setIsLoggedIn(checkLoginStatus());
   }, []);
 
