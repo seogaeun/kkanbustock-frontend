@@ -5,7 +5,7 @@ import StockListItem from "./StockListItem";
 import WhiteContentBtn from "./../ButtonComponent/WhiteContentBtn";
 import axios from 'axios';
 
-function StockListComponent({ width, height, memberId = "나" }) {
+function StockListComponent({ width, height,userName="나", memberId = "나" }) {
     const [stockDataList, setStockDataList] = useState([]);
     const [manyStockName, setManyStockName] = useState(""); // 가장 많이 투자한 종목을 저장할 상태
 
@@ -41,7 +41,7 @@ function StockListComponent({ width, height, memberId = "나" }) {
     return (
         <div className='StockListComponentWrap' style={{ width: width }}>
             <div className='stockListContentTitle' style={{ width: width }}>
-                {memberId}의 포트폴리오
+                {userName}의 포트폴리오
             </div>
             <div className="stockListContent" style={{ width: width }}>
                 <StockListCover>

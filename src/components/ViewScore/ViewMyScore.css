@@ -35,3 +35,34 @@
   }
   
   
+
+  .winClass{
+    background-color: red;
+    animation-duration: 0.5s ease;
+
+}
+
+.lossClass{
+
+
+    /* width: 400px;
+    height: 260px;
+    margin-left: -60px;
+    padding:10px;
+    border-radius:  0px 20px 20px 0px;
+    background: #ffffff;
+    font-family: OneShinhan;
+    clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+    animation-duration: 0.5s ease; */
+
+
+
+
+    margin-left: 50px;
+    margin-top: 100px;
+    width: 300px;
+    height: 195px;
+    background-color: blue;
+    animation-duration: 3s ease;
+
+}
