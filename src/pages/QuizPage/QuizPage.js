@@ -4,16 +4,45 @@ import Header from "../../components/Header/Header";
 import DailyQuiz from "../../components/Quiz/DailyQuiz/DailyQuiz.js";
 import QuizHistory from "../../components/Quiz/QuizHistory/QuizHistory";
 import axios from "axios";
+import { useToken } from '../LoginPage/TokenContext';
+import { useMemberId } from '../LoginPage/MemberContext';
 
 function Quiz() {
+    
+    const getAxios = (token) => {
+        const config = {
+          baseURL: 'http://localhost:8080',
+          headers: {
+            'accept': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest',
+          }
+        };
+      
+        // 토큰이 존재할 경우에만 요청 헤더에 추가
+        if (token) {
+            console.log("토큰있다")
+            config.headers['authorization'] = `Bearer ${token}`;
+        }
+      
+        return axios.create(config);
+      }
+
   const [quizContents, setQuizContents] = useState([]); // API에서 가져온 데이터를 저장하는 상태
-  const memberId = "choi";
+//   const { token } = useToken();
+//   const { memberId } = useMemberId();
+
+      const token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyNyIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2OTc2NTU1MjEsImV4cCI6MTY5NzY5MTUyMX0.6uUkSyaB39VgSz8NbL_PU2opnrrgRJFkZO3IC6zZHlo";
+      const memberId = "user7";
 
   useEffect(() => {
     // API에서 데이터를 가져오는 함수
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/api/v1/quizzes/${memberId}`);
+        const response = await getAxios(token).get(`/api/v1/quizzes/${memberId}`);
+
+        console.log(token);
+        console.log(memberId);
+
         const formattedData = response.data.map((quiz, index) => {
           const solvedDate = new Date(quiz.solvedDate);
           const formattedDate = `${solvedDate.getFullYear()}-${(
@@ -52,7 +81,7 @@ function Quiz() {
     };
 
     fetchData();
-  }, []);
+  }, [memberId, token]); 
 
   // 임의의 오늘의 퀴즈 데이터
   const StockQuiz = [
