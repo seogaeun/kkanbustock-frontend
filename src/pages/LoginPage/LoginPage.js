@@ -10,7 +10,7 @@ function Login() {
             headers: {
             'accept': 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
-            // authorization: `Bearer ${token}`,
+            //authorization: `Bearer ${token}`,
         }
         })
     }
@@ -38,9 +38,10 @@ function Login() {
             console.log(loginData);
     
     
-            // GET 요청을 보내고 응답을 기다립니다.
-            const response = await fetch().get('/api/v1/login', {
+            // POST 요청을 보내고 응답을 기다립니다.
+            const response = await fetch().post('/api/v1/login', {
                 params: loginData, // GET 요청에 데이터를 params로 전달
+                withCredentials: true
             });
     
             // 서버로부터의 응답 처리
