@@ -1,9 +1,9 @@
-*{
+.InvestType_intro>*{
     font-family: OneShinhan;
     text-align: start;
 }
 
-.center-container {
+.InvestType_intro-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,7 +54,7 @@
     line-height: 46px; /* 76.667% */
 }
 
-.intro-container>button{
+.introStart{
     color: #FFF;
     text-align: center;
     font-size: 30px;
@@ -62,6 +62,13 @@
     padding: 15px 50px;
     border-radius: 30px;
     background: #005CFE;
+}
+
+
+.introStart:hover {
+    background: #ddff00;
+    border: 1px dashed #000 ;
+    color: #000000;
 }
 
 .InvestType_intro>img{

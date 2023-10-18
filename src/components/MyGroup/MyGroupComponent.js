@@ -5,12 +5,14 @@ import MyGroupItem from './MyGroupItem.js';
 import BlueSmallBtn from '../ButtonComponent/BlueSmallBtn';
 import BlueLargeBtn from '../ButtonComponent/BlueLargeBtn';
 
-function MyGroupComponent() {
+
+function MyGroupComponent({memberId}) {
   const [groupData, setGroupData] = useState([]);
 
   useEffect(() => {
     // API 호출
-    axios.get('/api/v1/groups/proposal')
+
+    axios.get(`/api/v1/groups/${memberId}`)
       .then(response => {
         setGroupData(response.data); // API 응답 데이터를 state에 설정
       })
