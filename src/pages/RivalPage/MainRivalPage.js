@@ -32,14 +32,17 @@ function RivalPage() {
     };
 
     return (
-        <div className="RivalPageWrap" style={rivalPageStyle}>
-            <ViewScoreComponent></ViewScoreComponent>
-            <div className="ViewMyStockSection">
-                <StockListComponent who="나" stockDataList={stockDataList} width="800px" height="100%"></StockListComponent>
-                <BlueLargeBtn title="투자하러 가기"></BlueLargeBtn>
+        <div>
+            <div className="RivalPageWrap" style={rivalPageStyle}>
+                <ViewScoreComponent></ViewScoreComponent>
+                <div className="ViewMyStockSection">
+                    <StockListComponent memberId="dd" stockDataList={stockDataList} width="800px" height="100%"></StockListComponent>
+                    <BlueLargeBtn title="투자하러 가기"></BlueLargeBtn>
+                </div>
+                <MyGroupComponent memberId="kim"></MyGroupComponent>
             </div>
-            <MyGroupComponent memberId="kim"></MyGroupComponent>
         </div>
+
     )
 }
 
