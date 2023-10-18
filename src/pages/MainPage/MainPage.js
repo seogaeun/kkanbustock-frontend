@@ -25,6 +25,7 @@ function Main() {
   const [newsData, setNewsData] = useState([]); // 뉴스 데이터를 저장하는 상태
   const page1 = 0; // 페이지 번호 (0부터 시작)
   const size = 8; // 한 페이지당 뉴스 아이템 수
+  const [stockRecommendations, setStockRecommendations] = useState([]);
 
   const memberId = "choi";
 
@@ -120,6 +121,27 @@ function Main() {
     }
   };
 
+  // //종목 가져오기 api 호출
+  // const fetchStockRecommendations = async (page) => {
+  //   try {
+  //     const size = 1; // 페이지 당 가져올 아이템 수를 설정하세요
+
+  //     const response = await axios.get("/api/v1/recommends", {
+  //       params: {
+  //         page: page,
+  //         size: size,
+  //       },
+  //     });
+  //     page = page + 1;
+  //     const stockData = response.data.content;
+  //     console.log("주식 데이터 수신:", stockData[0]); // 수신된 데이터를 로그에 출력
+  //     return stockData;
+  //   } catch (error) {
+  //     console.error("주식 데이터 가져오기 실패", error);
+  //     return null; // 에러 처리를 위해 null을 반환하도록 수정했습니다.
+  //   }
+  // };
+
   const fetchMoreNewsData = async () => {
     try {
       const response = await axios.get("/api/v1/news", {
@@ -144,6 +166,7 @@ function Main() {
     const fetchData = async () => {
       const data = await fetchDictionaryData();
       setDictionaryContents(data);
+      //fetchStockRecommendations(); // Fetch initial stock recommendations
     };
     fetchNewsData(); // 초기에 10개의 뉴스를 가져옵니다.
     fetchData();
