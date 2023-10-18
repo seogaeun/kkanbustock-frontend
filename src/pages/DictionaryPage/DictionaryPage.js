@@ -2,7 +2,6 @@ import React, {useState } from 'react';
 import Header from "../../components/Header/Header";
 import Carousel from "../../components/LibraryCard/Carousel copy";
 import "./DictionaryPage.css"
-import axios from 'axios';
 
 
 function DictionaryPage() {
