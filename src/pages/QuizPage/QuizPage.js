@@ -3,7 +3,7 @@ import "./QuizPage.css";
 import Header from "../../components/Header/Header";
 import DailyQuiz from "../../components/Quiz/DailyQuiz/DailyQuiz.js";
 import QuizHistory from "../../components/Quiz/QuizHistory/QuizHistory";
-import axios from "axios";
+import {axiosF} from "../../apis";
 import { useToken } from '../LoginPage/TokenContext';
 import { useMemberId } from '../LoginPage/MemberContext';
 
@@ -24,7 +24,7 @@ function Quiz() {
             config.headers['authorization'] = `Bearer ${token}`;
         }
       
-        return axios.create(config);
+        return axiosF.create(config);
       }
 
   const [quizContents, setQuizContents] = useState([]); // API에서 가져온 데이터를 저장하는 상태
