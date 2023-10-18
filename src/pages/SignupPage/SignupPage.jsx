@@ -1,44 +1,64 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import styles from './SignUpPage.module.css';
+import axios from 'axios';
 
 function SignUpPage() {
+    const [account, setAccount] = useState('');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [emailType, setEmailType] = useState('naver.com'); // Default email type
     const [customEmail, setCustomEmail] = useState(''); // Custom email input
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [passwordMatch, setPasswordMatch] = useState(true);
 
-    const handleSignUp = () => {
-        // 이 부분에 회원가입 로직을 추가하세요.
-        // 이름 (name), 이메일 (email + emailType 또는 customEmail), 비밀번호 (password) 정보를 사용하여 회원가입을 처리합니다.
-        // 예: 서버에 POST 요청을 보내거나 다른 회원가입 처리 로직을 실행합니다.
-    }
+    const handleSignUp = async () => {
+        try {
+            // 회원가입 정보를 서버로 보내는 요청 데이터 생성
+            const userData = {
+                account: name,
+                name: name,
+                email: email === 'custom' ? customEmail : email, // 수정된 부분
+                password: password,
+            };
+
+            // POST 요청을 보내고 응답을 기다립니다.
+            const response = await axios.post('/api/test/register', userData);
+
+            // 서버로부터의 응답 처리
+            console.log('회원가입 성공:', response.data);
+
+            // 여기서 회원가입이 성공했을 때 사용자를 다른 페이지로 리디렉션할 수 있습니다.
+            // 예: history.push('/login') 등을 사용하여 로그인 페이지로 이동
+        } catch (error) {
+            // 서버로부터의 응답에 오류가 있는 경우 처리
+            console.error('회원가입 오류:', error.response.data);
+            // 오류 처리 로직을 추가하세요.
+        }
+    };
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
         if (e.target.value !== 'custom') {
             setCustomEmail('');
         }
-    }
+    };
 
     const handleCustomEmailChange = (e) => {
         setCustomEmail(e.target.value);
-    }
+    };
 
     const handlePasswordChange = (e) => {
         const newPassword = e.target.value;
         setPassword(newPassword);
         setPasswordMatch(newPassword === confirmPassword);
-    }
+    };
 
     const handleConfirmPasswordChange = (e) => {
         const newPassword = e.target.value;
         setConfirmPassword(newPassword);
         setPasswordMatch(password === newPassword);
-    }
+    };
 
     return (
         <div className={styles.signUpPage}>
@@ -66,14 +86,6 @@ function SignUpPage() {
                             value={customEmail}
                             onChange={handleCustomEmailChange}
                         />
-                    )}
-                    {email !== 'custom' && (
-                        <select value={email} onChange={handleEmailChange}>
-                            <option value="naver.com">naver.com</option>
-                            <option value="nate.com">nate.com</option>
-                            <option value="google.com">google.com</option>
-                            <option value="custom">직접 입력</option>
-                        </select>
                     )}
                 </div>
                 <div className={styles.formGroup}>

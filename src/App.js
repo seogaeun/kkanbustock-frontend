@@ -24,6 +24,7 @@ function App() {
           <Route path="/Rival" element={<RivalPage />} />
           <Route path="/Dictionary" element={<DictionaryPage />} />
           <Route path="/Signup" element={<SignupPage />} />
+          <Route path="/Login" element={<Login />} />
         </Routes>
       </div>
     </BrowserRouter>
