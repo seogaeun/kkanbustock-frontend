@@ -6,6 +6,3 @@ export const axiosF = axios.create({
         withCredentials: true,
     }
     })
-// // $(process.)4
-// process.env.REACT_APP_ENDPOINT
-// "http://localhost:8080"
