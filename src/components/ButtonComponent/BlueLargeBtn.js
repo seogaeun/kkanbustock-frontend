@@ -2,10 +2,10 @@ import React from 'react';
 import "./BlueLargeBtn.css";
 
 
-function BlueLargeBtn({ title="클릭하기" }) {
+function BlueLargeBtn({ title="클릭하기" , onclick}) {
     return (
         <div className='BlueLargeBtnWrap'>
-            <button className='blueLargeBtn'>
+            <button onclick={onclick} className='blueLargeBtn'>
                 {title}
             </button>
         </div>
