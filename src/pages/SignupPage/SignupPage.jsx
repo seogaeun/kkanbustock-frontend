@@ -4,7 +4,6 @@ import styles from './SignUpPage.module.css';
 import axios from 'axios';
 
 function SignUpPage() {
-    const [account, setAccount] = useState('');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [customEmail, setCustomEmail] = useState(''); // Custom email input
