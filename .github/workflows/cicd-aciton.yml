@@ -66,7 +66,7 @@ jobs:
         ref: main  # branch 이름
         # 내 repository에 push 하기 위한 Personal Access Token이 필요
         token: ${{ secrets.ACTION_TOKEN }} # Github Action token을 발급받아서 repo secrect에 등록해줘야한다
-        path: cicd # 최상위 경로로 repository와 동일하게 설정
+        path: kkanbustock-cicd # 최상위 경로로 repository와 동일하게 설정
 
     # 새 이미지 버전으로 파일의 태그값 수정
     # cd path 수정
@@ -74,13 +74,13 @@ jobs:
     - name: Update Kubernetes resources
       run: |
         pwd 
-        cd cicd/overlays/${{ env.ENV_NAME }}/ 
+        cd kkanbustock-cicd/overlays/${{ env.ENV_NAME }}/ 
         kustomize edit set image ${{ env.APP }}:front-${{ github.sha }}
 
     # 수정된 kustomization.yaml 파일 commit push
     - name: Commit minifest files
       run: |
-        cd cicd
+        cd kkanbustock-cicd
         git config --global user.email "goldencorn7@naver.com"
         git config --global user.name "ghdeo"
         git commit -am "Update image"
