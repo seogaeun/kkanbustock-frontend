@@ -39,8 +39,8 @@ function StockListComponent({ width, height, memberId = "나" }) {
     ));
 
     return (
-        <div className='StockListComponentWrap'>
-            <div className='stockListContentTitle'>
+        <div className='StockListComponentWrap' style={{ width: width }}>
+            <div className='stockListContentTitle' style={{ width: width }}>
                 {memberId}의 포트폴리오
             </div>
             <div className="stockListContent" style={{ width: width }}>

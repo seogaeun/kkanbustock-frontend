@@ -35,7 +35,7 @@ function InvestType_question() {
 
         if (quizNumber === questions.length - 1) {
             await axios.post('/api/v1/submit-user-answers', {
-                answers: userAnswers,
+                params : userAnswers,
             }).catch((error) => {
                 console.error('Error submitting answers:', error);
             });
