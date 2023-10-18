@@ -4,72 +4,62 @@ import './LoginPage.css';
 import axios from 'axios'; 
 function Login() {
 
-    const fetch = () => {
+    const getAxios = () => {
         return axios.create({
             baseURL: 'http://localhost:8080',
             headers: {
             'accept': 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
-            //authorization: `Bearer ${token}`,
+            // authorization: `Bearer ${token}`,
         }
         })
     }
 
     
-    const [id, setInputId] = useState('');
-    const [password, setInputPw] = useState('');
+    const [loginData, setLoginData] = useState({});
 
-    const handleInputId = (e) => {
-        setInputId(e.target.value);
-    }
+    const handleInput = (e) => {
+    setLoginData((prevData) => ({
+      ...prevData,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
-
-    const handleInputPw = (e) => {
-        setInputPw(e.target.value);
-    }
+    console.log(loginData)
 
     const onClickLogin = async () => {
         try {
-            // 로그인 정보를 서버로 보내는 요청 데이터 생성
-            const loginData = {
-                id: id,
-                password: password,
-            };
-            console.log(loginData);
-    
-    
-            // POST 요청을 보내고 응답을 기다립니다.
-            const response = await fetch().post('/api/v1/login', {
-                params: loginData, // GET 요청에 데이터를 params로 전달
-                withCredentials: true
-            });
-    
-            // 서버로부터의 응답 처리
-            console.log('로그인 성공:', response.data);
-    
-            // 로그인이 성공했을 때 원하는 작업을 수행할 수 있습니다.
-        } catch (error) {
-            // 서버로부터의 응답에 오류가 있는 경우 처리
-            console.error('로그인 오류:', error.response.data);
-            // 오류 처리 로직을 추가하세요.
-        }
-    };
-    
-    
+            const { id, password } = loginData;
 
-    useEffect(() => {
-        // 페이지 호출 후 처음 한 번만 호출될 수 있도록 [] 추가
-    }, []);
+            console.log("@@@@@@@@@" +id+password)
+
+          const response = await getAxios().post('/api/v1/login', {
+            id,
+            password,
+          })
+      
+          // 서버로부터의 응답 처리
+          console.log('로그인 성공:', response.data);
+          const token = response.data.jwt;
+          console.log(token)
+      
+          // 로그인이 성공했을 때 원하는 작업을 수행할 수 있습니다.
+        } catch (error) {
+      
+          console.error('로그인 오류:', error.response.data);
+         
+        }
+      };
 
     return (
         <div>
             <Header name='LOGIN' />
             <div>
                 <div>
-                    <input className='input_group' placeholder='ID' type='text' name='input_id' value={id} onChange={handleInputId} />
+                    <input className='input_group' placeholder='ID' type='text' name='id' value={loginData.id} onChange={handleInput} />
                 </div>
                 <div>
-                    <input className='input_group' placeholder='비밀번호' type='password' name='input_pw' value={password} onChange={handleInputPw} />
+                    <input className='input_group' placeholder='비밀번호' type='password' name='password' value={loginData.password} onChange={handleInput} />
                 </div>
             </div>
             <div id='button_group'>
