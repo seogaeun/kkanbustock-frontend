@@ -8,7 +8,7 @@ const componentContent ={imgSrc:SOL_search, inputTitle:"그룹 들어가기", in
 
 function EnterGroupPage() {
     return (
-        <div className='center-container'>
+        <div className='EnterGroupPage-container'>
             <TitleContentLayout {...componentContent}>
                 <GroupInput {...componentContent}></GroupInput>
             </TitleContentLayout>

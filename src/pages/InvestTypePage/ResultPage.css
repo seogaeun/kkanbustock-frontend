@@ -1,10 +1,10 @@
-*{
+.InvestType_result-container>*{
     font-family: OneShinhan;
     text-align: start;
     /* outline: 1px solid black;  */
 }
 
-.center-container {
+.InvestType_result-container {
     display: flex;
     flex-direction: column; /* 내부 요소들을 세로로 배치 */
     justify-content: center;
@@ -62,7 +62,7 @@
 
 
 
-.center-container>button{
+.InvestType_result-container>button{
     color: #FFF;
     text-align: center;
     font-size: 20px;

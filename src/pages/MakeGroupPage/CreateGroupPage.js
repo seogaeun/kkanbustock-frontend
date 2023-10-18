@@ -8,7 +8,7 @@ const componentContent ={imgSrc:LL_together, inputTitle:"그룹 생성하기", i
 
 function CreateGroupPage() {
     return (
-        <div className='center-container'>
+        <div className='CreateGroupPage-container'>
             <TitleContentLayout {...componentContent}>
                 <GroupInput {...componentContent}></GroupInput>
             </TitleContentLayout>

@@ -9,7 +9,7 @@ const button2 ={imgSrc:LL_together, title:"그룹 만들기", descript:"새로 �
 
 function SelectPage() {
     return (
-        <div className='center-container'>
+        <div className='SelectPage-container'>
             <div className='selectionContainer'>
                 <SelectButton {...button1} />
                 <SelectButton {...button2} />

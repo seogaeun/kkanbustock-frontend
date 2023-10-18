@@ -1,18 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import "./ViewRivalScore.css";
 import ViewScoreInfo from './ViewScoreInfo';
 import PLI_GO from './../../assets/images/PLI_GO.png';
+import PLI_Happy from './../../assets/images/PLI_happy.png';
+import PLI_Sad from './../../assets/images/PLI_worry.png';
 
-function ViewRivalScore({nickname, totalProfitRate}) {
-    nickname = "서가돌";
-    totalProfitRate = 100;
+
+
+function ViewRivalScore({guestId,totalProfitRate,matchResult}) {
+
+    const ribalSadariggolClass = matchResult === 'win' ? 'winClassRival' : (matchResult === 'loss' ? 'lossClassRival' : 'defaultClassRival');
+    let PLI_img = PLI_GO;
+
+    if (matchResult === 'win') {
+        PLI_img = PLI_Happy;
+    }
+    else if(matchResult ==="loss"){
+        PLI_img = PLI_Sad;
+
+    }
+    else{
+        PLI_img = PLI_GO;
+
+    }
 
     return (
-        <div className='componentWrap'>
-            <div className='ribalSadariggol'>
-                <img alt="SOL" src={PLI_GO}></img>
+        <div className='ViewRivalScoreWrap'>
+            <div className={`ribalSadariggol ${ribalSadariggolClass}`}>
+                <img alt="SOL" src={PLI_img}></img>
                 <div className='rivalScoreInfo'>
-                    <ViewScoreInfo who= "RIVAL" nickname={nickname} totalProfitRate={totalProfitRate}  ></ViewScoreInfo>
+                    <ViewScoreInfo who= "RIVAL" nickname={guestId} totalProfitRate={totalProfitRate} matchResult={matchResult} ></ViewScoreInfo>
                 </div>
             </div>
         </div>
