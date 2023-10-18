@@ -9,7 +9,7 @@ let InvestType="위험중립형"
 
 function InvestType_result() {
     return (
-        <div className='center-container'>
+        <div className='InvestType_result-container'>
             <div className='up-container'>
                     <div className='intro-title'>
                         <h2><span>{nickname}</span>님은</h2>

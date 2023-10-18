@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './styles/invest-test-box.module.css';
-import commonStyles from './styles/main-page.module.css';
 import SOL_Question from './../../assets/images/SOL_Question.png'
-
+import { Link } from 'react-router-dom';
 
 
 const InvestTestBox = ({className}) => {
@@ -35,11 +34,17 @@ const InvestTestBox = ({className}) => {
                     </div>
                 </div>
                 <div className={styles.joinContent}>
+
                     <img className={styles.solImg} alt={SOL_Question} src={SOL_Question}>
                     </img>
-                    <button className={styles.letsGoBtn}>
-                        지금 쏠과 함께 투자성향 테스트 하러 가기 {`>`}
-                    </button>
+
+                    <Link to="/InvestType/Intro">
+                        <button className={styles.letsGoBtn}>
+                            지금 쏠과 함께 투자성향 테스트 하러 가기 {`>`}
+                        </button>
+                    </Link>
+
+
                 </div>
             </div>
         </div>
