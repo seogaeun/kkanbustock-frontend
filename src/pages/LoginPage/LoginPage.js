@@ -1,22 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import './LoginPage.css';
 import axios from 'axios'; 
 function Login() {
 
-    const getAxios = () => {
-        return axios.create({
-            baseURL: 'http://localhost:8080',
-            headers: {
+    const getAxios = (token) => {
+        const config = {
+          baseURL: 'http://localhost:8080',
+          headers: {
             'accept': 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
-            // authorization: `Bearer ${token}`,
+          }
+        };
+      
+        // 토큰이 존재할 경우에만 요청 헤더에 추가
+        if (token) {
+            console.log("토큰있다")
+            config.headers['authorization'] = `Bearer ${token}`;
         }
-        })
-    }
+      
+        return axios.create(config);
+      }
 
     
     const [loginData, setLoginData] = useState({});
+    const [token, setToken] = useState('');
 
     const handleInput = (e) => {
     setLoginData((prevData) => ({
@@ -41,7 +49,9 @@ function Login() {
           // 서버로부터의 응답 처리
           console.log('로그인 성공:', response.data);
           const token = response.data.jwt;
-          console.log(token)
+
+        //   console.log(token)
+          setToken(token);
       
           // 로그인이 성공했을 때 원하는 작업을 수행할 수 있습니다.
         } catch (error) {
