@@ -4,7 +4,7 @@ import StockListComponent from "./../../components/StockList/StockListComponent"
 import MyGroupComponent from "./../../components/MyGroup/MyGroupComponent.js";
 import BlueLargeBtn from "../../components/ButtonComponent/BlueLargeBtn";
 import React, { useState, useEffect } from 'react';
-
+import MolyTip from "../../components/MolyComponent/MolyTip";
 
 let hostName="";
 let guestName="";
@@ -64,6 +64,7 @@ function RivalPage() {
             <StockListComponent memberId={memberId}  width="800px" height="100%"></StockListComponent>
           </div>
         )}
+        {/* <MolyTip></MolyTip> */}
         <BlueLargeBtn title="투자하러 가기"></BlueLargeBtn>
         <MyGroupComponent memberId={memberId} onGroupItemClick={handleGroupItemClick} />
       </div>
