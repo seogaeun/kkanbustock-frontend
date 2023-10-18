@@ -4,7 +4,7 @@ import TodayQuizBox from "../today-quiz-box";
 import NewsBox from "../news-box";
 import DictionaryBox2 from '../dictionaty-box2';
 
-const BottomLayout = ({ dict }) => {
+const BottomLayout = ( { dict }) => {
     return (
         <div className={styles.container}>
             <div className={styles.child_container}>

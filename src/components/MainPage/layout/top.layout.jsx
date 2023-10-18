@@ -1,43 +1,39 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import NewsBox from "../news-box";
-import styles from '../styles/main-page.module.css';
+import styles from "../styles/main-page.module.css";
 import TodayQuizBox from "../today-quiz-box";
 import DictionaryBox from "../dictionary-box";
-import axios from 'axios';
 
-const TopLayout = ({ dict }) => {
-    const userId = 'choi'; // 예를 들어 userId를 하드코딩하거나 props로 가져옵니다.
-    // const [news, setNews] = useState([]); // 뉴스 데이터를 저장할 상태 변수
-
-    // const getNews = async (query) => {
-    //     try {
-    //         const response = await axios.get(`https://13fe-123-254-143-22.ngrok-free.app/news?query=${query}`);
-    //         const newsData = response.data;
-    //         setNews(newsData); // 뉴스 데이터를 상태에 저장
-    //         console.error('뉴스 가져오기 성공', newsData);
-
-    //     } catch (error) {
-    //         console.error('뉴스 가져오기 실패', error);
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     getNews('주식');
-    // }, []); // 컴포넌트 마운트 시 한 번 호출
-
-    return (
-        <div className={styles.container}>
-            <div className={styles.child_container}>
-                <section className={styles.row_container}>
-                    <TodayQuizBox memberId={userId} />
-                    <NewsBox />
-                    <NewsBox />
-                    <NewsBox />
-                    <DictionaryBox dict={dict} />
-                </section>
-            </div>
-        </div>
-    );
+const TopLayout = ({ dict, news }) => {
+  const userId = "choi"; // 예를 들어 userId를 하드코딩하거나 props로 가져옵니다.
+  function formatPubDate(pubDate) {
+    const date = new Date(pubDate); // 문자열을 Date 객체로 변환
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // 월은 0부터 시작하므로 +1 해주고 2자리로 포맷
+    const day = String(date.getDate()).padStart(2, "0"); // 일을 2자리로 포맷
+  
+    return `${year}-${month}-${day}`;
+  }
+  
+  return (
+    <div className={styles.container}>
+      <div className={styles.child_container}>
+        <section className={styles.row_container}>
+          <TodayQuizBox memberId={userId} />
+          {news && news.map((newsItem, index) => (
+            <NewsBox
+              key={index}
+              title={newsItem.title}
+              src={newsItem.link}
+              date={formatPubDate(newsItem.pubDate)} // 연-월-일 형식으로 날짜 표시
+            />
+          ))}
+          <DictionaryBox dict={dict} />
+        </section>
+      </div>
+    </div>
+  );
 };
 
 export default TopLayout;
