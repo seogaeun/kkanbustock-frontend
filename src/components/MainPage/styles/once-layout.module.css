@@ -44,12 +44,12 @@
     }
 
     .once_short_box {
-        width: 45%;
+        width: 100%;
     }
 
     .left_layout {
         width: 100%;
-        aspect-ratio: 2;
-        flex-direction: row;
+        aspect-ratio: 1;
+        flex-direction: column;
     }
 }
