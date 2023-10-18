@@ -38,7 +38,7 @@ function RivalPage() {
                 <StockListComponent who="나" stockDataList={stockDataList} width="800px" height="100%"></StockListComponent>
                 <BlueLargeBtn title="투자하러 가기"></BlueLargeBtn>
             </div>
-            <MyGroupComponent></MyGroupComponent>
+            <MyGroupComponent memberId="kim"></MyGroupComponent>
         </div>
     )
 }

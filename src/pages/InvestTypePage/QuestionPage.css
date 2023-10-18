@@ -1,11 +1,17 @@
-
-
-.center-container {
+.InvestType_question-wrap{
+    margin-top: 1000px;
     display: flex;
     flex-direction: column; /* 내부 요소들을 세로로 배치 */
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    height: 100vh;
+}
+
+.InvestType_question-container {
+    display: flex;
+    flex-direction: column; /* 내부 요소들을 세로로 배치 */
+    justify-content: flex-end;
+    align-items: center;
+    height: 90%;
 }
   
 .progressBar{
@@ -31,6 +37,7 @@
     background: #0045FF;
     display: flex; /* 내부 요소를 가로로 배치하기 위해 추가 */
     align-items: center; /* 내부 요소를 세로 가운데 정렬하기 위해 추가 */
+    animation: width 0.5s ease-in-out;
 }
 
 .progressBar-now > img {

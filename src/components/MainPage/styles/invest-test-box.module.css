@@ -1,20 +1,21 @@
 .investTestWrap {
     /* width: 66%; */
-    width: 760px;
-    height: 770px;
-    min-width: 240px;
+    width: 100%;
+    height: 100%;
     aspect-ratio: 1;
-    background: linear-gradient(
+    /* background: linear-gradient(
       45deg,
       #d0f6ff 0%,
       #6bb0ff 100%
-    );         
+    );          */
     box-sizing: border-box;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+    padding:10px;
 }
 
 .textContent{
@@ -23,17 +24,16 @@
 }
 
 .mainQuestion{
-    color: #FFF;
-    font-size: 30px;
+    color: #000000;
+    font-size: 20px;
     font-weight: 700;
-    text-shadow: -2px 0px black, 0px 2px black, 2px 0px black, 0px -2px black;
-    margin-bottom: 10px;
+    margin:15px;
 }
 
 .yourChoice{
     color: #0045FF;
     font-weight: bolder;
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 30px;
 }
 
@@ -53,9 +53,10 @@
     flex-shrink: 0;
     line-height: 60px; /* 184% */
     color: #FFF;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 700;
     text-shadow: -2px 0px black, 0px 2px black, 2px 0px black, 0px -2px black;
+    text-align: left;
 }
 
 .versus{
@@ -83,7 +84,7 @@
     line-height: 60px; /* 184% */
     text-align: end;
     color: #FFF;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 700;
     text-shadow: -2px 0px black, 0px 2px black, 2px 0px black, 0px -2px black;
 }
@@ -93,6 +94,7 @@
 }
 
 .joinContent {
+    width:90%;
     display: flex;
     flex-direction: column;
     align-items: center; /* 요소를 수평 가운데 정렬 */
@@ -101,25 +103,25 @@
 }
 
 .solImg {
-    width: 407.089px;
-    height: 400px;
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
     animation: shake 2s ease-in-out infinite; 
 }
 
 .letsGoBtn {
     position: relative;
     z-index: 1; /* 이미지 위로 버튼을 올립니다 */
-    width: 600px;
-    height: 70px;
+    width: 100%;
+    height: 20%;
     flex-shrink: 0;
     border: 3px solid #000;
     background: #FFF;
 
 
-    color: #FFF;
-    text-shadow: -2px 0px #0045FF, 0px 2px #0045FF, 2px 0px #0045FF, 0px -2px #0045FF;
+    color: #000;
     text-align: center;
-    font-size: 25px;
+    font-size: 20px;
 
     position: absolute;
     top: 90%; 
@@ -133,6 +135,8 @@
 
 .letsGoBtn:hover {
     background-color: #0045FF;
+    color: #FFF;
+
 }
 
 

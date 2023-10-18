@@ -10,7 +10,7 @@ const groupCode="12345"
 
 function CreateGroupPage() {
     return (
-        <div className='center-container'>
+        <div className='CreateGroupPage-container'>
             <TitleContentLayout {...componentContent}>
                 <div className='informCodeContent'>
                     <h3>{userName}님의 그룹 코드는</h3>
