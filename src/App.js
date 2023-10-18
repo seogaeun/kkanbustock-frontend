@@ -9,12 +9,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import MyPage from "./pages/MyPage/MyPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
+import { TokenProvider } from './pages/LoginPage/TokenContext';
+import { MemberProvider } from './pages/LoginPage/MemberContext';
 
 function App() {
   const [scroll, setScroll] = useState(0);
 
   return (
     <BrowserRouter>
+    <TokenProvider>
+        <MemberProvider>
       <div className="App">
         <Nav />
         <Routes>
@@ -27,6 +31,8 @@ function App() {
           <Route path="/Login" element={<LoginPage />} />
         </Routes>
       </div>
+      </MemberProvider>
+      </TokenProvider>
     </BrowserRouter>
   );
 }
