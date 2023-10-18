@@ -5,12 +5,12 @@ import DictionaryBox from "../dictionary-box";
 import NewsBox from '../news-box';
 import { padding } from '@mui/system';
 
-function SecondTop({ dict }) {
+function SecondTop({ dict , stockData}) {
     return (
         <div className={styles.container}>
             <div className={styles.child_container}>
               <section className={styles.row_container}>
-              <StockBox2 className={styles.flex_box} style={{ padding: '20px' }} />
+              <StockBox2 className={styles.flex_box} style={{ padding: '20px' }} stockData={stockData}/>
                 <NewsBox/>
                 <NewsBox/>
                 <NewsBox/>
