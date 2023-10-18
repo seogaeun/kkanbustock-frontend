@@ -26,7 +26,7 @@ function App() {
           <Route path="/Quiz" element={<QuizPage />} />
           <Route path="/Rival" element={<RivalPage />} />
           <Route path="/Dictionary" element={<DictionaryPage />} />
-          <Route path="/Signup" element={<SignupPage />} />
+          <Route path="/Signup" element={<MyPage />} />
           <Route path="/InvestType/Intro" element={<InvestType_intro />} />
           <Route path="/InvestType/Question" element={<InvestType_question />} />
           <Route path="/InvestType/Result" element={<InvestType_result />} />
