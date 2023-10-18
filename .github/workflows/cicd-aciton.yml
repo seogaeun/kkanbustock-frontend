@@ -52,7 +52,7 @@ jobs:
         context: .
         push: true
         tags: |
-          ${{env.ECR}}/${{env.ECR_REPOSITORY_NAME}}:main-${{env.TAG}}
+          ${{env.ECR}}/${{env.ECR_REPOSITORY_NAME}}:front-${{env.TAG}}
         cache-from: type=gha
         cache-to: type=gha,mode=max
         build-args: |
@@ -75,7 +75,7 @@ jobs:
       run: |
         pwd 
         cd cicd/overlays/${{ env.ENV_NAME }}/ 
-        kustomize edit set image ${{ env.APP }}:main-${{ github.sha }}
+        kustomize edit set image ${{ env.APP }}:front-${{ github.sha }}
 
     # 수정된 kustomization.yaml 파일 commit push
     - name: Commit minifest files
