@@ -9,7 +9,7 @@ import axios from 'axios';
 const OnceLayout = ({ news }) => {
   // 주식 정보를 저장할 상태
   const [stockData, setStockData] = useState(null);
-  console.log("나는 뉴스다@", news)
+
   // API에서 주식 정보 가져오기
   const fetchStockRecommendations = async () => {
     try {
@@ -28,7 +28,6 @@ const OnceLayout = ({ news }) => {
       console.error("주식 데이터 가져오기 실패", error);
     }
   };
-
 
   // 컴포넌트가 마운트될 때 주식 정보 가져오기
   useEffect(() => {
@@ -49,11 +48,15 @@ const OnceLayout = ({ news }) => {
       <div className={styles.child_container}>
         <section className={onceLayoutStyles.layout}>
           <div className={onceLayoutStyles.left_layout}>
-            <NewsBox className={onceLayoutStyles.once_short_box} 
-              key = {0}
-              title={news[0].title}
-              src={news[0].link}
-              date={formatPubDate(news[0].pubDate)}/>
+            {news.length > 0 ? (
+              <NewsBox
+                className={onceLayoutStyles.once_short_box} 
+                key={0}
+                title={news[0].title}
+                src={news[0].link}
+                date={formatPubDate(news[0].pubDate)}
+              />
+            ) : null}
             <StockBox
               className={onceLayoutStyles.once_short_box}
               stock={stockData} // 주식 정보를 StockBox 컴포넌트로 전달
