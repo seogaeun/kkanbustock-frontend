@@ -1,14 +1,15 @@
 .container {
     background: linear-gradient(
-        125deg,
-        #c5f4fe 0%,
-        #8dc2ff 100%
+        135deg,
+        #d300a5 0%,
+        #5432ff 100%
       );    
+    color: antiquewhite;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transition: transform 0.2s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
 }
 
 .container:hover {
@@ -18,11 +19,24 @@
 .header {
     display: flex;
     justify-content: space-between;
-    font-size: 1rem;
+    font-size: 140%;
+    font-weight: bold;
 }
 
 .footer {
+    font-size: 120%;
+    text-align: center;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    height: 90%; 
+    
+  }
+
+  /* 
+.footer {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 120%;
     text-align: left;
-}
+    vertical-align: middle;
+} */
