@@ -110,8 +110,8 @@ function Main() {
     try {
       const response = await axios.get("/api/v1/recommends", {
         params: {
-          page: 1,
-          size: 100,
+          page: 0,
+          size: 500,
         },
       });
       const newStockData = response.data.content;
