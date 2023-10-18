@@ -30,8 +30,10 @@ const stockDataList = [
 function MyPage() {
 
       const handleLogout = async () => {
-        axiosF.post('/api/v1/logout')
-        .then(res => {
+        axiosF.post('/api/v1/logout', {
+          //토큰 삭제하기 
+          
+        }).then(res => {
             console.log(res.data);
         }).catch((e)=> {
             console.log(e);
