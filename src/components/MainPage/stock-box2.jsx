@@ -5,8 +5,10 @@ import styles2 from './styles/stock_box2.module.css'
 import stockImage from '../../assets/images/quiz1.png';
 
 const StockBox2 = ({ className, stockData}) => {
-
-    const title = stockData.itmsNm || "현대차";
+    if (!stockData) {
+        return <div>Loading...</div>;
+    }
+    const title = stockData && stockData.itmsNm ? stockData.itmsNm : "현대차";
     const price = stockData.clpr || "213,000";
     const detail = stockData.vs || 500;
     const content = stockData.content || "대한민국 최고의 자동차 회사! 당신의 투자를 응원합니다";
