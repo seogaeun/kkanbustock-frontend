@@ -1,6 +1,6 @@
 import axios from "axios"
 export const axiosF = axios.create({
-    baseURL: "app-team-4.shinhansec-pda.net",
+    baseURL: "https://app-team-4.shinhansec-pda.net",
     headers: {
         "Content-Type": `application/json;charset=UTF-8`,
         "Accept": "application/json",
