@@ -4,7 +4,6 @@ import StockListComponent from "./../../components/StockList/StockListComponent"
 import MyGroupComponent from "./../../components/MyGroup/MyGroupComponent.js";
 import BlueLargeBtn from "../../components/ButtonComponent/BlueLargeBtn";
 import React, { useState, useEffect } from 'react';
-import {axiosF} from "../../apis";
 import MolyTip from "../../components/MolyComponent/MolyTip";
 
 let hostName="";
