@@ -20,8 +20,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //     }
 // })
 
-root.headers['Access-Control-Allow-Origin'] = '*';
-root.headers['Access-Control-Allow-Credentials'] = true;
-root.headers['withCredentials'] = true;
+// root.headers['Access-Control-Allow-Origin'] = '*';
+// root.headers['Access-Control-Allow-Credentials'] = true;
+// root.headers['withCredentials'] = true;
 
 root.render(<App/>);
