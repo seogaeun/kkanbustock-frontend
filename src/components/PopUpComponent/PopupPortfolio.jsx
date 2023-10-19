@@ -12,7 +12,7 @@ function PopupPortfolio({userInfo,stockDataList,isOpen,closeModal}) {
                 <div className='PopupPortfolioWrap'>
                     <div className="PopupPortfolio-upContent">
                         <div>
-                            <StockListComponent who="나" stockDataList={stockDataList} width="95%" height="100px"></StockListComponent>
+                            <StockListComponent who="나" memberId="dd" stockDataList={stockDataList} width="95%" height="100px"></StockListComponent>
                             
                         </div>
                     </div>

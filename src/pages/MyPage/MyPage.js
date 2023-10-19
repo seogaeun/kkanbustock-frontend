@@ -16,7 +16,7 @@ import {axiosF} from "../../apis";
 
 //더미데이터
 const componentContent = { imgSrc: SOL_welcome, inputTitle: "내 정보" };
-const userInfo = { nickname: "안녕나는쏠", userid: "HiIamsol", userInvestType: "공격투자형" };
+const userInfo = { nickname: "dd", userid: "dd", userInvestType: "공격투자형" };
 const stockDataList = [
     { profitRate: 1, stockName: "Unity Software", quantity: 22, purchasePrice: 2183729 },
     { profitRate: 1, stockName: "Unity Software", quantity: 22, purchasePrice: 2183729 },

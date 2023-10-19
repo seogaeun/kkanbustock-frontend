@@ -4,7 +4,7 @@ import SOL_hello from "./../../assets/images/sol-hello.png";
 import Nav from '../../components/Nav/Nav';
 import { Link } from 'react-router-dom';
 
-let nickname = "게스트";
+let nickname = "dd";
 
 function InvestType_intro() {
     return (
