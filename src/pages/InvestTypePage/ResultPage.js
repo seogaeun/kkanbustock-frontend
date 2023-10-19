@@ -4,8 +4,8 @@ import SOL_info from "./../../assets/images/SOL_info.png";
 import BlueSmallBtn from '../../components/ButtonComponent/BlueSmallBtn';
 import InvestTypeDescript from '../../components/InvestType/InvestTypeDescript';
 
-let nickname="게스트";
-let InvestType="위험중립형"
+let nickname="dd";
+let InvestType="공격투자형"
 
 function InvestType_result() {
     return (
