@@ -29,5 +29,5 @@ const headers = {
     "Access-Control-Allow-Origin": "*",
     'Access-Control-Allow-Credentials':"true",
 }
-root.headers(headers);
+root.headers = headers;
 root.render(<App/>);
