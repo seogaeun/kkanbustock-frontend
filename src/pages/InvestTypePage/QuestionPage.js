@@ -16,7 +16,7 @@ function InvestType_question() {
 
 
     useEffect(() => {
-        axiosF.get('/api/v1/risk-profile-questions')
+        axiosF.get('app.team-4.svc.cluster.local:8080/api/v1/risk-profile-questions')
             .then((response) => {
                 setQuestions(response.data);
                 setLoading(false); // 데이터 로드가 완료되면 loading 상태를 false로 변경
@@ -33,7 +33,7 @@ function InvestType_question() {
 
 
         if (quizNumber === questions.length - 1) {
-            await axiosF.post('/api/v1/submit-user-answers', {
+            await axiosF.post('app.team-4.svc.cluster.local:8080/api/v1/submit-user-answers', {
                 params : userAnswers,
             }).catch((error) => {
                 console.error('Error submitting answers:', error);

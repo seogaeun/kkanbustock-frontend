@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import './LoginPage.css';
-import axios from 'axios';
 import {axiosF} from "../../apis";
+import { useNavigate, Link } from 'react-router-dom'; 
 
 function Login() {
+  const navigate = useNavigate(); // useNavigate를 사용
 
     const getAxios = (token) => {
         const config = {
@@ -20,7 +21,6 @@ function Login() {
             console.log("토큰있다")
             config.headers['authorization'] = `Bearer ${token}`;
         }
-      
         return axiosF.create(config);
       }
 
@@ -38,7 +38,19 @@ function Login() {
 
     console.log(loginData)
 
+    const onClickGuest = async () =>{
+      navigate('/'); // '/' 경로로 이동 (MainPage로 이동)
+
+    }
+
+    const onClickSign = async () => {
+      navigate('/Signup'); 
+      };
+
+
     const onClickLogin = async () => {
+      navigate('/'); // '/' 경로로 이동 (MainPage로 이동)
+
         try {
             const { id, password } = loginData;
 
@@ -88,11 +100,11 @@ function Login() {
                     <button className='button' type='button' onClick={onClickLogin}>로그인</button>
                 </div>
                 <div>
-                    <button className='button' type='button' onClick={onClickLogin}>회원가입</button>
+                    <button className='button' type='button' onClick={onClickSign}>회원가입</button>
                 </div>
                 <div>
                     <label id="explanation">로그인없이 들어갈 수 있어요</label>
-                    <label id="guestLogin">구경하기{'>'}</label>
+                    <label id="guestLogin" onClick={onClickGuest}>구경하기{'>'}</label>
                 </div>
             </div>
         </div>
