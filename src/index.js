@@ -1,4 +1,4 @@
-import cors from 'cors';
+// import cors from 'cors';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
