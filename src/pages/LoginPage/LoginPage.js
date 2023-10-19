@@ -6,21 +6,20 @@ import { useNavigate, Link } from 'react-router-dom';
 
 
 function Login() {
+  const getAxios = () => {
+    return axios.create({
+      baseURL: "http://service.team-4.svc.cluster.local:8080",
+      headers: {
+        accept: "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+        //authorization: `Bearer ${token}`,
+      },
+    });
+  };
 
-    const getAxios = () => {
-        return axios.create({
-            baseURL: 'http://service.team-4.svc.cluster.local:8080',
-            headers: {
-            'accept': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest',
-        }
-        })
-    }
+  const [loginData, setLoginData] = useState({});
 
-    
-    const [loginData, setLoginData] = useState({});
-
-    const handleInput = (e) => {
+  const handleInput = (e) => {
     setLoginData((prevData) => ({
       ...prevData,
       [e.target.name]: e.target.value,
@@ -37,52 +36,68 @@ function Login() {
     
   };
 
-    const onClickLogin = async () => {
-        try {
-            const { id, password } = loginData;
-            console.log("@@@@@@@@@" +id+password)
-          const response = await getAxios().post('/api/v1/login', {
-            id:id,
-            password:password,
-          })
-    
-          console.log('로그인 성공:', response.data);
-        } catch (error) {
-          console.error('로그인 오류:', error.response.data);
-        }
-      };
-    
-   
+  const onClickLogin = async () => {
+    try {
+      const { id, password } = loginData;
+      console.log("@@@@@@@@@" + id + password);
+      const response = await getAxios().post("/api/v1/login", {
+        id: id,
+        password: password,
+      });
 
-    useEffect(() => {
-        // 페이지 호출 후 처음 한 번만 호출될 수 있도록 [] 추가
-    }, []);
+      console.log("로그인 성공:", response.data);
+    } catch (error) {
+      console.error("로그인 오류:", error.response.data);
+    }
+  };
 
-    return (
+  useEffect(() => {
+    // 페이지 호출 후 처음 한 번만 호출될 수 있도록 [] 추가
+  }, []);
+
+  return (
+    <div>
+      <Header name="LOGIN" />
+      <div>
         <div>
-            <Header name='LOGIN' />
-            <div>
-                <div>
-                    <input className='input_group' placeholder='ID' type='text' name='id' value={loginData.id} onChange={handleInput} />
-                </div>
-                <div>
-                    <input className='input_group' placeholder='비밀번호' type='password' name='password' value={loginData.password} onChange={handleInput} />
-                </div>
-            </div>
-            <div id='button_group'>
-                <div>
-                    <button className='button' type='button' onClick={onClickLogin}>로그인</button>
-                </div>
-                <div>
-                    <button className='button' type='button' onClick={onClickLogin}>회원가입</button>
-                </div>
-                <div>
-                    <label id="explanation">로그인없이 들어갈 수 있어요</label>
-                    <label id="guestLogin">구경하기{'>'}</label>
-                </div>
-            </div>
+          <input
+            className="input_group"
+            placeholder="ID"
+            type="text"
+            name="id"
+            value={loginData.id}
+            onChange={handleInput}
+          />
         </div>
-    )
+        <div>
+          <input
+            className="input_group"
+            placeholder="비밀번호"
+            type="password"
+            name="password"
+            value={loginData.password}
+            onChange={handleInput}
+          />
+        </div>
+      </div>
+      <div id="button_group">
+        <div>
+          <button className="button" type="button" onClick={onClickLogin}>
+            로그인
+          </button>
+        </div>
+        <div>
+          <button className="button" type="button" onClick={onClickLogin}>
+            회원가입
+          </button>
+        </div>
+        <div>
+          <label id="explanation">로그인없이 들어갈 수 있어요</label>
+          <label id="guestLogin">구경하기{">"}</label>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Login;
