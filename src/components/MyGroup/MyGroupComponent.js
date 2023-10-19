@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {axiosF} from "../../apis";
+import axios from 'axios';
 import "./MyGroupComponent.css";
 import MyGroupItem from './MyGroupItem.js';
 import BlueSmallBtn from '../ButtonComponent/BlueSmallBtn';
@@ -10,7 +10,7 @@ function MyGroupComponent({ memberId, onGroupItemClick }) {
 
   useEffect(() => {
     // API 호출
-    axiosF.get(`/api/v1/groups/${memberId}`)
+    axios.get(`service.team-4.svc.cluster.local:8080/api/v1/groups/${memberId}`)
       .then(response => {
         setGroupData(response.data); // API 응답 데이터를 state에 설정
       })
