@@ -31,21 +31,40 @@ function Main() {
   const fetchNewsData = async () => {
     try {
       const response = await axios.get(
-        "https://app-team-4.shinhansec-pda.net/api/v1/news",
-        {
-          params: {
-            page1,
-            size,
-          },
-        }
+          "https://app-team-4.shinhansec-pda.net/api/v1/news",
+          {
+            params: {
+              page1,
+              size,
+            },
+          }, {
+            withCredentials: true // 클라이언트와 서버가 통신할때 쿠키와 같은 인증 정보 값을 공유하겠다는 설정
+          }
       );
-      const newNewsData = response.data;
-      setNewsData((prevNewsData) => [...prevNewsData, ...newNewsData]);
-      setPage(page + 1);
     } catch (error) {
-      console.error("뉴스 데이터를 불러오는 데 실패했습니다", error);
+      console.log("fetchNewsData 에러~~")
     }
   };
+
+
+  // const fetchNewsData = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       "https://app-team-4.shinhansec-pda.net/api/v1/news",
+  //       {
+  //         params: {
+  //           page1,
+  //           size,
+  //         },
+  //       }
+  //     );
+  //     const newNewsData = response.data;
+  //     setNewsData((prevNewsData) => [...prevNewsData, ...newNewsData]);
+  //     setPage(page + 1);
+  //   } catch (error) {
+  //     console.error("뉴스 데이터를 불러오는 데 실패했습니다", error);
+  //   }
+  // };
 
   const fetchTopNGroups = async () => {
     try {
