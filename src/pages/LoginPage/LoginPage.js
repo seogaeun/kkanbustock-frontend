@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import './LoginPage.css';
-import axios from 'axios'; 
+import axios from 'axios';
+import { useNavigate, Link } from 'react-router-dom';
+
 
 function Login() {
 
@@ -11,7 +13,6 @@ function Login() {
             headers: {
             'accept': 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
-            //authorization: `Bearer ${token}`,
         }
         })
     }
@@ -29,9 +30,11 @@ function Login() {
   console.log(loginData);
 
   const onClickGuest = async () => {
+
   };
 
   const onClickSign = async () => {
+    
   };
 
     const onClickLogin = async () => {
