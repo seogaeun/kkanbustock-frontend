@@ -1,5 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./MainPage.css";
+import Header from "../../components/Header/Header";
+import MainPoint from "../../components/MainPoint/MainPoint.js";
+import MonthlyRank from "../../components/MonthlyRank/MonthlyRank";
+import MyGroupRanking from "../../components/MyGroupRanking/MyGroupRanking";
+import TopLayout from "../../components/MainPage/layout/top.layout";
+import BottomLayout from "../../components/MainPage/layout/bottom.layout";
+import OnceLayout from "../../components/MainPage/layout/once.layout";
+import InfiniteScroll from "react-infinite-scroll-component";
+import SecondTop from "../../components/MainPage/layout/secondtop.layout";
+import axios from "axios";
+
 function Main() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [items, setItems] = useState([]);
