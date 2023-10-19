@@ -11,7 +11,7 @@ function Quiz() {
     
     const getAxios = (token) => {
         const config = {
-          baseURL: 'service.team-4.svc.cluster.local:8080',
+          baseURL: 'https://app-team-4.shinhansec-pda.net',
           headers: {
             'accept': 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
@@ -38,7 +38,7 @@ function Quiz() {
     // API에서 데이터를 가져오는 함수
     const fetchData = async () => {
       try {
-        const response = await axios(token).get(`service.team-4.svc.cluster.local:8080/api/v1/quizzes/${memberId}`);
+        const response = await axios(token).get(`https://app-team-4.shinhansec-pda.net/api/v1/quizzes/${memberId}`);
 
         console.log(token);
         console.log(memberId);
