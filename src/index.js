@@ -1,4 +1,3 @@
-// import cors from 'cors';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
@@ -20,14 +19,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 //         'Access-Control-Allow-Credentials':"true",
 //     }
 // })
-const headers = {
-    "Content-Type": `application/json;charset=UTF-8`,
-    "Accept": "application/json",
-    "Authorization": "Bearer",
 
-    // 추가
-    "Access-Control-Allow-Origin": "*",
-    'Access-Control-Allow-Credentials':"true",
-}
-root.headers = headers;
+root.headers['Access-Control-Allow-Origin'] = '*';
+root.headers['Access-Control-Allow-Credentials'] = true;
+root.headers['withCredentials'] = true;
+
 root.render(<App/>);
