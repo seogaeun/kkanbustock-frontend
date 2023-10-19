@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import './LoginPage.css';
 import axios from 'axios'; 
+
 function Login() {
 
     const getAxios = () => {
@@ -28,11 +29,9 @@ function Login() {
   console.log(loginData);
 
   const onClickGuest = async () => {
-    navigate("/"); // '/' 경로로 이동 (MainPage로 이동)
   };
 
   const onClickSign = async () => {
-    navigate("/Signup");
   };
 
     const onClickLogin = async () => {
