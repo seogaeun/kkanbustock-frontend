@@ -31,7 +31,7 @@ function Main() {
   const fetchNewsData = async () => {
     try {
       const response = await axios.get(
-        "http://service.team-4.svc.cluster.local:8080/api/v1/news",
+        "https://app-team-4.shinhansec-pda.net/api/v1/news",
         {
           params: {
             page1,
@@ -50,7 +50,7 @@ function Main() {
   const fetchTopNGroups = async () => {
     try {
       const response2 = await axios.get(
-        "http://service.team-4.svc.cluster.local:8080/api/v1/groups/top-n-groups",
+        "https://app-team-4.shinhansec-pda.net/api/v1/groups/top-n-groups",
         {
           params: {
             n: 3,
