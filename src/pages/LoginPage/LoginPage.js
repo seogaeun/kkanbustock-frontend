@@ -2,11 +2,8 @@ import React, { useState, useEffect } from "react";
 import Header from "../../components/Header/Header";
 import "./LoginPage.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // useNavigate 를 import 해줘야 합니다.
 
 function Login() {
-  const navigate = useNavigate(); // navigate 변수를 선언해줘야 합니다.
-
   const getAxios = () => {
     return axios.create({
       baseURL: "http://service.team-4.svc.cluster.local:8080",
@@ -29,13 +26,9 @@ function Login() {
 
   console.log(loginData);
 
-  const onClickGuest = async () => {
-    navigate("/"); // '/' 경로로 이동 (MainPage로 이동)
-  };
+  const onClickGuest = async () => {};
 
-  const onClickSign = async () => {
-    navigate("/Signup");
-  };
+  const onClickSign = async () => {};
 
   const onClickLogin = async () => {
     try {
@@ -88,15 +81,13 @@ function Login() {
           </button>
         </div>
         <div>
-          <button className="button" type="button" onClick={onClickSign}>
-            회원가입 {/* 이 부분에서 onClickSign 함수를 호출해야 합니다. */}
+          <button className="button" type="button" onClick={onClickLogin}>
+            회원가입
           </button>
         </div>
         <div>
           <label id="explanation">로그인없이 들어갈 수 있어요</label>
-          <label id="guestLogin" onClick={onClickGuest}>
-            구경하기{">"}
-          </label>
+          <label id="guestLogin">구경하기{">"}</label>
         </div>
       </div>
     </div>
