@@ -30,15 +30,24 @@ const stockDataList = [
 function MyPage() {
 
       const handleLogout = async () => {
-        axios.post('service.team-4.svc.cluster.local:8080/api/v1/logout', {
-          //토큰 삭제하기 
+        try {
+          // 서버에 로그아웃 요청을 보냅니다.
+          const response = await axios.post('http://service.team-4.svc.cluster.local:8080/api/v1/logout');
           
-        }).then(res => {
-            console.log(res.data);
-        }).catch((e)=> {
-            console.log(e);
-            alert('로그아웃에 실패');
-        })
+          // 서버에서 성공적으로 응답을 받았을 때의 처리
+          if (response.status === 200) {
+            console.log(response.data);
+            // 로그아웃이 성공했으므로 클라이언트 상태를 업데이트하거나 리다이렉트 등을 수행할 수 있습니다.
+          } else {
+            // 서버에서 다른 응답 코드를 반환한 경우 처리
+            console.log('로그아웃 실패');
+            alert('로그아웃에 실패했습니다.');
+          }
+        } catch (error) {
+          // 요청 실패 시 처리
+          console.error(error);
+          alert('로그아웃 요청에 실패했습니다.');
+        }
     };
 
     //My투자 성향 팝업
