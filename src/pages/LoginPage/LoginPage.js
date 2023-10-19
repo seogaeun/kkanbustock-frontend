@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // useNavigate로 수정
 import Header from '../../components/Header/Header';
 import './LoginPage.css';
 import axios from 'axios'; 
+
 function Login() {
+    const navigate = useNavigate(); // useNavigate를 사용
 
     const getAxios = (token) => {
         const config = {
@@ -20,9 +23,8 @@ function Login() {
         }
       
         return axios.create(config);
-      }
+    }
 
-    
     const [loginData, setLoginData] = useState({});
     const [token, setToken] = useState('');
     const [id, setId] = useState('');
@@ -34,37 +36,37 @@ function Login() {
     }));
   };
 
-    console.log(loginData)
-
     const onClickLogin = async () => {
+        
         try {
+
             const { id, password } = loginData;
 
-            console.log("@@@@@@@@@" +id+password)
+            console.log("@@@@@@@@@" + id + password)
 
-          const response = await getAxios().post('/api/v1/login', {
-            id,
-            password,
-          })
-      
-          // 서버로부터의 응답 처리
-          console.log('로그인 성공:', response.data);
-          const token = response.data.jwt;
+            const response = await getAxios().post('/api/v1/login', {
+                id,
+                password,
+            })
 
-        //   console.log(token)
-          setToken(token);
-          setId(response.data.member.id);
-          
-          console.log(token);
-          console.log(id);
-      
-          // 로그인이 성공했을 때 원하는 작업을 수행할 수 있습니다.
+            // 서버로부터의 응답 처리
+            console.log('로그인 성공:', response.data);
+            const token = response.data.jwt;
+
+            console.log(token)
+            setToken(token);
+            setId(response.data.member.id);
+
+            console.log(token);
+            console.log(id);
+
+            navigate('/'); // '/' 경로로 이동 (MainPage로 이동)
         } catch (error) {
-      
-          console.error('로그인 오류:', error.response.data);
-         
+
+            console.error('로그인 오류:', error.response.data);
+
         }
-      };
+    };
 
     return (
         <div>
