@@ -1,8 +1,13 @@
 import axios from "axios"
 export const axiosF = axios.create({
-        baseURL: "http://localhost:8080",
-        headers: {
-        'Content-Type': 'application/json',
-        withCredentials: true,
+    baseURL: "app-team-4.shinhansec-pda.net",
+    headers: {
+        "Content-Type": `application/json;charset=UTF-8`,
+        "Accept": "application/json",
+        "Authorization": "Bearer ",
+
+        // 추가
+        "Access-Control-Allow-Origin": "*",
+        'Access-Control-Allow-Credentials':"true",
     }
-    })
+})
