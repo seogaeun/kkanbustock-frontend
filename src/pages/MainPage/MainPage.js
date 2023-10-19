@@ -66,7 +66,7 @@ function Main() {
   const fetchTopNMyGroups = async () => {
     try {
       const response3 = await axios.get(
-        "http://service.team-4.svc.cluster.local:8080/api/v1/groups/my-groups-profit-rate",
+        "https://app-team-4.shinhansec-pda.net/api/v1/groups/my-groups-profit-rate",
         {
           params: {
             n: 5,
@@ -99,7 +99,7 @@ function Main() {
   const fetchDictionaryData = async () => {
     try {
       const response5 = await axios.get(
-        "http://service.team-4.svc.cluster.local:8080/api/v1/dictionary"
+        "https://app-team-4.shinhansec-pda.net/api/v1/dictionary"
       );
       return response5.data;
     } catch (error) {
@@ -117,7 +117,7 @@ function Main() {
   const fetchStockRecommendations = async () => {
     try {
       const response = await axios.get(
-        "http://service.team-4.svc.cluster.local:8080/api/v1/recommends",
+        "https://app-team-4.shinhansec-pda.net/api/v1/recommends",
         {
           params: {
             page: 1,
@@ -135,7 +135,7 @@ function Main() {
   const fetchMoreNewsData = async () => {
     try {
       const response7 = await axios.get(
-        "http://service.team-4.svc.cluster.local:8080/api/v1/news",
+        "https://app-team-4.shinhansec-pda.net/api/v1/news",
         {
           params: {
             page1: page,

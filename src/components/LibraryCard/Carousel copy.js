@@ -21,7 +21,7 @@ function Carousel() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "http://service.team-4.svc.cluster.local:8080/api/v1/dictionary"
+          "https://app-team-4.shinhansec-pda.net/api/v1/dictionary"
         ); // API 엔드포인트를 변경해야 할 수도..
         setDictionaryContents(response.data);
         console.log("데이터 불러오기 성공");
