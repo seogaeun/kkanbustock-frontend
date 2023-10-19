@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import './LoginPage.css';
-import axios from 'axios';
 import {axiosF} from "../../apis";
+import { useNavigate, Link } from 'react-router-dom'; 
 
 function Login() {
+  const navigate = useNavigate(); // useNavigate를 사용
 
     const getAxios = (token) => {
         const config = {
@@ -20,7 +21,6 @@ function Login() {
             console.log("토큰있다")
             config.headers['authorization'] = `Bearer ${token}`;
         }
-      
         return axiosF.create(config);
       }
 
@@ -38,7 +38,19 @@ function Login() {
 
     console.log(loginData)
 
+    const onClickGuest = async () =>{
+      navigate('/'); // '/' 경로로 이동 (MainPage로 이동)
+
+    }
+
+    const onClickSign = async () => {
+      navigate('/Signup'); 
+      };
+
+
     const onClickLogin = async () => {
+      navigate('/'); // '/' 경로로 이동 (MainPage로 이동)
+
         try {
             const { id, password } = loginData;
 

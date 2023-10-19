@@ -3,7 +3,7 @@ import "./StockListComponent.css";
 import StockListCover from "./StockListCover";
 import StockListItem from "./StockListItem";
 import WhiteContentBtn from "./../ButtonComponent/WhiteContentBtn";
-import { axiosF } from "../../apis";
+import {axiosF} from "../../apis";
 
 function StockListComponent({
   width,
