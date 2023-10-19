@@ -19,7 +19,7 @@ function DailyQuiz({ memberId }) {
 
   const fetchQuiz = async () => {
     try {
-      const response = await axios.get(`https://app-team-4.shinhansec-pda.net/${memberId}`);
+      const response = await axios.get(`https:app-team-4.shinhansec-pda.net/${memberId}`);
       if (response.data) {
         const data = response.data;
         setQuiz({
@@ -71,7 +71,7 @@ function DailyQuiz({ memberId }) {
     }
 
     try {
-      await axios.post(`https://app-team-4.shinhansec-pda.net/api/v1/quizzes/daily`, {
+      await axios.post(`https:app-team-4.shinhansec-pda.net/api/v1/quizzes/daily`, {
         memberId: memberId,
         stockQuizId: quiz.quizId,
         isCorrect: isAnswerCorrect,

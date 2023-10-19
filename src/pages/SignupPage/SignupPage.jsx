@@ -16,7 +16,7 @@ function SignUpPage() {
 
 
     const handleSignUp = async () => {
-        axios.post('http://app-team-4.shinhansec-pda.net/api/v1/register', {
+        axios.post('https:app-team-4.shinhansec-pda.net/api/v1/register', {
             id: id,
             name: name,
             email: email,
