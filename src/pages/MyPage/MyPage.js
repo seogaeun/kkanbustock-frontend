@@ -11,7 +11,7 @@ import PopupInvestType from '../../components/PopUpComponent/PopupInvestType';
 import PopupPortfolio from '../../components/PopUpComponent/PopupPortfolio';
 import PopupGrpAlarm from '../../components/PopUpComponent/PopupGrpAlarm';
 import PopupPortRecommandStock from '../../components/PopUpComponent/PopupRecommandStock';
-import {axiosF} from "../../apis";
+import axios from 'axios'
 
 
 //더미데이터
@@ -30,7 +30,7 @@ const stockDataList = [
 function MyPage() {
 
       const handleLogout = async () => {
-        axiosF.post('/api/v1/logout', {
+        axios.post('service.team-4.svc.cluster.local:8080/api/v1/logout', {
           //토큰 삭제하기 
           
         }).then(res => {

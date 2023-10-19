@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../../components/Header/Header';
 import './LoginPage.css';
-import {axiosF} from "../../apis";
+import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom'; 
 
 function Login() {
@@ -9,7 +9,7 @@ function Login() {
 
     const getAxios = (token) => {
         const config = {
-          baseURL: 'http://localhost:8080',
+          baseURL: 'service.team-4.svc.cluster.local:8080',
           headers: {
             'accept': 'application/json',
             'X-Requested-With': 'XMLHttpRequest',
@@ -21,7 +21,7 @@ function Login() {
             console.log("토큰있다")
             config.headers['authorization'] = `Bearer ${token}`;
         }
-        return axiosF.create(config);
+        return axios.create(config);
       }
 
     
