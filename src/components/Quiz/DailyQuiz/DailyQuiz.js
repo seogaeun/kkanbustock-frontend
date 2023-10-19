@@ -19,7 +19,10 @@ function DailyQuiz({ memberId }) {
 
   const fetchQuiz = async () => {
     try {
-      const response = await axios.get(`https:app-team-4.shinhansec-pda.net/${memberId}`);
+      //https://app-team-4.shinhansec-pda.net/
+      const response = await axios.get(
+        `https://app-team-4.shinhansec-pda.net/${memberId}`
+      );
       if (response.data) {
         const data = response.data;
         setQuiz({
@@ -71,11 +74,14 @@ function DailyQuiz({ memberId }) {
     }
 
     try {
-      await axios.post(`https:app-team-4.shinhansec-pda.net/api/v1/quizzes/daily`, {
-        memberId: memberId,
-        stockQuizId: quiz.quizId,
-        isCorrect: isAnswerCorrect,
-      });
+      await axios.post(
+        `https:app-team-4.shinhansec-pda.net/api/v1/quizzes/daily`,
+        {
+          memberId: memberId,
+          stockQuizId: quiz.quizId,
+          isCorrect: isAnswerCorrect,
+        }
+      );
 
       console.log("POST 요청 성공: 문제 푼 상태 업데이트 완료");
     } catch (error) {

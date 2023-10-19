@@ -8,24 +8,23 @@ import { useToken } from "../LoginPage/TokenContext";
 import { useMemberId } from "../LoginPage/MemberContext";
 
 function Quiz() {
-    
-    const getAxios = (token) => {
-        const config = {
-          baseURL: 'https://app-team-4.shinhansec-pda.net',
-          headers: {
-            'accept': 'application/json',
-            'X-Requested-With': 'XMLHttpRequest',
-          }
-        };
-      
-        // 토큰이 존재할 경우에만 요청 헤더에 추가
-        if (token) {
-            console.log("토큰있다")
-            config.headers['authorization'] = `Bearer ${token}`;
-        }
-      
-        return axios.create(config);
-      }
+  const getAxios = (token) => {
+    const config = {
+      baseURL: "https://app-team-4.shinhansec-pda.net",
+      headers: {
+        accept: "application/json",
+        "X-Requested-With": "XMLHttpRequest",
+      },
+    };
+
+    // 토큰이 존재할 경우에만 요청 헤더에 추가
+    if (token) {
+      console.log("토큰있다");
+      config.headers["authorization"] = `Bearer ${token}`;
+    }
+
+    return axios.create(config);
+  };
 
   const [quizContents, setQuizContents] = useState([]); // API에서 가져온 데이터를 저장하는 상태
   //   const { token } = useToken();
@@ -33,13 +32,15 @@ function Quiz() {
 
   const token =
     "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyNyIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2OTc2NTU1MjEsImV4cCI6MTY5NzY5MTUyMX0.6uUkSyaB39VgSz8NbL_PU2opnrrgRJFkZO3IC6zZHlo";
-  const memberId = "user7";
+  const memberId = "choi";
 
   useEffect(() => {
     // API에서 데이터를 가져오는 함수
     const fetchData = async () => {
       try {
-        const response = await axios(token).get(`https://app-team-4.shinhansec-pda.net/api/v1/quizzes/${memberId}`);
+        const response = await axios(token).get(
+          `https://app-team-4.shinhansec-pda.net/api/v1/quizzes/${memberId}`
+        );
 
         console.log(token);
         console.log(memberId);

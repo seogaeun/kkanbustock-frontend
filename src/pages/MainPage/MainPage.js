@@ -31,21 +31,21 @@ function Main() {
   const fetchNewsData = async () => {
     try {
       const response = await axios.get(
-          "https://app-team-4.shinhansec-pda.net/api/v1/news",
-          {
-            params: {
-              page1,
-              size,
-            },
-          }, {
-            withCredentials: true // 클라이언트와 서버가 통신할때 쿠키와 같은 인증 정보 값을 공유하겠다는 설정
-          }
+        "https://app-team-4.shinhansec-pda.net/api/v1/news",
+        {
+          params: {
+            page1,
+            size: 500,
+          },
+        },
+        {
+          withCredentials: true, // 클라이언트와 서버가 통신할때 쿠키와 같은 인증 정보 값을 공유하겠다는 설정
+        }
       );
     } catch (error) {
-      console.log("fetchNewsData 에러~~")
+      console.log("fetchNewsData 에러~~");
     }
   };
-
 
   // const fetchNewsData = async () => {
   //   try {
@@ -158,7 +158,7 @@ function Main() {
         {
           params: {
             page1: page,
-            size,
+            size: 500,
           },
         }
       );
