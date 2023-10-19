@@ -17,8 +17,7 @@ function StockListComponent({
   useEffect(() => {
     axios
       .get(
-        `https://app-team-4.shinhansec-pda.net
-      /api/v1/portfolios/${memberId}`
+        `https://app-team-4.shinhansec-pda.net/api/v1/portfolios/${memberId}`
       )
       .then((response) => {
         const data = response.data;
