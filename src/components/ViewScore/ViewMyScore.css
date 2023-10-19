@@ -24,14 +24,50 @@
     height: 150px;
   }
   
+
+  
+  
+
+.winClass{
+    background-color: red;
+    width:450px;
+    height: 292.5px;
+    animation-duration: 0.5s ease;
+
+
+}
+
+  .winClass>img{
+
+  width:80%;
+  height: 80%;
+  right: 0px;
+  }
+
+  .lossClass{
+
+    margin-top: 100px;
+    width: 300px;
+    height: 195px;
+    background-color: blue;
+    animation-duration: 3s ease;
+
+  }
+
+  .lossClass>img{
+  width:50%;
+  height: 50%;
+  left:0;
+  right: 0;
+  }
+
+
   .mySadariggol>img {
     position: absolute;
     object-fit: contain;
     right: 60px;
     top: 0;
     margin:20px;
-    width:200px;
-    height: 200px;
+    width:70%;
+    height: 70%;
   }
-  
-  

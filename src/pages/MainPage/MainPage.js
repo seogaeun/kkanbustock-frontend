@@ -1,16 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./MainPage.css";
-import Header from "../../components/Header/Header";
-import MainPoint from "../../components/MainPoint/MainPoint.js";
-import MonthlyRank from "../../components/MonthlyRank/MonthlyRank";
-import MyGroupRanking from "../../components/MyGroupRanking/MyGroupRanking";
-import TopLayout from "../../components/MainPage/layout/top.layout";
-import BottomLayout from "../../components/MainPage/layout/bottom.layout";
-import OnceLayout from "../../components/MainPage/layout/once.layout";
-import InfiniteScroll from "react-infinite-scroll-component";
-import SecondTop from "../../components/MainPage/layout/secondtop.layout";
-import axios from "axios";
-
 function Main() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [items, setItems] = useState([]);
@@ -32,12 +21,13 @@ function Main() {
     try {
       const response = await axios.get("/api/v1/news", {
         params: {
-          page1: 0,
-          size: 500,
+          page1,
+          size,
         },
       });
-      const newsData = response.data;
-      setNewsData(newsData);
+      const newNewsData = response.data;
+      setNewsData((prevNewsData) => [...prevNewsData, ...newNewsData]);
+      setPage(page + 1);
     } catch (error) {
       console.error("뉴스 데이터를 불러오는 데 실패했습니다", error);
     }
@@ -109,14 +99,34 @@ function Main() {
     try {
       const response = await axios.get("/api/v1/recommends", {
         params: {
-          page: 0,
-          size: 500,
+          page: 1,
+          size: 100,
         },
       });
       const newStockData = response.data.content;
       setStockData(newStockData);
     } catch (error) {
       console.error("주식 데이터 가져오기 실패", error);
+    }
+  };
+
+  const fetchMoreNewsData = async () => {
+    try {
+      const response7 = await axios.get("/api/v1/news", {
+        params: {
+          page1: page,
+          size,
+        },
+      });
+      const newNewsData = response7.data;
+      if (newNewsData.length > 0) {
+        setNewsData((prevNewsData) => [...prevNewsData, ...newNewsData]);
+        setPage(page + 1);
+      } else {
+        setHasMore(false);
+      }
+    } catch (error) {
+      console.error("추가 뉴스 데이터를 불러오는 데 실패했습니다", error);
     }
   };
 
@@ -131,6 +141,7 @@ function Main() {
     fetchData();
     fetchTopNGroups();
     fetchTopNMyGroups();
+    fetchMoreNewsData();
     setIsLoggedIn(checkLoginStatus());
   }, []);
 

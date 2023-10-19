@@ -11,10 +11,12 @@ import PopupInvestType from '../../components/PopUpComponent/PopupInvestType';
 import PopupPortfolio from '../../components/PopUpComponent/PopupPortfolio';
 import PopupGrpAlarm from '../../components/PopUpComponent/PopupGrpAlarm';
 import PopupPortRecommandStock from '../../components/PopUpComponent/PopupRecommandStock';
+import {axiosF} from "../../apis";
+
 
 //더미데이터
 const componentContent = { imgSrc: SOL_welcome, inputTitle: "내 정보" };
-const userInfo = { nickname: "안녕나는쏠", userid: "HiIamsol", userInvestType: "공격투자형" };
+const userInfo = { nickname: "dd", userid: "dd", userInvestType: "공격투자형" };
 const stockDataList = [
     { profitRate: 1, stockName: "Unity Software", quantity: 22, purchasePrice: 2183729 },
     { profitRate: 1, stockName: "Unity Software", quantity: 22, purchasePrice: 2183729 },
@@ -25,12 +27,19 @@ const stockDataList = [
     // 다른 객체들도 여기에 추가 가능
 ];
 
-
-
-
-
-
 function MyPage() {
+
+      const handleLogout = async () => {
+        axiosF.post('/api/v1/logout', {
+          //토큰 삭제하기 
+          
+        }).then(res => {
+            console.log(res.data);
+        }).catch((e)=> {
+            console.log(e);
+        })
+    };
+
     //My투자 성향 팝업
     const [isInvestTypeModalOpen, setIsInvestTypeModalOpen] = useState(false);
 
@@ -92,7 +101,7 @@ function MyPage() {
               </button>
             </div>
             <div className='logoutContent'>
-              <button className='logoutBtn'>로그아웃하기</button>
+              <button onClick={handleLogout} className='logoutBtn'>로그아웃하기</button>
             </div>
           </div>
         </TitleContentLayout>

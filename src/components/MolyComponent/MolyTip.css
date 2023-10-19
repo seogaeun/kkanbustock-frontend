@@ -1,0 +1,11 @@
+.MolyTipWrap{
+    width: 90%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.MolyTip-upContent{
+    display: flex;
+    justify-content: space-around;
+}

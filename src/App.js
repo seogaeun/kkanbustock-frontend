@@ -9,6 +9,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import MyPage from "./pages/MyPage/MyPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
+import { TokenProvider } from './pages/LoginPage/TokenContext';
+import { MemberProvider } from './pages/LoginPage/MemberContext';
 import InvestType_intro from "./pages/InvestTypePage/IntroPage";
 import InvestType_question from "./pages/InvestTypePage/QuestionPage";
 import InvestType_result from "./pages/InvestTypePage/ResultPage";
@@ -18,6 +20,8 @@ function App() {
 
   return (
     <BrowserRouter>
+    <TokenProvider>
+        <MemberProvider>
       <div className="App">
         <Nav />
         <Routes>
@@ -27,13 +31,15 @@ function App() {
           <Route path="/Rival" element={<RivalPage />} />
           <Route path="/Dictionary" element={<DictionaryPage />} />
           <Route path="/Signup" element={<SignupPage />} />
-          <Route path="/Signup" element={<SignupPage />} />
           <Route path="/InvestType/Intro" element={<InvestType_intro />} />
           <Route path="/InvestType/Question" element={<InvestType_question />} />
-          <Route path="/InvestType/Result" element={<InvestType_result />} />
+          <Route path="/InvestQuestion/Result" element={<InvestType_result />} />
 
+          <Route path="/Login" element={<LoginPage />} />
         </Routes>
       </div>
+      </MemberProvider>
+      </TokenProvider>
     </BrowserRouter>
   );
 }
