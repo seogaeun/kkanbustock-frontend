@@ -3,10 +3,8 @@ import Header from '../../components/Header/Header';
 import styles from './SignUpPage.module.css';
 import {axiosF} from "../../apis";
 import { useNavigate, Link } from 'react-router-dom'; 
-import { useNavigate, Link } from 'react-router-dom'; 
 
 function SignUpPage() {
-    const navigate = useNavigate(); // useNavigate를 사용
     const navigate = useNavigate(); // useNavigate를 사용
     const [id, setAccount] = useState('');
     const [name, setName] = useState('');
