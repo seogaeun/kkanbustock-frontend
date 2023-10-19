@@ -11,7 +11,7 @@ function ViewScoreComponent({ memberId, guestId }) {
   useEffect(() => {
     axios
       .get(
-        `http://service.team-4.svc.cluster.local:8080/api/v1/portfolios/profits/${memberId}`
+        `https://app-team-4.shinhansec-pda.net/api/v1/portfolios/profits/${memberId}`
       )
       .then((response) => {
         const data = response.data;
@@ -29,7 +29,7 @@ function ViewScoreComponent({ memberId, guestId }) {
     if (guestId) {
       axios
         .get(
-          `http://service.team-4.svc.cluster.local:8080/api/v1/portfolios/profits/${guestId}`
+          `https://app-team-4.shinhansec-pda.net/api/v1/portfolios/profits/${guestId}`
         )
         .then((response) => {
           const data = response.data;
