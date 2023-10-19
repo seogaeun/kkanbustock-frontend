@@ -20,7 +20,6 @@ function DailyQuiz({ memberId }) {
   const fetchQuiz = async () => {
     try {
       const response = await axiosF.get(`/api/v1/quizzes/daily/${memberId}`);
-      const response = await axiosF.get(`/api/v1/quizzes/daily/${memberId}`);
       if (response.data) {
         const data = response.data;
         setQuiz({
@@ -72,7 +71,6 @@ function DailyQuiz({ memberId }) {
     }
 
     try {
-      await axiosF.post(`/api/v1/quizzes/daily`, {
       await axiosF.post(`/api/v1/quizzes/daily`, {
         memberId: memberId,
         stockQuizId: quiz.quizId,
