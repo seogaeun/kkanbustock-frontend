@@ -16,7 +16,7 @@ function InvestType_question() {
   useEffect(() => {
     axios
       .get(
-        "http://service.team-4.svc.cluster.local:8080/api/v1/risk-profile-questions"
+        "https://app-team-4.shinhansec-pda.net/api/v1/risk-profile-questions"
       )
       .then((response) => {
         setQuestions(response.data);
@@ -35,7 +35,7 @@ function InvestType_question() {
     if (quizNumber === questions.length - 1) {
       await axios
         .post(
-          "http://service.team-4.svc.cluster.local:8080/api/v1/submit-user-answers",
+          "https://app-team-4.shinhansec-pda.net/api/v1/submit-user-answers",
           {
             params: userAnswers,
           }

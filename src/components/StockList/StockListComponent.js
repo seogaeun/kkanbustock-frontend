@@ -17,7 +17,7 @@ function StockListComponent({
   useEffect(() => {
     axios
       .get(
-        `http://service.team-4.svc.cluster.local:8080
+        `https://app-team-4.shinhansec-pda.net
       /api/v1/portfolios/${memberId}`
       )
       .then((response) => {

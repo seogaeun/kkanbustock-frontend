@@ -12,7 +12,7 @@ function MyGroupComponent({ memberId, onGroupItemClick }) {
     // API 호출
     axios
       .get(
-        `http://service.team-4.svc.cluster.local:8080/api/v1/groups/${memberId}`
+        `https://app-team-4.shinhansec-pda.net/api/v1/groups/${memberId}`
       )
       .then((response) => {
         setGroupData(response.data); // API 응답 데이터를 state에 설정
