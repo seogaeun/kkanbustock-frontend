@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header/Header';
 import styles from './SignUpPage.module.css';
-import {axiosF} from "../../apis";
+import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom'; 
 
 function SignUpPage() {
@@ -16,7 +16,7 @@ function SignUpPage() {
 
 
     const handleSignUp = async () => {
-        axiosF.post('/api/v1/register', {
+        axios.post('http://app-team-4.shinhansec-pda.net/api/v1/register', {
             id: id,
             name: name,
             email: email,
@@ -24,7 +24,6 @@ function SignUpPage() {
         }).then(res => {
             console.log(res.data);
             navigate('/'); // '/' 경로로 이동 (MainPage로 이동)
-
         }).catch((e)=> {
             console.log(e);
         })
