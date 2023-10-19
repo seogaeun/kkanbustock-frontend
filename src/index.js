@@ -15,7 +15,7 @@ const getAuth = (token) => axios.create({
         "Authorization": "Bearer "+token,
 
         // 추가
-        "Access-Control-Allow-Origin": `http://localhost:3000`,
+        "Access-Control-Allow-Origin": "*",
         'Access-Control-Allow-Credentials':"true",
     }
 })
