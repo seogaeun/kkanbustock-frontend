@@ -3,14 +3,14 @@ import "./StockListComponent.css"
 import StockListCover from "./StockListCover";
 import StockListItem from "./StockListItem";
 import WhiteContentBtn from "./../ButtonComponent/WhiteContentBtn";
-import axios from 'axios';
+import {axiosF} from "../../apis";
 
 function StockListComponent({ width, height,userName="나", memberId = "나" }) {
     const [stockDataList, setStockDataList] = useState([]);
     const [manyStockName, setManyStockName] = useState(""); // 가장 많이 투자한 종목을 저장할 상태
 
     useEffect(() => {
-        axios.get(`/api/v1/portfolios/${memberId}`)
+        axiosF.get(`/api/v1/portfolios/${memberId}`)
             .then((response) => {
                 const data = response.data;
                 setStockDataList(data);

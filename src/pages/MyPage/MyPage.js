@@ -37,6 +37,7 @@ function MyPage() {
             console.log(res.data);
         }).catch((e)=> {
             console.log(e);
+            alert('로그아웃에 실패');
         })
     };
 

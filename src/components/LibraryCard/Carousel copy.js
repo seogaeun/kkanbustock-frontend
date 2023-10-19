@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Carousel copy.css';
 import LibraryCardItem from './LibraryCardItem';
-import axios from 'axios';
+import {axiosF} from "../../apis";
 
 function Carousel() {
   const [currCarousel, setCurrCarousel] = useState(1);
@@ -18,7 +18,7 @@ function Carousel() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('/api/v1/dictionary'); // API 엔드포인트를 변경해야 할 수도..
+        const response = await axiosF.get('/api/v1/dictionary'); // API 엔드포인트를 변경해야 할 수도..
         setDictionaryContents(response.data);
         console.log("데이터 불러오기 성공");
         console.log(response.data);

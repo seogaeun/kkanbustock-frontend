@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import {axiosF} from "../../apis";
 import "./ViewScoreComponent.css";
 import ViewMyScore from './ViewMyScore';
 import ViewRivalScore from './ViewRivalScore';
@@ -9,7 +9,7 @@ function ViewScoreComponent({ memberId, guestId }) {
   const [guestTotalProfitRate, setGuestTotalProfitRate] = useState(null);
 
   useEffect(() => {
-    axios.get(`/api/v1/portfolios/profits/${memberId}`)
+    axiosF.get(`/api/v1/portfolios/profits/${memberId}`)
       .then((response) => {
         const data = response.data;
         if (data) {
@@ -24,7 +24,7 @@ function ViewScoreComponent({ memberId, guestId }) {
       });
 
     if (guestId) {
-      axios.get(`/api/v1/portfolios/profits/${guestId}`)
+      axiosF.get(`/api/v1/portfolios/profits/${guestId}`)
         .then((response) => {
           const data = response.data;
           if (data) {
