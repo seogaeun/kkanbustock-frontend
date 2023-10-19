@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./DailyQuiz.css";
-import axios from 'axios';
+import axios from "axios";
 
 function DailyQuiz({ memberId }) {
   const [quiz, setQuiz] = useState({

@@ -3,9 +3,9 @@ import "./QuizPage.css";
 import Header from "../../components/Header/Header";
 import DailyQuiz from "../../components/Quiz/DailyQuiz/DailyQuiz.js";
 import QuizHistory from "../../components/Quiz/QuizHistory/QuizHistory";
-import axios from 'axios';
-import { useToken } from '../LoginPage/TokenContext';
-import { useMemberId } from '../LoginPage/MemberContext';
+import axios from "axios";
+import { useToken } from "../LoginPage/TokenContext";
+import { useMemberId } from "../LoginPage/MemberContext";
 
 function Quiz() {
     
@@ -28,11 +28,12 @@ function Quiz() {
       }
 
   const [quizContents, setQuizContents] = useState([]); // API에서 가져온 데이터를 저장하는 상태
-//   const { token } = useToken();
-//   const { memberId } = useMemberId();
+  //   const { token } = useToken();
+  //   const { memberId } = useMemberId();
 
-      const token = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyNyIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2OTc2NTU1MjEsImV4cCI6MTY5NzY5MTUyMX0.6uUkSyaB39VgSz8NbL_PU2opnrrgRJFkZO3IC6zZHlo";
-      const memberId = "user7";
+  const token =
+    "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyNyIsInJvbGVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2OTc2NTU1MjEsImV4cCI6MTY5NzY5MTUyMX0.6uUkSyaB39VgSz8NbL_PU2opnrrgRJFkZO3IC6zZHlo";
+  const memberId = "user7";
 
   useEffect(() => {
     // API에서 데이터를 가져오는 함수
@@ -81,7 +82,7 @@ function Quiz() {
     };
 
     fetchData();
-  }, [memberId, token]); 
+  }, [memberId, token]);
 
   // 임의의 오늘의 퀴즈 데이터
   const StockQuiz = [
